@@ -2,7 +2,7 @@ var sass = require('node-sass');
 var fs = require('fs');
 
 sass.render({
-    file: 'scss/test.scss'
+    file: 'scss/main.scss'
   }, function(error, result) {
     if(!error){
       fs.writeFile('../resources/css/main.css', result.css.toString(), function(err){
