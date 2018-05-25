@@ -1,0 +1,9 @@
+.logo {
+	width: 200px;
+}
+
+.nav-list-wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 50px;
+}

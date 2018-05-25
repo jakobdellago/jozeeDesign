@@ -6,6 +6,8 @@ uploads/*
 
 vendor/*
 
+fileadmin/build/node_modules
+
 CONTRIBUTING.md
 INSTALL.md
 LICENSE.txt
