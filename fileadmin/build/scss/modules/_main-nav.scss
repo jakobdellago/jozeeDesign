@@ -1,6 +1,24 @@
-.test {
-	width: 200px;
-	&.itworks {
-		height: 10px;
+.main-nav{
+	.nav-list-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 50px;
+		height: 85px;
+     	box-shadow: 0px -5px 20px 0px #444;
+		.center {
+			display: flex;
+			li:nth-child(2) {
+				margin: 0 60px
+			}
+		}
+		.last{
+			a {
+				float: right;
+			}
+		}
+		.first .logo, .last{
+			width:150px;
+		}
 	}
 }
