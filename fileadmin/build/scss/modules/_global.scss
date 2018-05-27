@@ -1,8 +1,26 @@
-body, ul {
+ul {
 	margin: 0;
 	padding: 0
 }
 
 li {
 	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+	&:visited {
+		color: #000;
+	}
+}
+
+/*FONTS*/
+
+html {
+	font-size:10px;
+}
+
+body {
+	font-size:62.5%;
 }

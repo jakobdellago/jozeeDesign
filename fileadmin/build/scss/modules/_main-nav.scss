@@ -1,4 +1,5 @@
-.main-nav{
+.main-nav {
+	font-size: 1.6rem;
 	.nav-list-wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -8,17 +9,32 @@
      	box-shadow: 0px -5px 20px 0px #444;
 		.center {
 			display: flex;
+			li {
+				width: 120px;
+    			border: 1px dotted grey;
+				a {
+					text-align: center;
+					display: block;
+				}
+			}
 			li:nth-child(2) {
-				margin: 0 60px
+				margin: 0 60px;
 			}
 		}
-		.last{
+		.last {
 			a {
 				float: right;
 			}
 		}
-		.first .logo, .last{
-			width:150px;
+		.first {
+			img {
+				max-width: 150px;
+				display: inline-block;
+    			vertical-align: middle;
+			}
+		}
+		.first, .last {
+			flex: 0 0 150px;
 		}
 	}
 }
