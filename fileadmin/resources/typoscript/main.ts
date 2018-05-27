@@ -6,7 +6,7 @@ page.includeCSS {
 }
 page.10 = FLUIDTEMPLATE
 page.10 {
-  file = fileadmin\resources\template\main.html  
+  file = fileadmin\resources\templates\main.html  
   variables {
     content < styles.content.get
     MAINMENU = HMENU
@@ -16,11 +16,11 @@ page.10 {
       1.NO {
         doNotLinkIt = 1
         wrapItemAndSub (
-          <a href="/index.php?id=1">
+          <a href="/index.php?id=1" class="first">
               <img src="fileadmin\resources\images\logo.jpg" title="JozeeDesign" alt="Logo" class="logo">
           </a>
-          <div class="nav-center">
-          <li>|</li> |*| <li>|</li> |*| </div> <li>|</li>
+          <div class="center">
+          <li>|</li> |*| <li>|</li> |*| </div> <li class="last">|</li>
         )
         stdWrap.cObject = CASE
         stdWrap.cObject {
