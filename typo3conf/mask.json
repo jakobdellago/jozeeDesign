@@ -1,0 +1,24 @@
+{
+    "tt_content": {
+        "elements": {
+            "headerimage": {
+                "label": "Headerimage",
+                "key": "headerimage",
+                "shortLabel": "",
+                "description": "Image with links and text",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "image",
+                    "rowDescription",
+                    "header_link"
+                ],
+                "labels": [
+                    "Image",
+                    "Description",
+                    "Link"
+                ]
+            }
+        }
+    }
+}

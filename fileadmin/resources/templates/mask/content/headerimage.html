@@ -1,0 +1,18 @@
+
+<f:debug>{_all}</f:debug>
+
+<f:if condition="{data.image}">
+<f:for each="{data.image}" as="file">
+  <f:image image="{file}" alt="{file.alternative}" title="{file.title}" width="200" /><br />
+  {file.description} / {file.identifier}<br />
+</f:for>
+</f:if>
+
+<f:if condition="{data.rowDescription}">
+<f:format.nl2br>{data.rowDescription}</f:format.nl2br><br />
+</f:if>
+
+<f:if condition="{data.header_link}">
+<f:link.typolink parameter="{data.header_link}">{data.header_link}</f:link.typolink><br />
+</f:if>
+

@@ -5,4 +5,5 @@
 $typo3InstallDir = PATH_site;
 
 return array(
+    'MASK\\Mask\\' => array($typo3InstallDir . 'typo3conf/ext/mask/Classes'),
 );
