@@ -8,6 +8,10 @@ vendor/*
 
 fileadmin/build/node_modules
 
+fileadmin/user_upload
+
+fileadmin/_processed_
+
 CONTRIBUTING.md
 INSTALL.md
 LICENSE.txt
