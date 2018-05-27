@@ -1,14 +1,17 @@
 {
   "name": "build",
   "version": "1.0.0",
-  "description": "",
+  "description": "packages for the JozeeDesign Website",
+  "repository": "github:jakobdellago/jozeeDesign",
   "main": "index.js",
   "scripts": {
-    "buildCSS": "node scripts/buildCSS"
+    "buildCSS": "node-sass scss/main.scss ../resources/css/main.css",
+    "watchCSS": "node-sass scss/main.scss ../resources/css/main.css -w scss/modules"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "4.9.0"
-  }
+  },
+  "dependencies": {}
 }
