@@ -10,14 +10,17 @@
                 "color": "#000000",
                 "columns": [
                     "image",
-                    "rowDescription",
+                    "bodytext",
                     "header_link"
                 ],
                 "labels": [
                     "Image",
-                    "Description",
+                    "",
                     "Link"
-                ]
+                ],
+                "options": {
+                    "1": "rte"
+                }
             }
         }
     }

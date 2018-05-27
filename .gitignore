@@ -12,6 +12,8 @@ fileadmin/user_upload
 
 fileadmin/_processed_
 
+typo3conf/ext/
+
 CONTRIBUTING.md
 INSTALL.md
 LICENSE.txt
