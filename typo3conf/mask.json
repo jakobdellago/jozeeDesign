@@ -9,17 +9,19 @@
                 "icon": "",
                 "color": "#000000",
                 "columns": [
+                    "header",
                     "image",
                     "bodytext",
                     "header_link"
                 ],
                 "labels": [
+                    "Titel (Nur im Backend sichtbar)",
                     "Image",
                     "",
                     "Link"
                 ],
                 "options": {
-                    "1": "rte"
+                    "2": "rte"
                 }
             }
         }
