@@ -32,6 +32,13 @@ return [
     ],
     'GFX' => [
         'jpg_quality' => '80',
+        'processor' => 'GraphicsMagick',
+        'processor_allowTemporaryMasksAsPng' => false,
+        'processor_colorspace' => 'RGB',
+        'processor_effects' => -1,
+        'processor_enabled' => true,
+        'processor_path' => 'C:/Program Files/GraphicsMagick-1.3.29-Q16/',
+        'processor_path_lzw' => 'C:/Program Files/GraphicsMagick-1.3.29-Q16/',
     ],
     'MAIL' => [
         'transport' => 'smtp',
