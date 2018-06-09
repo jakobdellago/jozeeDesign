@@ -1,6 +1,11 @@
+/*VARIABLES*/
+@import "variables/variables.scss";
+
 /*MODULES*/
-@import "modules/main-nav.scss";
 @import "modules/global.scss";
+@import "modules/main-nav.scss";
+@import "modules/mobile-nav.scss";
+
 
 /*VENDOR*/
 @import "vendor/normalize.scss";
