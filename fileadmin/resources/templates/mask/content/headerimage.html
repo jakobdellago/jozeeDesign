@@ -1,23 +1,25 @@
-<div class="slider-element">
+<div class="header-slider">
 
+	<div class="darkener"></div>
+	
 	<f:if condition="{data.image}">
 		<f:for each="{data.image}" as="file">
 			<f:image image="{file}" alt="{file.alternative}" title="{file.title}" width="1920c"/>
 		</f:for>
 	</f:if>
 
-	<f:if condition="{data.header}">
-		<h2 class="header">{data.header}</h2>
-	</f:if>
-
-	<f:if condition="{data.bodytext}">
+	<div class="content-wrapper">
 		<div class="text">
 			<f:format.html>{data.bodytext}</f:format.html>
 		</div>
-	</f:if>
+		<div class="button">
+			<span>mehr</span>
+			<i class="icon-arrow-down"></i>
+		</div>
+	</div>
 
-	<f:if condition="{data.header_link}">
-		<f:link.typolink parameter="{data.header_link} - link" class="link">Link</f:link.typolink>
-	</f:if>
+
+
+
 
 </div>
