@@ -9,19 +9,15 @@
                 "icon": "",
                 "color": "#000000",
                 "columns": [
-                    "header",
                     "image",
-                    "bodytext",
-                    "header_link"
+                    "bodytext"
                 ],
                 "labels": [
-                    "Titel",
                     "Image",
-                    "",
-                    "Link"
+                    ""
                 ],
                 "options": {
-                    "2": "rte"
+                    "1": "rte"
                 }
             }
         }
