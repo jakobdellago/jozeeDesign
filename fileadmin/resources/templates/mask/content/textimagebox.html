@@ -1,0 +1,28 @@
+<div class="text-image-box">
+	<f:if condition="{data.header}">
+		<div class="header">
+			<h1>{data.header}</h1>
+		</div>
+	</f:if>
+
+	<f:if condition="{data.subheader}">
+		<div class="subheader">
+			<h3>{data.subheader}</h3>
+		</div>
+	</f:if>
+
+	<f:if condition="{data.bodytext}">
+		<div class="text">
+			<f:format.html>{data.bodytext}</f:format.html>
+		</div>
+	</f:if>
+
+	<f:if condition="{data.image}">
+	<f:for each="{data.image}" as="file">
+	  <f:image image="{file}" alt="{file.alternative}" title="{file.title}"/>
+	</f:for>
+	</f:if>
+</div>
+
+
+

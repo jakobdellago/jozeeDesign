@@ -6,14 +6,17 @@
   "main": "index.js",
   "scripts": {
     "buildCSS": "node-sass scss/main.scss ../resources/css/main.css",
-    "watchCSS": "node-sass scss/main.scss ../resources/css/main.css -w scss/modules"
+    "watchCSS": "node-sass scss/main.scss ../resources/css/main.css -w scss/modules",
+    "buildJS": "browserify javascript/main.js -o ../resources/javascript/main.js",
+    "watchJS": "watchify javascript/main.js -o ../resources/javascript/main.js"
   },
-  "author": "",
+  "author": "Jakob Dellago",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "4.9.0"
+    "browserify": "16.x",
+    "node-sass": "4.x"
   },
   "dependencies": {
-    "jquery": "3.3.1"
+    "jquery": "3.x"
   }
 }

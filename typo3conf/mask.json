@@ -19,6 +19,26 @@
                 "options": {
                     "1": "rte"
                 }
+            },
+            "textimagebox": {
+                "label": "Text-Bild-Box",
+                "key": "textimagebox",
+                "shortLabel": "",
+                "description": "Eine Box mit Text und Bild",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "header",
+                    "subheader",
+                    "bodytext",
+                    "image"
+                ],
+                "labels": [
+                    "\u00dcberschrift",
+                    "Unter\u00fcberschrift",
+                    "Text",
+                    "Bild"
+                ]
             }
         }
     }

@@ -2,17 +2,18 @@
 	overflow: hidden;
 	position: relative;
 	img {
-		height: calc(100vh - 50px);
+		height: calc(100vh - 66px);
 		width: auto;
 		margin-left: 50%;
     	transform: translateX(-50%);
 	}
 	.darkener {
-		    height: calc(100vh - 50px);
+		    height: calc(100vh - 66px);
     		width: 100%;
 		    position: absolute;
 		    background: #000;
 		    opacity: 0.25;
+		    z-index: 1
 	}
 	.content-wrapper {
 		position: absolute;
@@ -20,6 +21,7 @@
 		color: #fff;
 	    width: 100%;
     	text-align: center;
+    	z-index: 3;
 		.text {
 			font-weight: 700;
 			font-size: 1.6rem;

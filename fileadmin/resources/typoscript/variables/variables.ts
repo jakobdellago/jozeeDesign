@@ -81,4 +81,7 @@ page.10.variables {
     }  
     HEADERSLIDER < styles.content.get
     HEADERSLIDER.select.where = colPos=10
+
+    CONTENT < styles.content.get
+    CONTENT.select.where = colPos=20
 }
