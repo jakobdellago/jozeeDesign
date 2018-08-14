@@ -41,6 +41,7 @@ page.10.variables {
         wrapItemAndSub = <li class="active">|</li>
       }
     }
+    
     MOBILEMENU = HMENU
     MOBILEMENU {
       1 = TMENU
@@ -79,6 +80,7 @@ page.10.variables {
         wrapItemAndSub = <li class="active">|</li>
       }
     }  
+
     HEADERSLIDER < styles.content.get
     HEADERSLIDER.select.where = colPos=10
 

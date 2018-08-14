@@ -320,16 +320,40 @@ BOLD
         .header-slider .content-wrapper .button:hover span, .header-slider .content-wrapper .button:hover i {
           color: #000; }
 
-.text-image-box .header {
-  font-family: merriweather;
-  font-size: 2rem; }
-
-.text-image-box .subheader {
-  font-family: merriweather;
-  font-size: 1.8rem; }
-
-.text-image-box .text {
-  font-size: 1.2rem; }
+.text-image-box .text-wrapper {
+  padding: 30px; }
+  .text-image-box .text-wrapper .header, .text-image-box .text-wrapper .subheader {
+    text-align: center;
+    margin: 0; }
+  .text-image-box .text-wrapper .header {
+    font-family: merriweather;
+    font-size: 2rem;
+    margin-bottom: 10px; }
+  .text-image-box .text-wrapper .subheader {
+    font-family: merriweather;
+    font-size: 1.8rem;
+    margin-bottom: 30px; }
+  .text-image-box .text-wrapper .text {
+    font-size: 1.2rem; }
+    .text-image-box .text-wrapper .text p {
+      margin: 20px 0; }
+  .text-image-box .text-wrapper .more-button {
+    text-align: center;
+    width: 80px;
+    margin: 0 auto; }
+    .text-image-box .text-wrapper .more-button a {
+      font-family: merriweather;
+      font-style: italic;
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .text-image-box .text-wrapper .more-button a i {
+        font-size: 2rem; }
+      .text-image-box .text-wrapper .more-button a span {
+        line-height: 1; }
 
 /*VENDOR*/
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */

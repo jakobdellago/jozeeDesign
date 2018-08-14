@@ -1,21 +1,27 @@
 <div class="text-image-box">
-	<f:if condition="{data.header}">
-		<div class="header">
-			<h1>{data.header}</h1>
-		</div>
-	</f:if>
+	<div class="text-wrapper">
 
-	<f:if condition="{data.subheader}">
-		<div class="subheader">
-			<h3>{data.subheader}</h3>
-		</div>
-	</f:if>
+		<f:if condition="{data.header}">
+				<h1 class="header">{data.header}</h1>
+		</f:if>
 
-	<f:if condition="{data.bodytext}">
-		<div class="text">
-			<f:format.html>{data.bodytext}</f:format.html>
-		</div>
-	</f:if>
+		<f:if condition="{data.subheader}">
+				<h3 class="subheader">{data.subheader}</h3>
+		</f:if>
+
+		<f:if condition="{data.bodytext}">
+			<div class="text">
+				<f:format.html>{data.bodytext}</f:format.html>
+			</div>
+		</f:if>
+
+		<f:if condition="{data.header_link}">
+			<div class="more-button">
+				<f:cObject typoscriptObjectPath="lib.renderLink" data="{data.header_link}"/>
+			</div>
+		</f:if>
+
+	</div>
 
 	<f:if condition="{data.image}">
 	<f:for each="{data.image}" as="file">

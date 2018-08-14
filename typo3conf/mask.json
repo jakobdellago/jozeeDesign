@@ -20,6 +20,26 @@
                     "1": "rte"
                 }
             },
+            "product": {
+                "label": "Produkt",
+                "key": "product",
+                "shortLabel": "",
+                "description": "",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "header",
+                    "bodytext",
+                    "tx_mask_price",
+                    "header_link"
+                ],
+                "labels": [
+                    "Name",
+                    "Beschreibung",
+                    "Preis",
+                    "Link zum Shop"
+                ]
+            },
             "textimagebox": {
                 "label": "Text-Bild-Box",
                 "key": "textimagebox",
@@ -31,14 +51,41 @@
                     "header",
                     "subheader",
                     "bodytext",
+                    "header_link",
                     "image"
                 ],
                 "labels": [
                     "\u00dcberschrift",
                     "Unter\u00fcberschrift",
                     "Text",
+                    "Link",
                     "Bild"
                 ]
+            }
+        },
+        "sql": {
+            "tx_mask_price": {
+                "tt_content": {
+                    "tx_mask_price": "double(11,2) DEFAULT '0.00' NOT NULL"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_price": {
+                "config": {
+                    "type": "input",
+                    "eval": "double2",
+                    "default": "",
+                    "placeholder": "",
+                    "size": "",
+                    "max": "",
+                    "range": {
+                        "lower": "",
+                        "upper": ""
+                    }
+                },
+                "exclude": "1",
+                "key": "price"
             }
         }
     }

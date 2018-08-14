@@ -1,3 +1,5 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
 <body>
 
 	<div class="main-container">
@@ -21,6 +23,17 @@
 		<div class="content">
 			<f:format.raw>{CONTENT}</f:format.raw>
 		</div>
+
+		<f:cObject typoscriptObjectPath="lib.getProducts" />
+
+		<v:variable.set name="test" value="{f:cObject(typoscriptObjectPath: 'lib.getProducts')}" />
+
+		{test}
+
+		
+
+		<f:debug>{_all}</f:debug>	
+		
 
 
 	</div>

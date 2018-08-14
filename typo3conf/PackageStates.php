@@ -119,6 +119,9 @@ return [
         'mask' => [
             'packagePath' => 'typo3conf/ext/mask/',
         ],
+        'vhs' => [
+            'packagePath' => 'typo3conf/ext/vhs/',
+        ],
     ],
     'version' => 5,
 ];

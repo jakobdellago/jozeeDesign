@@ -1,0 +1,16 @@
+<f:if condition="{data.header}">
+{data.header}<br />
+</f:if>
+
+<f:if condition="{data.bodytext}">
+<f:format.nl2br>{data.bodytext}</f:format.nl2br><br />
+</f:if>
+
+<f:if condition="{data.tx_mask_price}">
+<f:format.number decimals="2" decimalSeparator="," thousandsSeparator=".">{data.tx_mask_price}</f:format.number><br />
+</f:if>
+
+<f:if condition="{data.header_link}">
+<f:link.typolink parameter="{data.header_link}">{data.header_link}</f:link.typolink><br />
+</f:if>
+
