@@ -1,9 +1,11 @@
+<f:debug>{_all}</f:debug>
+
 <f:if condition="{data.header}">
 {data.header}<br />
 </f:if>
 
 <f:if condition="{data.bodytext}">
-<f:format.nl2br>{data.bodytext}</f:format.nl2br><br />
+<f:format.nl2br><f:format.html>{data.bodytext}</f:format.html></f:format.nl2br><br />
 </f:if>
 
 <f:if condition="{data.tx_mask_price}">

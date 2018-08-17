@@ -30,14 +30,46 @@
                 "columns": [
                     "header",
                     "bodytext",
+                    "image",
                     "tx_mask_price",
                     "header_link"
                 ],
                 "labels": [
                     "Name",
                     "Beschreibung",
+                    "Bilder",
                     "Preis",
                     "Link zum Shop"
+                ]
+            },
+            "product_link": {
+                "label": "Produktverlinkung",
+                "key": "product_link",
+                "shortLabel": "",
+                "description": "Gibt ein Produkt aus, welches in der Seite Produktpalette aufgelistet ist",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "header",
+                    "tx_mask_product_selector"
+                ],
+                "labels": [
+                    "\u00dcberschrift",
+                    "Produkt"
+                ]
+            },
+            "product_list": {
+                "label": "Produktliste",
+                "key": "product_list",
+                "shortLabel": "",
+                "description": "",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "header"
+                ],
+                "labels": [
+                    "\u00dcberschrift"
                 ]
             },
             "textimagebox": {
@@ -68,6 +100,11 @@
                 "tt_content": {
                     "tx_mask_price": "double(11,2) DEFAULT '0.00' NOT NULL"
                 }
+            },
+            "tx_mask_product_selector": {
+                "tt_content": {
+                    "tx_mask_product_selector": "tinytext"
+                }
             }
         },
         "tca": {
@@ -86,6 +123,27 @@
                 },
                 "exclude": "1",
                 "key": "price"
+            },
+            "tx_mask_product_selector": {
+                "config": {
+                    "type": "select",
+                    "renderType": "selectSingle",
+                    "size": "",
+                    "items": [
+                        [
+                            ""
+                        ]
+                    ],
+                    "foreign_table": "tt_content",
+                    "foreign_table_where": "AND tt_content.pid=8",
+                    "fileFolder": "",
+                    "fileFolder_extList": "",
+                    "fileFolder_recursions": "",
+                    "maxitems": "",
+                    "autoSizeMax": ""
+                },
+                "exclude": "1",
+                "key": "product_selector"
             }
         }
     }
