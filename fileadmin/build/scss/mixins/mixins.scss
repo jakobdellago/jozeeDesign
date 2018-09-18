@@ -1,0 +1,35 @@
+@mixin header {
+	font-family: merriweather, arial;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@mixin bodytext {
+	font-size: 1.2rem;
+	p {
+		margin: 30px 0;
+	}
+}
+
+@mixin button {
+	text-align: center;
+	width: 80px;
+	margin: 0 auto;
+	a {
+		font-family: merriweather;
+		font-style: italic;	
+		text-decoration: none;
+		font-size: 1.3rem;
+		color: #000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		i {
+			font-size: 2rem;
+		}
+		span {
+		    line-height: 1;
+		}
+	}
+}

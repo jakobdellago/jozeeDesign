@@ -6,9 +6,7 @@
 			margin: 0;
 		}
 		.header {
-			font-family: merriweather;
-			font-size: 2rem;
-			margin-bottom: 10px; 
+			@include header;
 		}
 		.subheader {
 			font-family: merriweather;
@@ -16,31 +14,10 @@
 			margin-bottom: 30px; 
 		}
 		.text {
-			font-size: 1.2rem;
-			p {
-				margin: 20px 0;
-			}
+			@include bodytext;
 		}
 		.more-button {
-			text-align: center;
-			width: 80px;
-    		margin: 0 auto;
-			a {
-				font-family: merriweather;
-    			font-style: italic;	
-    			text-decoration: none;
-    			font-size: 1.3rem;
-    			color: #000;
-    			display: flex;
-    			align-items: center;
-    			justify-content: center;
-    			i {
-    				font-size: 2rem;
-    			}
-    			span {
-				    line-height: 1;
-    			}
-			}
+			@include button;
 		}
 	}
 	img {

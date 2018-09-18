@@ -1,12 +1,3 @@
-lib.renderLink = TEXT
-lib.renderLink {
-	value = <span>mehr</span><i class="icon-arrow-right"></i>
-	typolink {
-		parameter.current = 1
-		title = button
-	}
-}
-
 lib.getProducts = CONTENT
 lib.getProducts {
   table = tt_content

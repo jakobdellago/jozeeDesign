@@ -1,5 +1,11 @@
+/*VENDOR*/
+@import "vendor/normalize.scss";
+
 /*VARIABLES*/
 @import "variables/variables.scss";
+
+/*MIXINS*/
+@import "mixins/mixins.scss";
 
 /*MODULES*/
 @import "modules/global.scss";
@@ -8,7 +14,4 @@
 @import "modules/fonts.scss";
 @import "modules/header-slider.scss";
 @import "modules/text-image-box.scss";
-
-
-/*VENDOR*/
-@import "vendor/normalize.scss";
+@import "modules/products-list.scss";

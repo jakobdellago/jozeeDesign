@@ -1,0 +1,42 @@
+.product-list {
+	padding: 30px; 
+	.product-list-wrapper {
+		.single-product-wrapper {
+			margin: 35px 10px;
+			border-top: 1px dotted #666666;
+    		padding-top: 20px;
+    		&:first-child {
+    			border-top: none;
+    		}
+			.picture {
+				img {
+					padding: 20px 20px 0;
+				}
+			}
+			.header {
+				@include header;
+				margin-top: 30px;
+
+			}
+			.bodytext {
+				@include bodytext;
+			}
+			.link-price-wrapper {
+				display: flex;
+				justify-content: space-between;
+				.more-button {
+					@include button;
+					margin: 0;
+					display: inline-block;
+					a {
+						justify-content: left;
+					}
+				}
+				.price {
+					font-family: merriweather, arial;
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}
