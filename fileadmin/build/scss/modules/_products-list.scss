@@ -1,5 +1,14 @@
 .product-list {
 	padding: 30px; 
+	.header {
+		@include header;
+	}
+	.subheader {
+		@include subheader
+	}
+	.text {
+		@include bodytext;
+	}
 	.product-list-wrapper {
 		.single-product-wrapper {
 			margin: 35px 10px;

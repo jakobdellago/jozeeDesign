@@ -9,9 +9,7 @@
 			@include header;
 		}
 		.subheader {
-			font-family: merriweather;
-			font-size: 1.8rem;
-			margin-bottom: 30px; 
+			@include subheader;
 		}
 		.text {
 			@include bodytext;

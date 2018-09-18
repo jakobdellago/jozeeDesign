@@ -634,11 +634,13 @@ BOLD
   .text-image-box .text-wrapper .subheader {
     font-family: merriweather;
     font-size: 1.8rem;
-    margin-bottom: 30px; }
+    text-align: center; }
   .text-image-box .text-wrapper .text {
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif; }
     .text-image-box .text-wrapper .text p {
-      margin: 30px 0; }
+      margin: 30px 0;
+      font-weight: 400; }
   .text-image-box .text-wrapper .more-button {
     text-align: center;
     width: 80px;
@@ -659,6 +661,21 @@ BOLD
 
 .product-list {
   padding: 30px; }
+  .product-list .header {
+    font-family: merriweather, arial;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center; }
+  .product-list .subheader {
+    font-family: merriweather;
+    font-size: 1.8rem;
+    text-align: center; }
+  .product-list .text {
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif; }
+    .product-list .text p {
+      margin: 30px 0;
+      font-weight: 400; }
   .product-list .product-list-wrapper .single-product-wrapper {
     margin: 35px 10px;
     border-top: 1px dotted #666666;
@@ -674,9 +691,11 @@ BOLD
       text-align: center;
       margin-top: 30px; }
     .product-list .product-list-wrapper .single-product-wrapper .bodytext {
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      font-family: 'Montserrat', sans-serif; }
       .product-list .product-list-wrapper .single-product-wrapper .bodytext p {
-        margin: 30px 0; }
+        margin: 30px 0;
+        font-weight: 400; }
     .product-list .product-list-wrapper .single-product-wrapper .link-price-wrapper {
       display: flex;
       justify-content: space-between; }

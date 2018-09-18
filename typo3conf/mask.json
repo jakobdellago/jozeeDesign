@@ -66,10 +66,14 @@
                 "icon": "",
                 "color": "#000000",
                 "columns": [
-                    "header"
+                    "header",
+                    "subheader",
+                    "bodytext"
                 ],
                 "labels": [
-                    "\u00dcberschrift"
+                    "\u00dcberschrift",
+                    "Unter\u00fcberschrift",
+                    "Beschreibung"
                 ]
             },
             "product_list_small": {

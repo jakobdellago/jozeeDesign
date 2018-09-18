@@ -2,8 +2,18 @@
 
 <div class="product-list">
 
-	<f:if condition="{data.header}">
-		<p>{data.header}<p>
+	<h1 class="header">
+		{data.header}
+	</h1>
+
+	<f:if condition="{data.subheader}">
+		<h2 class="subheader">{data.subheader}</h2>
+	</f:if>
+
+	<f:if condition="{data.bodytext}">
+		<div class="text">
+			<f:format.html>{data.bodytext}</f:format.html>
+		</div>
 	</f:if>
 
 	<div class="product-list-wrapper">
@@ -39,6 +49,4 @@
 	</div>
 
 </div>
-
-<f:debug>{_all}</f:debug>
 
