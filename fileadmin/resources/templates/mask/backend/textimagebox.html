@@ -1,0 +1,33 @@
+<f:if condition="{data.header}">
+	<b>{data.header}</b>
+	<br>
+</f:if>
+
+<f:if condition="{data.subheader}">
+	<br>
+	<b>{data.subheader}</b>
+	<br>
+</f:if>
+
+<f:if condition="{data.image}">
+	<br>
+	<f:image image="{data.image.0}" alt="{data.image.0.alternative}" title="{data.image.0.title}" width="50c" />
+	<br>
+</f:if>
+
+<f:if condition="{data.bodytext}">
+	<br>
+	<b>Text:</b>
+	<br>
+	<f:format.html>{data.bodytext}</f:format.html>
+	<br>
+</f:if>
+
+<f:if condition="{data.header_link}">
+	<br>
+	<b>Link: </b> {data.header_link}
+</f:if>
+
+
+
+

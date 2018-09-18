@@ -72,6 +72,20 @@
                     "\u00dcberschrift"
                 ]
             },
+            "product_list_small": {
+                "label": "Kleine Produktliste",
+                "key": "product_list_small",
+                "shortLabel": "",
+                "description": "Eine Produktliste mit weniger Informationen",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "header"
+                ],
+                "labels": [
+                    ""
+                ]
+            },
             "textimagebox": {
                 "label": "Text-Bild-Box",
                 "key": "textimagebox",
@@ -92,6 +106,20 @@
                     "Text",
                     "Link",
                     "Bild"
+                ]
+            },
+            "vhs_test": {
+                "label": "VHS TEST",
+                "key": "vhs_test",
+                "shortLabel": "",
+                "description": "",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "header"
+                ],
+                "labels": [
+                    ""
                 ]
             }
         },

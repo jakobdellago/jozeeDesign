@@ -1,3 +1,5 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
 <f:if condition="{data.header}">
 {data.header}<br />
 </f:if>
@@ -7,4 +9,10 @@ Produktselector: {data.tx_mask_product_selector}
 <f:if condition="{data.tx_mask_product_selector}">
 	<f:cObject typoscriptObjectPath="lib.getProduct" data="{data.tx_mask_product_selector}"/>
 </f:if>
+
+{v:content.get(column: 0,  pageUid: 8)}
+
+<f:debug title="product-link">{_all}</f:debug>
+
+
 

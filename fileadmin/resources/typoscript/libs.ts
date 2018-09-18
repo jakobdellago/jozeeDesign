@@ -48,3 +48,4 @@ lib.getProduct {
 	  	20.wrap = <span>|&nbsp;Euro</span>
     }
 }
+

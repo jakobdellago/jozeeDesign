@@ -1,6 +1,38 @@
-<f:if condition="{data.header}">
-{data.header}<br />
-</f:if>
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
-<f:cObject typoscriptObjectPath="lib.getProducts" />
+<div class="product-list">
+
+	<f:if condition="{data.header}">
+		<h2>{data.header}</h2>
+		<br />
+	</f:if>
+
+	<div class="product-list-wrapper">
+		<f:for each="{products}" as="product">
+			<div class="single-product-wrapper">
+				<h3>{product.data.header}</h3>
+				<f:format.html>{product.data.bodytext}</f:format.html>
+				<f:link.typolink parameter="{product.data.header_link}">LINK</f:link.typolink>
+				<span>{product.data.tx_mask_price} $</span>
+				<f:image src="{product.files.0.properties.uid}" alt="test" width="300c" height="300c" treatIdAsReference="1"/>
+
+				<picture>
+				    <source 
+				    	media="(max-width: 500px)" 
+				    	srcset="{f:uri.image(src:'{product.files.0.properties.uid}', width:'300', treatIdAsReference:'1')}, 
+				    			{f:uri.image(src:'{product.files.0.properties.uid}', width:'600', treatIdAsReference:'1')} 2x"
+				    >
+				    <f:image src="{product.files.0.properties.uid}"
+				        title="title"
+				        alt="alt"
+				        treatIdAsReference="1"
+			        />
+	    		</picture>
+			</div>
+		</f:for>
+	</div>
+
+</div>
+
+<f:debug>{_all}</f:debug>
 
