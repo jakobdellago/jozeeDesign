@@ -40,3 +40,13 @@ lib.getProduct {
     }
 }
 
+lib.spaceToHexa20 = TEXT
+lib.spaceToHexa20 {
+  value.current = 1
+  stdWrap.replacement {
+    10 {
+        search.char = 32
+        replace = %20
+    }
+  }
+}

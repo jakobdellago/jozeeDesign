@@ -18,6 +18,7 @@ tt_content {
 	        # + stdWrap
 	        colPos = 0
 	        pidInList = 8
+	        recursive = 1
 
 	        # The target variable to be handed to the ContentObject again, can
 	        # be used in Fluid e.g. to iterate over the objects. defaults to

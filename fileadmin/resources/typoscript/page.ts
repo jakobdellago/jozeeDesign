@@ -22,6 +22,10 @@ page {
                 default.value = fileadmin\resources\templates\home.html
             }
 
+            partialRootPaths {
+                10 = fileadmin/resources/templates/partials
+            }
+
             dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
             dataProcessing.10 {
                 # regular if syntax

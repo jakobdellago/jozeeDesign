@@ -1,0 +1,64 @@
+.product {
+	margin: 30px;
+	.header {
+		@include header;
+	}
+	.subheader {
+		@include subheader;
+	}
+	.bodytext {
+		@include bodytext;
+	}
+	.more-button {
+		display: flex;
+		justify-content: left;
+		span {
+			font-size: 1rem;
+			text-transform: uppercase;
+			margin-right: 15px;
+			font-family: merriweather, arial;	
+		}
+		i {
+			font-size: 1.4rem;
+		}
+	}
+	.price-wrapper {
+		font-family: merriweather, arial;
+		font-size: 1.6rem;
+		margin: 20px 50px;
+		border-top: 1px dotted #000;
+		border-bottom: 1px dotted #000;
+		p {
+			display: block;
+    		text-align: center;
+    		margin: 15px 0;
+		}
+	}
+	.shop-button,
+	.mail-button {
+		text-transform: uppercase;
+		border-radius: 2px;
+		font-family: merriweather, arial;
+		padding: 16px;
+		a {
+			display: flex;
+			justify-content: space-between;
+			text-decoration: none;
+			color: #fff;
+			span {
+				font-size: 1.6rem;
+			}
+			i {
+				font-size: 1.4rem;
+			}
+		}
+
+	}
+	.shop-button {
+		background-color: #47d44e;
+		margin-bottom: 20px;
+	}
+	.mail-button {
+		background-color: #53cdef;
+	}
+}

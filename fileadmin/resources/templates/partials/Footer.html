@@ -1,0 +1,50 @@
+<div class="footer">	
+
+	<picture class="picture">
+	    <source 
+	    	media="(max-width: 812px)" 
+	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna.png', width:'812')}, 
+	    			{f:uri.image(src:'fileadmin\resources\images\footer_johanna.png', width:'1624')} 2x"
+	    >
+	    <f:image src="fileadmin\resources\images\footer_johanna.png"
+	        title="title"
+	        alt="alt"
+	    />
+	</picture>
+
+	<div class="text-wrapper">
+		<div class="social-media">
+			<span class="header social-media-header">Social Media</span>
+			<div class="social-media-icons-wrapper">
+				<f:link.typolink parameter="{general_data.tx_mask_facebook_link}" title="facebook" class="link facebook-link">
+					<i class="icon-arrow-right"></i>
+				</f:link.typolink>
+				<f:link.typolink parameter="{general_data.tx_mask_instagram_link}" title="instagram" class="link instagram-link">
+					<i class="icon-arrow-right"></i>
+				</f:link.typolink>
+			</div>
+		</div>
+
+		<div class="contact">
+			<span class="header contact-header">Contact Me</span>
+			<f:link.typolink parameter="tel:{general_data.tx_mask_phone_number}" title="anrufen" class="link phone-link">
+				<i class="icon-arrow-right"></i>
+				<span class="phone-number">{general_data.tx_mask_phone_number}</span>
+			</f:link.typolink>
+			<f:link.typolink parameter="{general_data.tx_mask_mail_adress}" title="mail" class="link mail-link">
+				<i class="icon-arrow-right"></i>
+				<span class="mail-adress">{general_data.tx_mask_mail_adress}</span>
+			</f:link.typolink>
+		</div>
+
+		<f:link.typolink parameter="14" title="imprint" class="link imprint-link">
+			<span class="header imprint-header">imprint</span>
+		</f:link.typolink>
+
+		<span class="copyright-text">Copyright © 2018 JozeeDesign</span>
+	</div>
+
+	
+
+
+</div>

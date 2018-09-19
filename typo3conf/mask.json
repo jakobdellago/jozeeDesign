@@ -1,6 +1,26 @@
 {
     "tt_content": {
         "elements": {
+            "general_data": {
+                "label": "Allgemeine Infos",
+                "key": "general_data",
+                "shortLabel": "",
+                "description": "",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "tx_mask_phone_number",
+                    "tx_mask_mail_adress",
+                    "tx_mask_facebook_link",
+                    "tx_mask_instagram_link"
+                ],
+                "labels": [
+                    "Telefonnummer",
+                    "Mailadresse",
+                    "Link zur Facebookseite",
+                    "Link zur Instagramseite"
+                ]
+            },
             "headerimage": {
                 "label": "Headerimage",
                 "key": "headerimage",
@@ -29,6 +49,7 @@
                 "color": "#000000",
                 "columns": [
                     "header",
+                    "subheader",
                     "bodytext",
                     "image",
                     "tx_mask_price",
@@ -36,6 +57,7 @@
                 ],
                 "labels": [
                     "Name",
+                    "Unter\u00fcberschrift",
                     "Beschreibung",
                     "Bilder",
                     "Preis",
@@ -128,34 +150,38 @@
             }
         },
         "sql": {
+            "tx_mask_product_selector": {
+                "tt_content": {
+                    "tx_mask_product_selector": "tinytext"
+                }
+            },
             "tx_mask_price": {
                 "tt_content": {
                     "tx_mask_price": "double(11,2) DEFAULT '0.00' NOT NULL"
                 }
             },
-            "tx_mask_product_selector": {
+            "tx_mask_phone_number": {
                 "tt_content": {
-                    "tx_mask_product_selector": "tinytext"
+                    "tx_mask_phone_number": "tinytext"
+                }
+            },
+            "tx_mask_mail_adress": {
+                "tt_content": {
+                    "tx_mask_mail_adress": "tinytext"
+                }
+            },
+            "tx_mask_facebook_link": {
+                "tt_content": {
+                    "tx_mask_facebook_link": "tinytext"
+                }
+            },
+            "tx_mask_instagram_link": {
+                "tt_content": {
+                    "tx_mask_instagram_link": "tinytext"
                 }
             }
         },
         "tca": {
-            "tx_mask_price": {
-                "config": {
-                    "type": "input",
-                    "eval": "double2",
-                    "default": "",
-                    "placeholder": "",
-                    "size": "",
-                    "max": "",
-                    "range": {
-                        "lower": "",
-                        "upper": ""
-                    }
-                },
-                "exclude": "1",
-                "key": "price"
-            },
             "tx_mask_product_selector": {
                 "config": {
                     "type": "select",
@@ -176,6 +202,108 @@
                 },
                 "exclude": "1",
                 "key": "product_selector"
+            },
+            "tx_mask_price": {
+                "config": {
+                    "type": "input",
+                    "eval": "double2",
+                    "default": "",
+                    "placeholder": "",
+                    "size": "",
+                    "max": "",
+                    "range": {
+                        "lower": "",
+                        "upper": ""
+                    }
+                },
+                "exclude": "1",
+                "key": "price"
+            },
+            "tx_mask_phone_number": {
+                "config": {
+                    "type": "input",
+                    "eval": "",
+                    "default": "",
+                    "placeholder": "",
+                    "size": "",
+                    "max": "",
+                    "is_in": ""
+                },
+                "exclude": "1",
+                "key": "phone_number"
+            },
+            "tx_mask_mail_adress": {
+                "config": {
+                    "type": "input",
+                    "eval": "",
+                    "default": "",
+                    "placeholder": "",
+                    "size": "",
+                    "max": "",
+                    "is_in": ""
+                },
+                "exclude": "1",
+                "key": "mail_adress"
+            },
+            "tx_mask_facebook_link": {
+                "config": {
+                    "type": "input",
+                    "renderType": "inputLink",
+                    "softref": "typolink",
+                    "fieldControl": {
+                        "linkPopup": {
+                            "options": {
+                                "title": "Link",
+                                "windowOpenParameters": "height=300,width=500,status=0,menubar=0,scrollbars=1",
+                                "blindLinkOptions": ""
+                            }
+                        }
+                    },
+                    "wizards": {
+                        "link": {
+                            "icon": "actions-wizard-link",
+                            "params": {
+                                "allowedExtensions": ""
+                            }
+                        }
+                    },
+                    "eval": "",
+                    "default": "",
+                    "placeholder": "",
+                    "size": ""
+                },
+                "exclude": "1",
+                "key": "facebook_link"
+            },
+            "tx_mask_instagram_link": {
+                "config": {
+                    "type": "input",
+                    "renderType": "inputLink",
+                    "softref": "typolink",
+                    "fieldControl": {
+                        "linkPopup": {
+                            "options": {
+                                "title": "Link",
+                                "windowOpenParameters": "height=300,width=500,status=0,menubar=0,scrollbars=1",
+                                "blindLinkOptions": ""
+                            }
+                        }
+                    },
+                    "wizards": {
+                        "link": {
+                            "icon": "actions-wizard-link",
+                            "params": {
+                                "allowedExtensions": ""
+                            }
+                        }
+                    },
+                    "eval": "",
+                    "default": "",
+                    "placeholder": "",
+                    "size": ""
+                },
+                "exclude": "1",
+                "key": "instagram_link"
             }
         }
     }

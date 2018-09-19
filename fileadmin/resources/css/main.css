@@ -320,7 +320,8 @@ p {
 
 img {
   width: 100%;
-  height: auto; }
+  height: auto;
+  display: block; }
 
 .main-container {
   top: 66px;
@@ -723,3 +724,124 @@ BOLD
       .product-list .product-list-wrapper .single-product-wrapper .link-price-wrapper .price {
         font-family: merriweather, arial;
         font-size: 1.4rem; }
+
+.product {
+  margin: 30px; }
+  .product .header {
+    font-family: merriweather, arial;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center; }
+  .product .subheader {
+    font-family: merriweather;
+    font-size: 1.8rem;
+    text-align: center; }
+  .product .bodytext {
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif; }
+    .product .bodytext p {
+      margin: 30px 0;
+      font-weight: 400; }
+  .product .more-button {
+    display: flex;
+    justify-content: left; }
+    .product .more-button span {
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin-right: 15px;
+      font-family: merriweather, arial; }
+    .product .more-button i {
+      font-size: 1.4rem; }
+  .product .price-wrapper {
+    font-family: merriweather, arial;
+    font-size: 1.6rem;
+    margin: 20px 50px;
+    border-top: 1px dotted #000;
+    border-bottom: 1px dotted #000; }
+    .product .price-wrapper p {
+      display: block;
+      text-align: center;
+      margin: 15px 0; }
+  .product .shop-button,
+  .product .mail-button {
+    text-transform: uppercase;
+    border-radius: 2px;
+    font-family: merriweather, arial;
+    padding: 16px; }
+    .product .shop-button a,
+    .product .mail-button a {
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+      color: #fff; }
+      .product .shop-button a span,
+      .product .mail-button a span {
+        font-size: 1.6rem; }
+      .product .shop-button a i,
+      .product .mail-button a i {
+        font-size: 1.4rem; }
+  .product .shop-button {
+    background-color: #47d44e;
+    margin-bottom: 20px; }
+  .product .mail-button {
+    background-color: #53cdef; }
+
+.footer .text-wrapper {
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px; }
+  .footer .text-wrapper .header {
+    text-transform: uppercase;
+    font-size: 1.6rem; }
+  .footer .text-wrapper span {
+    text-align: center; }
+  .footer .text-wrapper .social-media .social-media-icons-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px; }
+    .footer .text-wrapper .social-media .social-media-icons-wrapper a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      text-decoration: none;
+      background-color: #b4b048;
+      margin-right: 15px;
+      height: 25px;
+      width: 25px; }
+      .footer .text-wrapper .social-media .social-media-icons-wrapper a:last-child {
+        margin: 0; }
+      .footer .text-wrapper .social-media .social-media-icons-wrapper a:hover {
+        cursor: pointer; }
+      .footer .text-wrapper .social-media .social-media-icons-wrapper a i {
+        color: #000;
+        font-size: 1.2rem; }
+  .footer .text-wrapper .contact {
+    margin: 20px 0; }
+    .footer .text-wrapper .contact a {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      text-decoration: none;
+      color: #fff; }
+      .footer .text-wrapper .contact a:hover {
+        cursor: pointer; }
+      .footer .text-wrapper .contact a i {
+        position: absolute;
+        color: #b4b048;
+        font-size: 1.2rem;
+        left: -30px;
+        top: 8px; }
+      .footer .text-wrapper .contact a span {
+        font-size: 1.2rem; }
+  .footer .text-wrapper .imprint-link {
+    color: #fff; }
+  .footer .text-wrapper .copyright-text {
+    font-size: 1.2rem; }
+  .footer .text-wrapper > * {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0; }
