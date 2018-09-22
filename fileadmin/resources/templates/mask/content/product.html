@@ -14,11 +14,11 @@
 	</picture>
 
 	<f:if condition="{data.header}">
-		<h1 class="header">{data.header}<h1>
+		<h1 class="header">{data.header}</h1>
 	</f:if>
 
 	<f:if condition="{data.subheader}">
-		<h2 class="subheader">{data.header}<h2>
+		<h2 class="subheader">{data.header}</h2>
 	</f:if>
 
 	<f:if condition="{data.bodytext}">
@@ -27,7 +27,7 @@
 		</div>
 	</f:if>
 
-	<div class="more-button">
+	<div class="hidden more-button">
 		<span>mehr lesen</span>
 		<i class="icon-arrow-right"></i>
 	</div>
@@ -39,22 +39,23 @@
 	</f:if>
 
 	<f:if condition="{data.header_link}">
-		<div class="shop-button">
-			<f:link.typolink parameter="{data.header_link}" title="button">
+		<f:link.typolink parameter="{data.header_link}" title="button" class="shop-link">
+			<div class="shop-button">
 				<span>zum shop</span>
 				<i class="icon-arrow-right"></i>
-			</f:link.typolink>
-		</div>
+			</div>
+		</f:link.typolink>
 	</f:if>
 
-	<div class="mail-button">
-		<f:link.typolink 
-				parameter="mailto:jozee.designs@gmail.com?subject=Anfrage:%20{f:cObject(typoscriptObjectPath: 'lib.spaceToHexa20', data: '{data.header}')}&body=Hallo%20Johanna,%20ich%20bin%20an%20deinen%20Produkten%20interessiert!"
-				title="button">
+	<f:link.typolink 
+		parameter="mailto:jozee.designs@gmail.com?subject=Anfrage:%20{f:cObject(typoscriptObjectPath: 'lib.spaceToHexa20', data: '{data.header}')}&body=Hallo%20Johanna,%20ich%20bin%20an%20deinen%20Produkten%20interessiert!"
+		title="button"
+		class="mail-link">
+		<div class="mail-button">
 			<span>mailanfrage</span>
 			<i class="icon-arrow-right"></i>
-		</f:link.typolink>
-	</div>
+		</div>
+	</f:link.typolink>
 
 </div>
 

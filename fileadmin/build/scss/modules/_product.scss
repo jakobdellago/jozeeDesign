@@ -1,7 +1,8 @@
 .product {
-	margin: 30px;
+	margin: 0 30px 30px;
 	.header {
 		@include header;
+		margin-top: 30px;
 	}
 	.subheader {
 		@include subheader;
@@ -34,17 +35,20 @@
     		margin: 15px 0;
 		}
 	}
-	.shop-button,
-	.mail-button {
-		text-transform: uppercase;
-		border-radius: 2px;
-		font-family: merriweather, arial;
-		padding: 16px;
-		a {
+
+
+	.shop-link,
+	.mail-link {
+		text-decoration: none;
+		.shop-button,
+		.mail-button {
 			display: flex;
 			justify-content: space-between;
-			text-decoration: none;
 			color: #fff;
+			text-transform: uppercase;
+			border-radius: 2px;
+			font-family: merriweather, arial;
+			padding: 16px;
 			span {
 				font-size: 1.6rem;
 			}

@@ -323,6 +323,10 @@ img {
   height: auto;
   display: block; }
 
+.hidden {
+  display: none !important;
+  visibility: hidden !important; }
+
 .main-container {
   top: 66px;
   position: relative;
@@ -726,12 +730,13 @@ BOLD
         font-size: 1.4rem; }
 
 .product {
-  margin: 30px; }
+  margin: 0 30px 30px; }
   .product .header {
     font-family: merriweather, arial;
     font-size: 2rem;
     margin-bottom: 10px;
-    text-align: center; }
+    text-align: center;
+    margin-top: 30px; }
   .product .subheader {
     font-family: merriweather;
     font-size: 1.8rem;
@@ -762,23 +767,29 @@ BOLD
       display: block;
       text-align: center;
       margin: 15px 0; }
-  .product .shop-button,
-  .product .mail-button {
-    text-transform: uppercase;
-    border-radius: 2px;
-    font-family: merriweather, arial;
-    padding: 16px; }
-    .product .shop-button a,
-    .product .mail-button a {
+  .product .shop-link,
+  .product .mail-link {
+    text-decoration: none; }
+    .product .shop-link .shop-button,
+    .product .shop-link .mail-button,
+    .product .mail-link .shop-button,
+    .product .mail-link .mail-button {
       display: flex;
       justify-content: space-between;
-      text-decoration: none;
-      color: #fff; }
-      .product .shop-button a span,
-      .product .mail-button a span {
+      color: #fff;
+      text-transform: uppercase;
+      border-radius: 2px;
+      font-family: merriweather, arial;
+      padding: 16px; }
+      .product .shop-link .shop-button span,
+      .product .shop-link .mail-button span,
+      .product .mail-link .shop-button span,
+      .product .mail-link .mail-button span {
         font-size: 1.6rem; }
-      .product .shop-button a i,
-      .product .mail-button a i {
+      .product .shop-link .shop-button i,
+      .product .shop-link .mail-button i,
+      .product .mail-link .shop-button i,
+      .product .mail-link .mail-button i {
         font-size: 1.4rem; }
   .product .shop-button {
     background-color: #47d44e;

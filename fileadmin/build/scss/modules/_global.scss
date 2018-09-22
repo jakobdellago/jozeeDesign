@@ -25,6 +25,11 @@ img {
 	display: block;
 }
 
+.hidden {
+	display: none!important;
+	visibility: hidden!important;
+}
+
 .main-container {
 	top: 66px;
     position: relative;
