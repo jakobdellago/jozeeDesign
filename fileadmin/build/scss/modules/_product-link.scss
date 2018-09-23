@@ -1,0 +1,30 @@
+.product-link {
+	margin: 30px;
+	.upper-header-wrapper {
+		border-top: 1px dotted #666;
+		border-bottom: 1px dotted #666;
+		.upper-header {
+			text-transform: uppercase;
+			font-family: merriweather, arial;
+			text-align: center;
+			font-size: 1.8rem;
+			font-weight: 300;
+		}
+	}
+	.product {
+		.picture {
+			img {
+				margin-top: 30px;
+			}
+		}
+		.header {
+			@include header;
+		}
+		.bodytext {
+			@include bodytext;
+		}
+		.link-price-wrapper {
+			@include link-price-wrapper
+		}
+	}
+}

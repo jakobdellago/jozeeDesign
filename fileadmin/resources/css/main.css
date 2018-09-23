@@ -856,3 +856,55 @@ BOLD
     display: flex;
     flex-direction: column;
     margin: 10px 0; }
+
+.product-link {
+  margin: 30px; }
+  .product-link .upper-header-wrapper {
+    border-top: 1px dotted #666;
+    border-bottom: 1px dotted #666; }
+    .product-link .upper-header-wrapper .upper-header {
+      text-transform: uppercase;
+      font-family: merriweather, arial;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 300; }
+  .product-link .product .picture img {
+    margin-top: 30px; }
+  .product-link .product .header {
+    font-family: merriweather, arial;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center; }
+  .product-link .product .bodytext {
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif; }
+    .product-link .product .bodytext p {
+      margin: 30px 0;
+      font-weight: 400; }
+  .product-link .product .link-price-wrapper {
+    display: flex;
+    justify-content: space-between; }
+    .product-link .product .link-price-wrapper .more-button {
+      text-align: center;
+      width: 80px;
+      margin: 0 auto;
+      margin: 0;
+      display: inline-block; }
+      .product-link .product .link-price-wrapper .more-button a {
+        font-family: merriweather;
+        font-style: italic;
+        text-decoration: none;
+        font-size: 1.3rem;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .product-link .product .link-price-wrapper .more-button a i {
+          font-size: 2rem; }
+        .product-link .product .link-price-wrapper .more-button a span {
+          line-height: 1; }
+      .product-link .product .link-price-wrapper .more-button a {
+        justify-content: left; }
+    .product-link .product .link-price-wrapper .price {
+      font-family: merriweather, arial;
+      font-size: 1.4rem; }

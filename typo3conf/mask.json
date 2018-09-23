@@ -150,11 +150,6 @@
             }
         },
         "sql": {
-            "tx_mask_product_selector": {
-                "tt_content": {
-                    "tx_mask_product_selector": "tinytext"
-                }
-            },
             "tx_mask_price": {
                 "tt_content": {
                     "tx_mask_price": "double(11,2) DEFAULT '0.00' NOT NULL"
@@ -179,30 +174,14 @@
                 "tt_content": {
                     "tx_mask_instagram_link": "tinytext"
                 }
+            },
+            "tx_mask_product_selector": {
+                "tt_content": {
+                    "tx_mask_product_selector": "tinytext"
+                }
             }
         },
         "tca": {
-            "tx_mask_product_selector": {
-                "config": {
-                    "type": "select",
-                    "renderType": "selectSingle",
-                    "size": "",
-                    "items": [
-                        [
-                            ""
-                        ]
-                    ],
-                    "foreign_table": "tt_content",
-                    "foreign_table_where": "AND tt_content.pid=8",
-                    "fileFolder": "",
-                    "fileFolder_extList": "",
-                    "fileFolder_recursions": "",
-                    "maxitems": "",
-                    "autoSizeMax": ""
-                },
-                "exclude": "1",
-                "key": "product_selector"
-            },
             "tx_mask_price": {
                 "config": {
                     "type": "input",
@@ -304,6 +283,27 @@
                 },
                 "exclude": "1",
                 "key": "instagram_link"
+            },
+            "tx_mask_product_selector": {
+                "config": {
+                    "type": "select",
+                    "renderType": "selectSingle",
+                    "size": "",
+                    "items": [
+                        [
+                            ""
+                        ]
+                    ],
+                    "foreign_table": "tt_content",
+                    "foreign_table_where": "AND tt_content.CType='mask_product'",
+                    "fileFolder": "",
+                    "fileFolder_extList": "",
+                    "fileFolder_recursions": "",
+                    "maxitems": "",
+                    "autoSizeMax": ""
+                },
+                "exclude": "1",
+                "key": "product_selector"
             }
         }
     }

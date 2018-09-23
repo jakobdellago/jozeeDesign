@@ -41,3 +41,20 @@
 	font-size: 1.8rem;
 	text-align: center;
 }
+
+@mixin link-price-wrapper {
+	display: flex;
+	justify-content: space-between;
+	.more-button {
+		@include button;
+		margin: 0;
+		display: inline-block;
+		a {
+			justify-content: left;
+		}
+	}
+	.price {
+		font-family: merriweather, arial;
+		font-size: 1.4rem;
+	}
+}

@@ -4,7 +4,7 @@
 		@include header;
 	}
 	.subheader {
-		@include subheader
+		@include subheader;
 	}
 	.text {
 		@include bodytext;
@@ -31,20 +31,7 @@
 				@include bodytext;
 			}
 			.link-price-wrapper {
-				display: flex;
-				justify-content: space-between;
-				.more-button {
-					@include button;
-					margin: 0;
-					display: inline-block;
-					a {
-						justify-content: left;
-					}
-				}
-				.price {
-					font-family: merriweather, arial;
-					font-size: 1.4rem;
-				}
+				@include link-price-wrapper
 			}
 		}
 	}

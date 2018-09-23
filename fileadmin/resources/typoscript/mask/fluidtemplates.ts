@@ -4,6 +4,8 @@ tt_content {
 	mask_product_list {
 		
 		file = fileadmin\resources\templates\mask\content\product_list.html
+
+		partialRootPaths.10 = fileadmin/resources/templates/mask/content/Partials/
  
 	    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
 	    dataProcessing.10 {
@@ -34,6 +36,7 @@ tt_content {
 	                references.fieldName = image
 	            }
 	        }
+		}
 	}
 
 	mask_product_list_small = FLUIDTEMPLATE
@@ -69,14 +72,17 @@ tt_content {
 	                references.fieldName = image
 	            }
 	        }
+		}
 	}
 
 	mask_product_link = FLUIDTEMPLATE
 	mask_product_link {
-		
-		file = fileadmin\resources\templates\mask\content\product_link.html
- 
-	    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+       	template = FILE
+       	template.file = fileadmin/resources/templates/mask/content/product_link.html
+
+       	partialRootPaths.10 = fileadmin/resources/templates/mask/content/Partials/   
+
+   		dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
 	    dataProcessing.10 {
 	        # regular if syntax
 	        # if.isTrue.field = records
@@ -89,6 +95,7 @@ tt_content {
 	        # + stdWrap
 	        colPos = 0
 	        pidInList = 8
+	        recursive = 1
 
 	        # The target variable to be handed to the ContentObject again, can
 	        # be used in Fluid e.g. to iterate over the objects. defaults to
@@ -104,5 +111,15 @@ tt_content {
 	                references.fieldName = image
 	            }
 	        }
+		}
+	   #partialRootPath = EXT:site_default/Resources/Private/Partials/
+	   #variables {
+	   #   mylabel = TEXT
+	   #   mylabel.value = Label coming from TypoScript!
+	   #}
+	   #settings {
+	      # Get the copyright year from a TypoScript constant.
+	      #copyrightYear = {$year}
+	   #}
 	}
 }
