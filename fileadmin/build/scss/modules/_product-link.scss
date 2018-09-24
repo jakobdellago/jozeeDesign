@@ -11,20 +11,25 @@
 			font-weight: 300;
 		}
 	}
-	.product {
-		.picture {
-			img {
-				margin-top: 30px;
+	.product-list-wrapper {
+		&.large {
+			.product {
+				.picture {
+					img {
+						margin-top: 30px;
+					}
+				}
+				.header {
+					@include header;
+				}
+				.bodytext {
+					@include bodytext;
+				}
+				.link-price-wrapper {
+					@include link-price-wrapper
+				}
 			}
 		}
-		.header {
-			@include header;
-		}
-		.bodytext {
-			@include bodytext;
-		}
-		.link-price-wrapper {
-			@include link-price-wrapper
-		}
 	}
+
 }

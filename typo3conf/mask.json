@@ -73,11 +73,13 @@
                 "color": "#000000",
                 "columns": [
                     "header",
-                    "tx_mask_product_selector"
+                    "tx_mask_product_selector",
+                    "tx_mask_small_checkbox"
                 ],
                 "labels": [
                     "\u00dcberschrift",
-                    "Produkt"
+                    "Produkt",
+                    "Klein (Eine kleine Liste nur mit Bild, \u00dcberschrift und Preis)"
                 ]
             },
             "product_list": {
@@ -178,6 +180,11 @@
             "tx_mask_product_selector": {
                 "tt_content": {
                     "tx_mask_product_selector": "tinytext"
+                }
+            },
+            "tx_mask_small_checkbox": {
+                "tt_content": {
+                    "tx_mask_small_checkbox": "int(11) DEFAULT '0' NOT NULL"
                 }
             }
         },
@@ -287,7 +294,7 @@
             "tx_mask_product_selector": {
                 "config": {
                     "type": "select",
-                    "renderType": "selectSingle",
+                    "renderType": "selectSingleBox",
                     "size": "",
                     "items": [
                         [
@@ -304,6 +311,20 @@
                 },
                 "exclude": "1",
                 "key": "product_selector"
+            },
+            "tx_mask_small_checkbox": {
+                "config": {
+                    "type": "check",
+                    "items": [
+                        [
+                            "aktiv"
+                        ]
+                    ],
+                    "cols": "",
+                    "default": ""
+                },
+                "exclude": "1",
+                "key": "small_checkbox"
             }
         }
     }

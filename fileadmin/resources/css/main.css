@@ -868,29 +868,29 @@ BOLD
       text-align: center;
       font-size: 1.8rem;
       font-weight: 300; }
-  .product-link .product .picture img {
+  .product-link .product-list-wrapper.large .product .picture img {
     margin-top: 30px; }
-  .product-link .product .header {
+  .product-link .product-list-wrapper.large .product .header {
     font-family: merriweather, arial;
     font-size: 2rem;
     margin-bottom: 10px;
     text-align: center; }
-  .product-link .product .bodytext {
+  .product-link .product-list-wrapper.large .product .bodytext {
     font-size: 1.2rem;
     font-family: 'Montserrat', sans-serif; }
-    .product-link .product .bodytext p {
+    .product-link .product-list-wrapper.large .product .bodytext p {
       margin: 30px 0;
       font-weight: 400; }
-  .product-link .product .link-price-wrapper {
+  .product-link .product-list-wrapper.large .product .link-price-wrapper {
     display: flex;
     justify-content: space-between; }
-    .product-link .product .link-price-wrapper .more-button {
+    .product-link .product-list-wrapper.large .product .link-price-wrapper .more-button {
       text-align: center;
       width: 80px;
       margin: 0 auto;
       margin: 0;
       display: inline-block; }
-      .product-link .product .link-price-wrapper .more-button a {
+      .product-link .product-list-wrapper.large .product .link-price-wrapper .more-button a {
         font-family: merriweather;
         font-style: italic;
         text-decoration: none;
@@ -899,12 +899,12 @@ BOLD
         display: flex;
         align-items: center;
         justify-content: center; }
-        .product-link .product .link-price-wrapper .more-button a i {
+        .product-link .product-list-wrapper.large .product .link-price-wrapper .more-button a i {
           font-size: 2rem; }
-        .product-link .product .link-price-wrapper .more-button a span {
+        .product-link .product-list-wrapper.large .product .link-price-wrapper .more-button a span {
           line-height: 1; }
-      .product-link .product .link-price-wrapper .more-button a {
+      .product-link .product-list-wrapper.large .product .link-price-wrapper .more-button a {
         justify-content: left; }
-    .product-link .product .link-price-wrapper .price {
+    .product-link .product-list-wrapper.large .product .link-price-wrapper .price {
       font-family: merriweather, arial;
       font-size: 1.4rem; }
