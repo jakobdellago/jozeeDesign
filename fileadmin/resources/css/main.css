@@ -908,3 +908,18 @@ BOLD
     .product-link .product-list-wrapper.large .product .link-price-wrapper .price {
       font-family: merriweather, arial;
       font-size: 1.4rem; }
+  .product-link .product-list-wrapper.small .product {
+    font-family: merriweather, arial;
+    font-size: 1.2rem; }
+    .product-link .product-list-wrapper.small .product .link {
+      color: #000;
+      text-decoration: none; }
+      .product-link .product-list-wrapper.small .product .link .header {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        text-align: left; }
+      .product-link .product-list-wrapper.small .product .link .price {
+        font-size: 1.2rem;
+        text-align: left; }
+      .product-link .product-list-wrapper.small .product .link .picture img {
+        margin-top: 30px; }

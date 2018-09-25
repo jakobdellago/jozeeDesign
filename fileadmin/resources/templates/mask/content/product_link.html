@@ -1,7 +1,6 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 {v:iterator.explode(content: '{data.tx_mask_product_selector}', glue: ',') -> f:variable(name: 'selectedProductsArray')}
-<f:debug>{_all}</f:debug>
 
 <div class="product-link">
 	
@@ -13,13 +12,20 @@
 		</div>
 	</f:if>
 
-	<div class="product-list-wrapper {f:if(condition: 'data.tx_mask_small_checkbox == 1', then: 'small', else: 'large')}">
+	<div class="product-list-wrapper {f:if(condition: '{data.tx_mask_small_checkbox} == 1', then: 'small', else: 'large')}">
 		<f:for each="{products}" as="product">
 			<f:for each="{selectedProductsArray}" as="selectedProduct">
 				<f:if condition="{product.data.uid} == {selectedProduct}">
 					<div class="product">
-						<f:render partial="Product_large.html" arguments="{product: product}"/>
-					</div>
+						<f:if condition="{data.tx_mask_small_checkbox} == 0">
+							<f:then>
+								<f:render partial="Product_large.html" arguments="{product: product}"/>
+							</f:then>
+							<f:else>
+								<f:render partial="Product_small.html" arguments="{product: product}"/>
+							</f:else>
+						</f:if>
+					</div>		
 				</f:if>
 			</f:for>
 		</f:for>

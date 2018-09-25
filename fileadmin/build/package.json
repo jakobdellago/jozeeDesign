@@ -17,6 +17,7 @@
     "node-sass": "4.x"
   },
   "dependencies": {
-    "jquery": "3.x"
+    "jquery": "3.x",
+    "slick-carousel": "1.8.x"
   }
 }
