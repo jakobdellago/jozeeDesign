@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "jquery": "3.x",
-    "slick-carousel": "1.8.x"
+    "slick-carousel": "1.8.0"
   }
 }

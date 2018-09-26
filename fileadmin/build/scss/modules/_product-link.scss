@@ -1,22 +1,21 @@
 .product-link {
-	margin: 30px;
 	.upper-header-wrapper {
 		border-top: 1px dotted #666;
 		border-bottom: 1px dotted #666;
+		margin: 30px 40px;
 		.upper-header {
 			text-transform: uppercase;
 			font-family: merriweather, arial;
 			text-align: center;
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 			font-weight: 300;
 		}
 	}
-	.product-list-wrapper {
-		&.large {
+	&.large {
+		.product-list-wrapper {
 			.product {
 				.picture {
 					img {
-						margin-top: 30px;
 					}
 				}
 				.header {
@@ -30,26 +29,46 @@
 				}
 			}
 		}
-		&.small {
-			.product {
-				font-family: merriweather, arial;
-				font-size: 1.2rem;
-				.link {
-					color: #000;
-					text-decoration: none;
-					.header {
-						text-transform: uppercase;
-						font-size: 1.2rem;
-						text-align: left;
+	}	
+	&.small {
+		.product {
+			font-family: merriweather, arial;
+			font-size: 1.2rem;
+			.link {
+				color: #000;
+				text-decoration: none;
+				.header {
+					text-transform: uppercase;
+					font-size: 1.2rem;
+					text-align: left;
+					margin-top:10px
+				}
+				.price {
+					font-size: 1.2rem;
+					text-align: left;
+				}
+			}
+		}
+		.slick-slider {
+			.slick-list {
+				.slick-track {
+					.slick-slide {
+						margin: 0 10px 20px;
 					}
-					.price {
-						font-size: 1.2rem;
-						text-align: left;
-					}
-					.picture {
-						img {
-							margin-top: 30px;
-						}
+				}
+			}
+		}
+	}
+	.slick-slider {
+		.slick-list {
+			overflow: hidden;
+			.slick-track {
+				display: flex;
+			    align-items: flex-start;
+				.slick-slide {
+					margin: 0 40px 30px;
+					.product {
+						margin: 0;
 					}
 				}
 			}

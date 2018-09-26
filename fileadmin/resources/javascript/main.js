@@ -2,8 +2,27 @@
 $ = require ('jquery');
 slick = require('slick-carousel');
 
-$('.menu-opener').click( function(){
-	$('.flex-wrapper').toggleClass('open');
+$(document).ready(function() {
+	
+	$('.menu-opener').click( function(){
+		$('.flex-wrapper').toggleClass('open');
+	});
+
+	$('.product-link.slider.large .product-list-wrapper').slick({
+  		infinite: true,
+  		slidesToShow: 1,
+  		slidesToScroll: 1,	
+  		arrows: false,
+  		adaptiveHeight: true
+	});
+
+	$('.product-link.slider.small .product-list-wrapper').slick({
+  		infinite: true,
+  		slidesToShow: 2.5,
+  		slidesToScroll: 2,	
+  		arrows: false,
+  		adaptiveHeight: true,
+	});
 });
 
 
@@ -10382,7 +10401,7 @@ return jQuery;
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
 
- Version: 1.8.1
+ Version: 1.8.0
   Author: Ken Wheeler
  Website: http://kenwheeler.github.io
     Docs: http://kenwheeler.github.io/slick

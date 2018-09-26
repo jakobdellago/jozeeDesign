@@ -74,12 +74,14 @@
                 "columns": [
                     "header",
                     "tx_mask_product_selector",
-                    "tx_mask_small_checkbox"
+                    "tx_mask_small_checkbox",
+                    "tx_mask_active_slider"
                 ],
                 "labels": [
                     "\u00dcberschrift",
                     "Produkt",
-                    "Klein (Eine kleine Liste nur mit Bild, \u00dcberschrift und Preis)"
+                    "Klein (Eine kleine Liste nur mit Bild, \u00dcberschrift und Preis)",
+                    "Slider (aktiviert den slickslider)"
                 ]
             },
             "product_list": {
@@ -185,6 +187,11 @@
             "tx_mask_small_checkbox": {
                 "tt_content": {
                     "tx_mask_small_checkbox": "int(11) DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_active_slider": {
+                "tt_content": {
+                    "tx_mask_active_slider": "int(11) DEFAULT '0' NOT NULL"
                 }
             }
         },
@@ -325,6 +332,20 @@
                 },
                 "exclude": "1",
                 "key": "small_checkbox"
+            },
+            "tx_mask_active_slider": {
+                "config": {
+                    "type": "check",
+                    "items": [
+                        [
+                            "aktiv"
+                        ]
+                    ],
+                    "cols": "",
+                    "default": ""
+                },
+                "exclude": "1",
+                "key": "active_slider"
             }
         }
     }

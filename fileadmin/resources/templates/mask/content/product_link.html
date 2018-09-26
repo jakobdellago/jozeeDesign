@@ -2,7 +2,8 @@
 
 {v:iterator.explode(content: '{data.tx_mask_product_selector}', glue: ',') -> f:variable(name: 'selectedProductsArray')}
 
-<div class="product-link">
+<div class="product-link {f:if(condition: '{data.tx_mask_small_checkbox} == 1', then: 'small', else: 'large')} {f:if(condition: '{data.tx_mask_active_slider} == 1', then: 'slider', else: 'no-slider')}"
+>
 	
 	<f:if condition="{data.header}">
 		<div class="upper-header-wrapper">
@@ -12,7 +13,7 @@
 		</div>
 	</f:if>
 
-	<div class="product-list-wrapper {f:if(condition: '{data.tx_mask_small_checkbox} == 1', then: 'small', else: 'large')}">
+	<div class="product-list-wrapper">
 		<f:for each="{products}" as="product">
 			<f:for each="{selectedProductsArray}" as="selectedProduct">
 				<f:if condition="{product.data.uid} == {selectedProduct}">
