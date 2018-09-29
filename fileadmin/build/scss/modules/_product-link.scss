@@ -2,13 +2,12 @@
 	.upper-header-wrapper {
 		border-top: 1px dotted #666;
 		border-bottom: 1px dotted #666;
-		margin: 30px 40px;
+	    margin: 30px 40px;
 		.upper-header {
 			text-transform: uppercase;
 			font-family: merriweather, arial;
 			text-align: center;
 			font-size: 1.6rem;
-			font-weight: 300;
 		}
 	}
 	&.large {
@@ -29,6 +28,12 @@
 				}
 			}
 		}
+		.underline-wrapper{
+			margin: 0 40px;
+			.underline {
+				border-bottom: 1px dotted #000;
+			}
+		}
 	}	
 	&.small {
 		.product {
@@ -41,7 +46,8 @@
 					text-transform: uppercase;
 					font-size: 1.2rem;
 					text-align: left;
-					margin-top:10px
+					margin-top:10px;
+					font-weight: 300;
 				}
 				.price {
 					font-size: 1.2rem;

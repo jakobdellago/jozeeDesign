@@ -40,6 +40,24 @@
                     "1": "rte"
                 }
             },
+            "link": {
+                "label": "Link",
+                "key": "link",
+                "shortLabel": "",
+                "description": "Ein Button mit Verlinkung",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "header",
+                    "subheader",
+                    "header_link"
+                ],
+                "labels": [
+                    "\u00dcberschrift",
+                    "Buttontext",
+                    "Link"
+                ]
+            },
             "product": {
                 "label": "Produkt",
                 "key": "product",
