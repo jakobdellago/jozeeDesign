@@ -24,7 +24,7 @@ $(document).ready(function() {
 	//headerimage slide to content
 	$('.header-slider .scroll-button').on('click', function(e){
 	  $('html, body').animate({
-	    scrollTop:$('.header-slider').height()
+	    scrollTop:$('.header-slider').height() + 26
 	  },'slow');
 	  e.preventDefault();
 	});
