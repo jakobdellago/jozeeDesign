@@ -40,6 +40,14 @@
                     "1": "rte"
                 }
             },
+            "image_gallery": {
+                "label": "Bildergallerie",
+                "key": "image_gallery",
+                "shortLabel": "",
+                "description": "",
+                "icon": "",
+                "color": "#000000"
+            },
             "link": {
                 "label": "Link",
                 "key": "link",

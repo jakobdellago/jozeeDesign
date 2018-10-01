@@ -1,0 +1,41 @@
+#curator-feed {
+	.crt-social-icon,
+	.crt-post-fullname,
+	.crt-post-footer,
+	.crt-logo,
+	.crt-popup-right {
+		display: none;
+		visibility: hidden;
+	}
+	.crt-post-content-text {
+		@include bodytext
+	}
+	.crt-load-more {
+		a {
+			display: flex;
+		    width: 180px;
+		    height: 40px;
+		    justify-content: center;
+		    align-items: center;
+		    background-color: #b4b048;
+		    border: 1px solid #b4b048;
+		    transition: 0.2s ease;
+		    &:hover {
+		    	background-color: #fff;
+		    	span {
+		    		color: #b4b048;
+		    	}
+		    }
+		    span {
+		    	font-family: 'Montserrat', sans-serif;
+		    	color: #fff;
+		    	font-size: 1.4rem;
+		    }
+		}
+	}
+}
+
+.crt-popup-wrapper .crt-popup.has-image .crt-popup-right {
+	display: none;
+	visibility: hidden;
+}

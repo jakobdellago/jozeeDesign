@@ -1,5 +1,5 @@
 .std-element.link {
-	padding: 20px 0;
+	padding: 20px 0 0;
 	.header {
 		@include header;
 		margin: 20px 0;
@@ -10,7 +10,7 @@
 		.button {
 			width: 200px;
 			padding: 5px 10px;
-			margin: 20px auto;
+			margin: 20px auto 50px;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;

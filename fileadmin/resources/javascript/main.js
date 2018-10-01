@@ -7,6 +7,11 @@ function setSlickTransform($slider) {
 	var width_before = $slick_track.css('transform');
 }
 
+$('.crt-load-more').click( function() {
+	console.log('click on more-button');
+	debugger;
+});
+
 $(document).ready(function() {
 
 	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
@@ -42,10 +47,40 @@ $(document).ready(function() {
         }, true);
 	});
 
-	// On before slide change
-	/*$('.product-link.slider.small .product-list-wrapper').on('afterChange', function(event, slick, currentSlide, nextSlide){
-	  setSlickTransform($(this));
-	});*/
+	if($('#curator-feed').length > 0) {
+		/* curator-feed */
+		(function() {
+			var i, e, d = document, s = "script";i = d.createElement("script");
+			i.async = 1;
+			i.src = "https://cdn.curator.io/published/69d5648f-2fa8-4aa4-81c1-356a793a2109.js";
+			e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+		})();
+
+		/*
+		Destroys curator-feeds textboxes with no text in it
+		*/
+		function destroyUnusedTextboxes() {
+			$post_objects = $('.crt-post-content');
+			$.each( $post_objects, function( key, value ) {
+				$this = $(this);
+				$text = $this.find('.crt-post-content-text');
+				$header = $this.find('.crt-post-header');	
+    			if($text[0].innerText === "") {
+    				$text.remove();
+    				$header.remove();
+    			}
+			});
+		}
+
+		destroyUnusedTextboxes();
+
+		$('.content').on('click', '.crt-load-more', function () {
+    		setTimeout( function() { 
+    			destroyUnusedTextboxes();
+    		}, 1000);
+		});
+	}
+
 });
 
 
