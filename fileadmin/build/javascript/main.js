@@ -29,10 +29,19 @@ $(document).ready(function() {
 	  e.preventDefault();
 	});
 
+	$(window).scroll(function() {
+		var top  = window.pageYOffset || document.documentElement.scrollTop;
+		if (top > 70) {
+			$('.mobile-nav').addClass('scrolled');
+		} else {
+			$('.mobile-nav').removeClass('scrolled');
+		}
+	});
+
 	$large_slider.slick({
   		infinite: true,
   		slidesToShow: 1,
-  		slidesToScroll: 1,	
+  		slidesToScroll: 1,
   		arrows: false,
   		adaptiveHeight: true,
   		autoplay: true,
