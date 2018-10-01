@@ -1,1 +1,1 @@
-C:\xampp\htdocs\fileadmin\build\scss\vendor\_hamburgers.scss -> delete unnecessary arrow animations
+analytics einbauen

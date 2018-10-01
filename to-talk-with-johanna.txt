@@ -1,0 +1,2 @@
+curator -> stoppt ab 2000 views
+wie tun mit den textboxen? soll mehr-button beibehalten werden? Wie lange werden ihre Texte sein?

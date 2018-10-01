@@ -619,8 +619,9 @@ BOLD
     .header-slider .content-wrapper .text {
       font-weight: 700;
       font-size: 1.6rem;
-      line-height: 2.7rem; }
-    .header-slider .content-wrapper .button {
+      line-height: 2.7rem;
+      padding: 0 50px; }
+    .header-slider .content-wrapper .scroll-button {
       position: relative;
       display: flex;
       justify-content: space-between;
@@ -630,18 +631,18 @@ BOLD
       margin: 40px auto 0;
       border: 1px solid #fff;
       transition: 0.2s ease-in; }
-      .header-slider .content-wrapper .button span {
+      .header-slider .content-wrapper .scroll-button span {
         text-align: center;
         text-transform: uppercase;
         flex: 1 1 100%; }
-        .header-slider .content-wrapper .button span:hover {
+        .header-slider .content-wrapper .scroll-button span:hover {
           cursor: default; }
-      .header-slider .content-wrapper .button i {
+      .header-slider .content-wrapper .scroll-button i {
         position: absolute;
         right: 10px; }
-      .header-slider .content-wrapper .button:hover {
+      .header-slider .content-wrapper .scroll-button:hover {
         background: #fff; }
-        .header-slider .content-wrapper .button:hover span, .header-slider .content-wrapper .button:hover i {
+        .header-slider .content-wrapper .scroll-button:hover span, .header-slider .content-wrapper .scroll-button:hover i {
           color: #000; }
 
 .text-image-box .text-wrapper {
@@ -926,11 +927,6 @@ BOLD
     font-family: merriweather, arial;
     font-size: 1.4rem; }
 
-.product-link.large .underline-wrapper {
-  margin: 0 40px; }
-  .product-link.large .underline-wrapper .underline {
-    border-bottom: 1px dotted #000; }
-
 .product-link.small .product {
   font-family: merriweather, arial;
   font-size: 1.2rem; }
@@ -1029,3 +1025,8 @@ BOLD
 .crt-popup-wrapper .crt-popup.has-image .crt-popup-right {
   display: none;
   visibility: hidden; }
+
+.separator-wrapper {
+  margin: 0 40px; }
+  .separator-wrapper .separator {
+    border-bottom: 1px dotted #000; }

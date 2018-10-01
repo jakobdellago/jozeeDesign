@@ -85,4 +85,24 @@ page.10.variables {
     HEADERSLIDER.select.where = colPos=10
 
     CONTENT < styles.content.get
+
+    SMALL_SLIDER < styles.content.get
+    SMALL_SLIDER {
+
+        select {
+
+        # The page with ID = 123 is the source.
+        pidInList = 8
+
+        # Sorting is the same as in the backend.
+        orderBy = sorting
+
+        # Only select the content of the left column.
+        where = {#colPos}=0
+
+        # Define the field with the language ID in tt_content.
+        languageField = sys_language_uid
+        
+        }
+    }
 }
