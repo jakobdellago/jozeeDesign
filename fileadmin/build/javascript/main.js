@@ -64,7 +64,7 @@ $(document).ready(function() {
 				$this = $(this);
 				$text = $this.find('.crt-post-content-text');
 				$header = $this.find('.crt-post-header');	
-    			if($text[0].innerText === "") {
+    			if($text.length > 0 && $text[0].innerText === "") {
     				$text.remove();
     				$header.remove();
     			}
