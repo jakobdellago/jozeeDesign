@@ -65,7 +65,7 @@ $(document).ready(function() {
         }, true);
 	});
 
-	$large_slider.find('.product').each(function(){
+	$('.product-link.large').find('.product').each(function(){
 		$bodytext = $(this).find('.bodytext');
 		var croppedText = truncate($bodytext.html(), 200);
 		$bodytext.html(croppedText);
