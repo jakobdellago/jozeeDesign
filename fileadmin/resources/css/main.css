@@ -656,7 +656,7 @@ BOLD
           color: #000; }
 
 .text-image-box .text-wrapper {
-  padding: 30px; }
+  margin: 30px; }
   .text-image-box .text-wrapper .header, .text-image-box .text-wrapper .subheader {
     text-align: center;
     margin: 0; }

@@ -17,6 +17,7 @@
     "node-sass": "4.x"
   },
   "dependencies": {
+    "html-truncate": "^1.2.2",
     "jquery": "3.x",
     "slick-carousel": "1.8.0",
     "watchify": "^3.11.0"

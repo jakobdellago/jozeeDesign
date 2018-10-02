@@ -1,5 +1,6 @@
 $ = require ('jquery');
 slick = require('slick-carousel');
+window.truncate = require('html-truncate');
 
 function setSlickTransform($slider) {
 	var $slick_track = $slider.find('.slick-track')
@@ -62,6 +63,12 @@ $(document).ready(function() {
         $large_slider.slick('slickSetOption', {
             autoplay: false
         }, true);
+	});
+
+	$large_slider.find('.product').each(function(){
+		$bodytext = $(this).find('.bodytext');
+		var croppedText = truncate($bodytext.html(), 200);
+		$bodytext.html(croppedText);
 	});
 
 	if($('#curator-feed').length > 0) {
