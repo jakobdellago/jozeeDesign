@@ -12,13 +12,15 @@
                     "tx_mask_phone_number",
                     "tx_mask_mail_adress",
                     "tx_mask_facebook_link",
-                    "tx_mask_instagram_link"
+                    "tx_mask_instagram_link",
+                    "tx_mask_categories"
                 ],
                 "labels": [
                     "Telefonnummer",
                     "Mailadresse",
                     "Link zur Facebookseite",
-                    "Link zur Instagramseite"
+                    "Link zur Instagramseite",
+                    "Alle Kategorien"
                 ]
             },
             "headerimage": {
@@ -79,7 +81,8 @@
                     "bodytext",
                     "image",
                     "tx_mask_price",
-                    "header_link"
+                    "header_link",
+                    "tx_mask_product_categories"
                 ],
                 "labels": [
                     "Name",
@@ -87,11 +90,12 @@
                     "Beschreibung",
                     "Bilder",
                     "Preis",
-                    "Link zum Shop"
+                    "Link zum Shop",
+                    "Kategorie(n)"
                 ]
             },
             "product_link": {
-                "label": "Produktverlinkung",
+                "label": "Produktliste",
                 "key": "product_link",
                 "shortLabel": "",
                 "description": "Gibt ein Produkt aus, welches in der Seite Produktpalette aufgelistet ist",
@@ -101,45 +105,15 @@
                     "header",
                     "tx_mask_product_selector",
                     "tx_mask_small_checkbox",
-                    "tx_mask_active_slider"
+                    "tx_mask_active_slider",
+                    "tx_mask_render_category_selectbox"
                 ],
                 "labels": [
                     "\u00dcberschrift",
                     "Produkt",
                     "Klein (Eine kleine Liste nur mit Bild, \u00dcberschrift und Preis)",
-                    "Slider (aktiviert den slickslider)"
-                ]
-            },
-            "product_list": {
-                "label": "Produktliste",
-                "key": "product_list",
-                "shortLabel": "",
-                "description": "",
-                "icon": "",
-                "color": "#000000",
-                "columns": [
-                    "header",
-                    "subheader",
-                    "bodytext"
-                ],
-                "labels": [
-                    "\u00dcberschrift",
-                    "Unter\u00fcberschrift",
-                    "Beschreibung"
-                ]
-            },
-            "product_list_small": {
-                "label": "Kleine Produktliste",
-                "key": "product_list_small",
-                "shortLabel": "",
-                "description": "Eine Produktliste mit weniger Informationen",
-                "icon": "",
-                "color": "#000000",
-                "columns": [
-                    "header"
-                ],
-                "labels": [
-                    ""
+                    "Slider (aktiviert den slickslider)",
+                    "Selectbox anzeigen"
                 ]
             },
             "separator": {
@@ -172,6 +146,40 @@
                     "Bild"
                 ]
             },
+            "product_list": {
+                "label": "Produktliste",
+                "key": "product_list",
+                "shortLabel": "",
+                "description": "",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "header",
+                    "subheader",
+                    "bodytext"
+                ],
+                "labels": [
+                    "\u00dcberschrift",
+                    "Unter\u00fcberschrift",
+                    "Beschreibung"
+                ],
+                "hidden": 1
+            },
+            "product_list_small": {
+                "label": "Kleine Produktliste",
+                "key": "product_list_small",
+                "shortLabel": "",
+                "description": "Eine Produktliste mit weniger Informationen",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "header"
+                ],
+                "labels": [
+                    ""
+                ],
+                "hidden": 1
+            },
             "vhs_test": {
                 "label": "VHS TEST",
                 "key": "vhs_test",
@@ -184,15 +192,11 @@
                 ],
                 "labels": [
                     ""
-                ]
+                ],
+                "hidden": 1
             }
         },
         "sql": {
-            "tx_mask_price": {
-                "tt_content": {
-                    "tx_mask_price": "double(11,2) DEFAULT '0.00' NOT NULL"
-                }
-            },
             "tx_mask_phone_number": {
                 "tt_content": {
                     "tx_mask_phone_number": "tinytext"
@@ -213,6 +217,21 @@
                     "tx_mask_instagram_link": "tinytext"
                 }
             },
+            "tx_mask_categories": {
+                "tt_content": {
+                    "tx_mask_categories": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_price": {
+                "tt_content": {
+                    "tx_mask_price": "double(11,2) DEFAULT '0.00' NOT NULL"
+                }
+            },
+            "tx_mask_product_categories": {
+                "tt_content": {
+                    "tx_mask_product_categories": "tinytext"
+                }
+            },
             "tx_mask_product_selector": {
                 "tt_content": {
                     "tx_mask_product_selector": "tinytext"
@@ -227,25 +246,14 @@
                 "tt_content": {
                     "tx_mask_active_slider": "int(11) DEFAULT '0' NOT NULL"
                 }
+            },
+            "tx_mask_render_category_selectbox": {
+                "tt_content": {
+                    "tx_mask_render_category_selectbox": "int(11) DEFAULT '0' NOT NULL"
+                }
             }
         },
         "tca": {
-            "tx_mask_price": {
-                "config": {
-                    "type": "input",
-                    "eval": "double2",
-                    "default": "",
-                    "placeholder": "",
-                    "size": "",
-                    "max": "",
-                    "range": {
-                        "lower": "",
-                        "upper": ""
-                    }
-                },
-                "exclude": "1",
-                "key": "price"
-            },
             "tx_mask_phone_number": {
                 "config": {
                     "type": "input",
@@ -332,6 +340,66 @@
                 "exclude": "1",
                 "key": "instagram_link"
             },
+            "tx_mask_categories": {
+                "config": {
+                    "type": "inline",
+                    "foreign_table": "--inlinetable--",
+                    "foreign_field": "parentid",
+                    "foreign_table_field": "parenttable",
+                    "foreign_sortby": "sorting",
+                    "appearance": {
+                        "enabledControls": {
+                            "dragdrop": "1"
+                        },
+                        "newRecordLinkTitle": "",
+                        "levelLinksPosition": "top"
+                    },
+                    "minitems": "",
+                    "maxitems": ""
+                },
+                "exclude": "1",
+                "inlineLabel": "",
+                "inlineIcon": "",
+                "l10n_mode": "copy",
+                "key": "categories"
+            },
+            "tx_mask_price": {
+                "config": {
+                    "type": "input",
+                    "eval": "double2",
+                    "default": "",
+                    "placeholder": "",
+                    "size": "",
+                    "max": "",
+                    "range": {
+                        "lower": "",
+                        "upper": ""
+                    }
+                },
+                "exclude": "1",
+                "key": "price"
+            },
+            "tx_mask_product_categories": {
+                "config": {
+                    "type": "select",
+                    "renderType": "selectSingleBox",
+                    "size": "",
+                    "items": [
+                        [
+                            ""
+                        ]
+                    ],
+                    "foreign_table": "tx_mask_categories",
+                    "foreign_table_where": "",
+                    "fileFolder": "",
+                    "fileFolder_extList": "",
+                    "fileFolder_recursions": "",
+                    "maxitems": "",
+                    "autoSizeMax": ""
+                },
+                "exclude": "1",
+                "key": "product_categories"
+            },
             "tx_mask_product_selector": {
                 "config": {
                     "type": "select",
@@ -380,6 +448,46 @@
                 },
                 "exclude": "1",
                 "key": "active_slider"
+            },
+            "tx_mask_render_category_selectbox": {
+                "config": {
+                    "type": "check",
+                    "items": [
+                        [
+                            "aktiv"
+                        ]
+                    ],
+                    "cols": "",
+                    "default": ""
+                },
+                "exclude": "1",
+                "key": "render_category_selectbox"
+            }
+        }
+    },
+    "tx_mask_categories": {
+        "sql": {
+            "tx_mask_category": {
+                "tx_mask_categories": {
+                    "tx_mask_category": "tinytext"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_category": {
+                "config": {
+                    "type": "input",
+                    "eval": "",
+                    "default": "",
+                    "placeholder": "",
+                    "size": "",
+                    "max": "",
+                    "is_in": ""
+                },
+                "exclude": "1",
+                "inlineParent": "tx_mask_categories",
+                "label": "Kategorie",
+                "key": "category"
             }
         }
     }

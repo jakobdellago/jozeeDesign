@@ -10,6 +10,17 @@
 			font-size: 1.6rem;
 		}
 	}
+	.selectbox-wrapper {
+		text-align: center;
+		select {
+			text-transform: uppercase;
+		    font-size: 1.4rem;
+			option {
+				text-transform: uppercase;
+			    font-size: 1.4rem;
+			}
+		}
+	}
 	&.large {
 		.product-list-wrapper {
 			.product {

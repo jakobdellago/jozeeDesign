@@ -896,6 +896,15 @@ BOLD
     text-align: center;
     font-size: 1.6rem; }
 
+.product-link .selectbox-wrapper {
+  text-align: center; }
+  .product-link .selectbox-wrapper select {
+    text-transform: uppercase;
+    font-size: 1.4rem; }
+    .product-link .selectbox-wrapper select option {
+      text-transform: uppercase;
+      font-size: 1.4rem; }
+
 .product-link.large .product-list-wrapper .product .header {
   font-family: merriweather, arial;
   font-size: 2rem;

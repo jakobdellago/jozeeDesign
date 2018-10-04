@@ -1,6 +1,7 @@
 $ = require ('jquery');
 slick = require('slick-carousel');
 window.truncate = require('html-truncate');
+window.shuffle = require('shufflejs');
 
 function setSlickTransform($slider) {
 	var $slick_track = $slider.find('.slick-track')

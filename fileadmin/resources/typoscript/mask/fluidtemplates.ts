@@ -112,6 +112,16 @@ tt_content {
 	            }
 	        }
 		}
+
+		dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+		dataProcessing.20 {
+
+	        table = tx_mask_categories
+
+   			pidInList = 1
+
+   			as = available_categories
+		}
 	   #partialRootPath = EXT:site_default/Resources/Private/Partials/
 	   #variables {
 	   #   mylabel = TEXT
