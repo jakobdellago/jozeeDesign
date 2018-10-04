@@ -2,19 +2,39 @@
 $ = require ('jquery');
 slick = require('slick-carousel');
 window.truncate = require('html-truncate');
-window.shuffle = require('shufflejs');
+window.Shuffle = require('shufflejs');
 
 function setSlickTransform($slider) {
 	var $slick_track = $slider.find('.slick-track')
 	var width_before = $slick_track.css('transform');
 }
 
-$('.crt-load-more').click( function() {
-	console.log('click on more-button');
-	debugger;
-});
-
 $(document).ready(function() {
+
+	if($('.product-link.selectbox').length > 0) {
+		
+		$('.selectbox-wrapper select').on('change', function(){
+			$this = $(this);
+			filter_by = $this.val()
+			if (filter_by === "0") {
+				shuffleInstance.filter("all");
+			} else {
+				shuffleInstance.filter(filter_by);
+			}
+		});
+
+		//ShuffleJS Configuration
+		var Shuffle = window.Shuffle;
+		var shuffle_element = document.querySelector('.product-link.selectbox .product-list-wrapper');
+		var shuffle_sizer = shuffle_element.querySelector('.product');
+
+		var shuffleInstance = new Shuffle(shuffle_element, {
+		  itemSelector: '.product',
+		  sizer: shuffle_sizer // could also be a selector: '.my-sizer-element'
+		});
+
+		window.shuffleInstance = shuffleInstance;
+	}
 
 	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
 	var $small_slider = $('.product-link.slider.small .product-list-wrapper');

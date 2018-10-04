@@ -897,8 +897,11 @@ BOLD
     font-size: 1.6rem; }
 
 .product-link .selectbox-wrapper {
-  text-align: center; }
+  text-align: center;
+  padding: 0 40px; }
   .product-link .selectbox-wrapper select {
+    padding: 5px;
+    width: 100%;
     text-transform: uppercase;
     font-size: 1.4rem; }
     .product-link .selectbox-wrapper select option {

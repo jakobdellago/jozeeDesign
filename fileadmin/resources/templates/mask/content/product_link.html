@@ -2,9 +2,8 @@
 
 {v:iterator.explode(content: '{data.tx_mask_product_selector}', glue: ',') -> f:variable(name: 'selectedProductsArray')}
 
-<f:debug>{_all}</f:debug>
 
-<div class="product-link {f:if(condition: '{data.tx_mask_small_checkbox} == 1', then: 'small', else: 'large')} {f:if(condition: '{data.tx_mask_active_slider} == 1', then: 'slider', else: 'no-slider')}"
+<div class="product-link {f:if(condition: '{data.tx_mask_small_checkbox} == 1', then: 'small', else: 'large')} {f:if(condition: '{data.tx_mask_active_slider} == 1', then: 'slider', else: 'no-slider')} {f:if(condition: '{data.tx_mask_render_category_selectbox}', then: 'selectbox', else: 'no-selectbox')}"
 >
 	
 	<f:if condition="{data.header}">
@@ -18,6 +17,7 @@
 	<f:if condition="{data.tx_mask_render_category_selectbox}">
 		<div class="selectbox-wrapper">
 			<select>
+				<option value="0">Alle Produkte</option>
 				<f:for each="{available_categories}" as="category">
 	  				<option value="{category.data.uid}">{category.data.tx_mask_category}</option>
 				</f:for>
@@ -29,7 +29,8 @@
 		<f:for each="{products}" as="product">
 			<f:for each="{selectedProductsArray}" as="selectedProduct">
 				<f:if condition="{product.data.uid} == {selectedProduct}">
-					<div class="product" data-category="{product.data.tx_mask_product_categories}">
+					{v:format.replace(substring: ',', content: '{product.data.tx_mask_product_categories}', replacement: '","') -> f:variable(name: 'product_categories_formatted')}
+					<div class="product" data-groups='["{product_categories_formatted}"]'>
 						<f:if condition="{data.tx_mask_small_checkbox} == 0">
 							<f:then>
 								<f:render partial="Product_large.html" arguments="{product: product}"/>
