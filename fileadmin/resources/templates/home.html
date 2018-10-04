@@ -1,48 +1,58 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
-<body>
+<html>
 
-	<div class="main-container">
+<f:be.security.ifAuthenticated>
+   <f:then>
+	   <body>
+	      	<div class="main-container">
 
-		<f:comment>
-			<div class="main-nav">
-				<f:format.raw>{MAINMENU}</f:format.raw>
-			</div>
-		</f:comment>
-
-		<div class="mobile-nav">
-		    <div class="header">
-		    	<f:link.typolink parameter="1">
-			    	<div class="logo">
-						<img src="fileadmin\resources\images\logo.jpg">
+				<f:comment>
+					<div class="main-nav">
+						<f:format.raw>{MAINMENU}</f:format.raw>
 					</div>
-				</f:link.typolink>
-				<div class="menu-opener">
-				    <div class="line"></div>
-				    <div class="line"></div>
-				    <div class="line"></div>
+				</f:comment>
+
+				<div class="mobile-nav">
+				    <div class="header">
+				    	<f:link.typolink parameter="1">
+					    	<div class="logo">
+								<img src="fileadmin\resources\images\logo.jpg">
+							</div>
+						</f:link.typolink>
+						<div class="menu-opener">
+						    <div class="line"></div>
+						    <div class="line"></div>
+						    <div class="line"></div>
+						</div>
+				    </div>
+					<f:format.raw>{MOBILEMENU}</f:format.raw>
 				</div>
-		    </div>
-			<f:format.raw>{MOBILEMENU}</f:format.raw>
-		</div>
 
-		<f:format.raw>{HEADERSLIDER}</f:format.raw>
+				<f:format.raw>{HEADERSLIDER}</f:format.raw>
 
-		<div class="content">
-			<f:format.raw>{CONTENT}</f:format.raw>
-			<v:condition.iterator.contains needle="8" haystack="{v:page.rootline() -> v:iterator.extract(key: 'uid')}">
-   				<f:format.raw>{SMALL_SLIDER}</f:format.raw>
-			</v:condition.iterator.contains>
-		</div>
+				<div class="content">
+					<f:format.raw>{CONTENT}</f:format.raw>
+					<v:condition.iterator.contains needle="8" haystack="{v:page.rootline() -> v:iterator.extract(key: 'uid')}">
+		   				<f:format.raw>{SMALL_SLIDER}</f:format.raw>
+					</v:condition.iterator.contains>
+				</div>
 
-		{v:content.get(column: 100, pageUid: 1, limit: 1) -> f:variable(name: 'general_data')}
-		<f:render partial="footer" arguments="{general_data: general_data.0}"/> 
+				{v:content.get(column: 100, pageUid: 1, limit: 1) -> f:variable(name: 'general_data')}
+				<f:render partial="footer" arguments="{general_data: general_data.0}"/> 
+			</div>
+			<script src="fileadmin\resources\javascript\main.js"></script>
+		</body>
+    </f:then>
 
-
-	</div>
-
-	<script src="fileadmin\resources\javascript\main.js"></script>
-
-</body>
+   <f:else>
+   		<body class="no-be-login">
+		   	  <img src="fileadmin\resources\images\work_in_progress.jpg" alt="work-in-progress" title="work-in-progress">
+		      <h1>
+		      		Please log in too see content: <a href="http://jozeedesign.at/typo3/">http://jozeedesign.at/typo3/</a>
+	   		  </h1>
+  		</body>
+   </f:else>
+</f:be.security.ifAuthenticated>
 
 </html>

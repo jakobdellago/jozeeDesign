@@ -335,6 +335,14 @@ img {
   .main-container * {
     box-sizing: border-box; }
 
+.no-be-login {
+  background-color: #F8F9F4; }
+  .no-be-login img {
+    max-width: 700px;
+    margin: 0 auto; }
+  .no-be-login h1 {
+    text-align: center; }
+
 .main-nav {
   position: relative; }
   .main-nav .nav-list-wrapper {
