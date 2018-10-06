@@ -1,1 +1,3 @@
 analytics einbauen
+cooluri einbauen
+open graph für facebook usw anpassen
