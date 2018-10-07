@@ -1,25 +1,39 @@
-<picture class="picture">
-    <source 
-    	media="(max-width: 812px)" 
-    	srcset="{f:uri.image(src:'{product.files.0.properties.uid}', height:'300c', width:'400c', treatIdAsReference:'1')}, 
-    			{f:uri.image(src:'{product.files.0.properties.uid}', height:'600c', width:'800c', treatIdAsReference:'1')} 2x"
-    >
-    <f:image src="{product.files.0.properties.uid}"
-        title="title"
-        alt="alt"
-        treatIdAsReference="1"
-    />
-</picture>
-<h2 class="header">{product.data.header}</h2>
-<div class="bodytext">
-	<f:format.html>{product.data.bodytext}</f:format.html>
+<div class="picture-wrapper">
+    <picture class="picture">
+        <source 
+        	media="(max-width: 812px)" 
+        	srcset="{f:uri.image(image:'{product.files.0}', height:'500c', width:'800c', treatIdAsReference:'1')}, 
+        			{f:uri.image(image:'{product.files.0}', height:'1000c', width:'1600c', treatIdAsReference:'1')} 2x"
+        >
+
+        <source 
+            media="(max-width: 1280px)" 
+            srcset="{f:uri.image(image:'{product.files.0}', height:'390c', width:'640c', treatIdAsReference:'1')}, 
+                    {f:uri.image(image:'{product.files.0}', height:'780c', width:'1280c', treatIdAsReference:'1')} 2x"
+        >
+
+        <f:image image="{product.files.0}"
+            height="1000c"
+            width="1600c"
+            title="title"
+            alt="alt"
+            treatIdAsReference="1"
+        />
+    </picture>
 </div>
-<div class="link-price-wrapper">
-	<div class="more-button">
-		<f:link.typolink parameter="{product.data.pid}" title="button">
-			<span>mehr</span>
-			<i class="icon-arrow-right"></i>
-		</f:link.typolink>
-	</div>
-	<span class="price">{product.data.tx_mask_price} €</span>
+
+<div class="text-wrapper">
+    <h2 class="header">{product.data.header}</h2>
+    <div class="bodytext">
+    	<f:format.html>{product.data.bodytext}</f:format.html>
+    </div>
+    <div class="link-price-wrapper">
+    	<div class="more-button">
+    		<f:link.typolink parameter="{product.data.pid}" title="button">
+    			<span>mehr</span>
+    			<i class="icon-arrow-right"></i>
+    		</f:link.typolink>
+    	</div>
+    	<span class="price">{product.data.tx_mask_price} €</span>
+    </div>
 </div>

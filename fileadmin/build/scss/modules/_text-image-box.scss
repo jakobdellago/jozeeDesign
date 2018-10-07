@@ -18,7 +18,26 @@
 			@include button;
 		}
 	}
-	img {
+}
 
+@media only screen and (min-width: $tablet) {
+	.text-image-box {
+		.text-wrapper {
+			margin: 40px 60px;
+			.header {
+				@include header--tablet
+			}
+			.subheader {
+				@include subheader--tablet
+			}
+			.text {
+				@include bodytext--tablet;
+			}
+		}
+		.picture {
+		    img {
+		    	padding: 0 25%;
+	    	}
+		}
 	}
 }

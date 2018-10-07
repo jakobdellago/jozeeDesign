@@ -1,4 +1,4 @@
-	.header-slider {
+.header-slider {
 	overflow: hidden;
 	position: relative;
 	img {
@@ -55,6 +55,28 @@
 				span, i {
 					color: #000;
 				}
+			}
+		}
+	}
+}
+
+/* Minimum aspect ratio */
+@media only screen and (min-aspect-ratio: 13/10) {
+	.header-slider {
+		height: calc(100vh - 66px);
+		img {
+		    width: 100%;
+    		height: auto;
+		}
+	}
+}
+
+@media only screen and (min-width: $tablet) {
+	.header-slider {
+		.content-wrapper {
+			.text {
+				font-size: 1.8rem;
+			    padding: 0 20%;
 			}
 		}
 	}
