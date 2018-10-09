@@ -3,3 +3,8 @@ think about a typo3 and database backup system
 analytics einbauen
 cooluri einbauen
 open graph für facebook usw anpassen
+cookiebanner einbauen
+
+#smaller fixes:
+make selectbox(shufflejs) work together with slickslider -> look at mask-element "product-link" for more information 
+check why favicons arent shown

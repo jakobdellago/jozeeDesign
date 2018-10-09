@@ -1,36 +1,34 @@
 .product-link {
 	.upper-header-wrapper {
-		border-top: 1px dotted #666;
-		border-bottom: 1px dotted #666;
-	    margin: 30px 40px;
+	    margin: 30px 40px 0;
+        text-align: center;
 		.upper-header {
 			text-transform: uppercase;
 			font-family: merriweather, arial;
 			text-align: center;
 			font-size: 1.6rem;
+			border-top: 1px dotted #666;
+			border-bottom: 1px dotted #666;
+			padding: 15px 0;
+			width: 300px;
+			margin: 0 auto;
 		}
 	}
 	.selectbox-wrapper {
 		text-align: center;
-		padding: 0 40px;
+    	padding: 40px 40px 0;
 		.custom-select {
-
-		}
-		.select2-container {
-			padding: 5px;
-    		width: 100%;
 			text-transform: uppercase;
-		    font-size: 1.4rem;
+			font-size: 1.4rem;
+			padding: 8px;
 			option {
 				text-transform: uppercase;
 			    font-size: 1.4rem;
 			}
-			.select2-search {
-				display: none;
-			}
 		}
 	}
 	&.large {
+		margin-bottom: 0; 
 		.product-list-wrapper {
 			.product {
 				.picture {
@@ -50,6 +48,9 @@
 		}
 	}	
 	&.small {
+		.upper-header-wrapper {
+		    margin: 30px 40px;
+		}
 		.product {
 			font-family: merriweather, arial;
 			font-size: 1.2rem;
@@ -86,7 +87,7 @@
 				display: flex;
 			    align-items: flex-start;
 				.slick-slide {
-					margin: 0 40px 30px;
+					margin: 30px 40px;
 					.product {
 						margin: 0;
 					}
@@ -100,22 +101,12 @@
 @media only screen and (min-width: $tablet) {
 	.product-link {
 		.upper-header-wrapper {
-			border-top: 1px dotted #666;
-			border-bottom: 1px dotted #666;
-		    margin: 30px 40px;
 			.upper-header {
-				text-transform: uppercase;
-				font-family: merriweather, arial;
-				text-align: center;
-				//changed
 				font-size: 1.8rem;
 			}
 		}
 		.selectbox-wrapper {
-			text-align: center;
-			padding: 0 40px;
 			.custom-select {
-				//changed
 				option {
 					text-transform: uppercase;
 				    font-size: 1.4rem;
@@ -125,88 +116,52 @@
 		&.large {
 			.product-list-wrapper {
 				.product {
-					display: flex;
+					display: flex!important;
 					.picture-wrapper {
-						//changed
 						margin-right: 20px;
 						flex: 1 1 100%;
-						.picture {
-							img {
-
-							}
-						}
 					}
 					.text-wrapper {
-						//changed
 					    display: flex;
     					flex-direction: column;
     					justify-content: space-around;
 						flex: 1 1 100%;
 						.header {
-							//changed
 						    margin-top: 0;
 						    text-align: left;
 							@include header--tablet;
 						}
 						.bodytext {
-							//changed
 							@include bodytext--tablet;
 						}
 						.link-price-wrapper {
-							//cahnged
 							margin-top: 15px;
-							//not changed
-							@include link-price-wrapper
+							.more-button {
+								a {
+									span {
+										font-size: 1.2rem;
+									}
+								}
+								.price {
+									font-size: 1.6rem;
+								}
+							}
 						}
 					}
 				}
 			}
-		}	
+		}
 		&.small {
 			.product {
-				font-family: merriweather, arial;
-				font-size: 1.2rem;
 				.link {
-					color: #000;
-					text-decoration: none;
 					.header {
-						text-transform: uppercase;
-						font-size: 1.2rem;
-						text-align: left;
-						margin-top:10px;
-						font-weight: 300;
+						font-size: 1.4rem;
 					}
 					.price {
-						font-size: 1.2rem;
-						text-align: left;
-					}
-				}
-			}
-			.slick-slider {
-				.slick-list {
-					.slick-track {
-						.slick-slide {
-							margin: 0 10px 20px;
-						}
+						font-size: 1.4rem;
 					}
 				}
 			}
 		}
-		.slick-slider {
-			.slick-list {
-				overflow: hidden;
-				.slick-track {
-					display: flex;
-				    align-items: flex-start;
-					.slick-slide {
-						margin: 0 40px 30px;
-						.product {
-							margin: 0;
-						}
-					}
-				}
-			}
-		}
-
 	}
 }

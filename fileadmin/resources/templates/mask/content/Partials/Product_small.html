@@ -4,15 +4,26 @@
     <picture class="picture">
         <source 
             media="(max-width: 812px)" 
-            srcset="{f:uri.image(src:'{product.files.0.properties.uid}', height:'200c', width:'200c', treatIdAsReference:'1')}, 
-                    {f:uri.image(src:'{product.files.0.properties.uid}', height:'400c', width:'400c', treatIdAsReference:'1')} 2x"
+            srcset="{f:uri.image(image:'{product.files.0}', height:'500c', width:'500c', treatIdAsReference:'1')}, 
+                    {f:uri.image(image:'{product.files.0}', height:'1000c', width:'1000c', treatIdAsReference:'1')} 2x"
         >
-        <f:image src="{product.files.0.properties.uid}"
+
+        <source 
+            media="(max-width: 1280px)" 
+            srcset="{f:uri.image(image:'{product.files.0}', height:'800c', width:'800c', treatIdAsReference:'1')}, 
+                    {f:uri.image(image:'{product.files.0}', height:'1600c', width:'1600c', treatIdAsReference:'1')} 2x"
+        >
+
+        <f:image image="{product.files.0}"
+            height="1000c"
+            width="1600c"
             title="title"
             alt="alt"
             treatIdAsReference="1"
         />
     </picture>
+
+
     <h2 class="header">{product.data.header}</h2>
     <span class="price">{product.data.tx_mask_price} €</span>
 

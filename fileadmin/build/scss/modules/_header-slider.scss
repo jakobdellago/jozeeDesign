@@ -17,7 +17,11 @@
 	}
 	.content-wrapper {
 		position: absolute;
-		bottom: 50px;
+		bottom: 100px;
+		/* UNCOMMENT TO CENTER CONTENT
+		bottom: 50%;
+    	transform: translateY(50%);
+    	*/
 		color: #fff;
 	    width: 100%;
     	text-align: center;
@@ -61,6 +65,7 @@
 }
 
 /* Minimum aspect ratio */
+/*
 @media only screen and (min-aspect-ratio: 13/10) {
 	.header-slider {
 		height: calc(100vh - 66px);
@@ -69,7 +74,7 @@
     		height: auto;
 		}
 	}
-}
+}*/
 
 @media only screen and (min-width: $tablet) {
 	.header-slider {

@@ -3,7 +3,7 @@
 {v:iterator.explode(content: '{data.tx_mask_product_selector}', glue: ',') -> f:variable(name: 'selectedProductsArray')}
 
 
-<div class="product-link {f:if(condition: '{data.tx_mask_small_checkbox} == 1', then: 'small', else: 'large')} {f:if(condition: '{data.tx_mask_active_slider} == 1', then: 'slider', else: 'no-slider')} {f:if(condition: '{data.tx_mask_render_category_selectbox}', then: 'selectbox', else: 'no-selectbox')}"
+<div class="product-link content-element {f:if(condition: '{data.tx_mask_small_checkbox} == 1', then: 'small', else: 'large')} {f:if(condition: '{data.tx_mask_active_slider} == 1', then: 'slider', else: 'no-slider')} {f:if(condition: '{data.tx_mask_render_category_selectbox}', then: 'selectbox', else: 'no-selectbox')}"
 >
 	
 	<f:if condition="{data.header}">

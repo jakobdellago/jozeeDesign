@@ -79,3 +79,47 @@
 	}
 
 }
+
+@media only screen and (min-width: $tablet) {
+	.footer {
+		.text-wrapper {
+			.header {
+				font-size: 2rem;
+				&.contact-header {
+					margin-bottom: 5px;
+				}
+			}
+			span {
+			}
+			.social-media {
+				.social-media-icons-wrapper {
+					a {
+					    width: 30px;
+					    height: 30px;
+					    i {
+					    	font-size: 1.6rem;
+					    }
+					}
+				}
+			}
+			.contact {
+				a {
+					margin: 5px auto;
+					i {
+						font-size: 1.6rem;
+					}
+					span {
+						font-size: 1.4rem;
+					}
+				}
+			}
+			.imprint-link {
+				.imprint-header {}
+			}
+			.copyright-text {
+			}
+			> * {
+			}
+		}
+	}
+}

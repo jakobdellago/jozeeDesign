@@ -1,5 +1,4 @@
 .std-element.link {
-	padding: 20px 0 0;
 	.header {
 		@include header;
 		margin: 20px 0;
@@ -34,4 +33,20 @@
 			}
 		}
 	}
+}
+
+@media only screen and (min-width: $tablet) {
+	.std-element.link {
+		.header {
+			font-size: 2rem;
+		}
+		a {
+			.button {
+				padding: 10px 20px;
+				span {
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}	
 }

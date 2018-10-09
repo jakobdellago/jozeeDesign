@@ -11,9 +11,6 @@ function setSlickTransform($slider) {
 
 $(document).ready(function() {
 
-	//Make a custom selectbox with select2
-	$('.custom-select');
-
 	if($('.product-link.selectbox').length > 0) {
 		
 		$('.selectbox-wrapper select').on('change', function(){
@@ -77,18 +74,30 @@ $(document).ready(function() {
 
 	$small_slider.slick({
   		infinite: true,
-  		slidesToShow: 2,
+  		slidesToShow: 3,
   		slidesToScroll: 2,	
   		arrows: false,
   		adaptiveHeight: true,
-		centerMode: true
+		centerMode: true,
+		responsive: [
+		    {
+		      breakpoint: 812,
+		      settings: {
+		        slidesToShow: 2,
+		      }
+		    }
+		]
 	});
 
+	/* SHOULD STOP AUTOPLAY WHEN SWIPED ONCE - STILL CAUSES BUGS WHILE SLIDING
 	$large_slider.on('swipe', function(event, slick, direction){
-        $large_slider.slick('slickSetOption', {
-            autoplay: false
-        }, true);
-	});
+        console.log('test');
+		$large_slider.slick('slickSetOption', {
+		    autoplay: false,
+		    autoplaySpeed: 0,
+		    infinite: true
+		}, true)
+    });*/
 
 	$('.product-link.large').find('.product').each(function(){
 		$bodytext = $(this).find('.bodytext');

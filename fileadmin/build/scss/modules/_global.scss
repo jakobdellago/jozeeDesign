@@ -40,8 +40,11 @@ img {
 	}
 }
 
-.content {
-	
+.content-element {
+	margin: 40px 0;
+	.separator-wrapper {
+		margin: 0;
+	}
 }
 
 .no-be-login {

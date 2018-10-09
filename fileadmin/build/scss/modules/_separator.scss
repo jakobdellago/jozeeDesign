@@ -1,6 +1,9 @@
 .separator-wrapper{
 	margin: 0 40px;
 	.separator {
-		border-bottom: 1px dotted #000;
+	    border-bottom: 1px dotted #000;
+	    height: 2px;
+	    width: 300px;
+	    margin: 0 auto;
 	}
 }
