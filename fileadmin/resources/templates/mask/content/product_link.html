@@ -16,7 +16,7 @@
 
 	<f:if condition="{data.tx_mask_render_category_selectbox}">
 		<div class="selectbox-wrapper">
-			<select>
+			<select class="custom-select">
 				<option value="0">Alle Produkte</option>
 				<f:for each="{available_categories}" as="category">
 	  				<option value="{category.data.uid}">{category.data.tx_mask_category}</option>

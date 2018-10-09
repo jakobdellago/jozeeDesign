@@ -937,14 +937,16 @@ BOLD
 .product-link .selectbox-wrapper {
   text-align: center;
   padding: 0 40px; }
-  .product-link .selectbox-wrapper select {
+  .product-link .selectbox-wrapper .select2-container {
     padding: 5px;
     width: 100%;
     text-transform: uppercase;
     font-size: 1.4rem; }
-    .product-link .selectbox-wrapper select option {
+    .product-link .selectbox-wrapper .select2-container option {
       text-transform: uppercase;
       font-size: 1.4rem; }
+    .product-link .selectbox-wrapper .select2-container .select2-search {
+      display: none; }
 
 .product-link.large .product-list-wrapper .product .header {
   font-family: merriweather, arial;
@@ -1029,14 +1031,9 @@ BOLD
   .product-link .selectbox-wrapper {
     text-align: center;
     padding: 0 40px; }
-    .product-link .selectbox-wrapper select {
-      text-align-last: center;
-      text-align: center;
-      -ms-text-align-last: center;
-      -moz-text-align-last: center; }
-      .product-link .selectbox-wrapper select option {
-        text-transform: uppercase;
-        font-size: 1.4rem; }
+    .product-link .selectbox-wrapper .custom-select option {
+      text-transform: uppercase;
+      font-size: 1.4rem; }
   .product-link.large .product-list-wrapper .product {
     display: flex; }
     .product-link.large .product-list-wrapper .product .picture-wrapper {

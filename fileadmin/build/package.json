@@ -19,6 +19,7 @@
   "dependencies": {
     "html-truncate": "^1.2.2",
     "jquery": "3.x",
+    "selectric": "^1.13.0",
     "shufflejs": "^5.2.0",
     "slick-carousel": "1.8.0",
     "watchify": "^3.11.0"

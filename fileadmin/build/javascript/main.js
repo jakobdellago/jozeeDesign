@@ -10,6 +10,9 @@ function setSlickTransform($slider) {
 
 $(document).ready(function() {
 
+	//Make a custom selectbox with select2
+	$('.custom-select');
+
 	if($('.product-link.selectbox').length > 0) {
 		
 		$('.selectbox-wrapper select').on('change', function(){

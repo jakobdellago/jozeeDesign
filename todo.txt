@@ -1,3 +1,5 @@
+make tablet view and desktop view
+think about a typo3 and database backup system
 analytics einbauen
 cooluri einbauen
 open graph für facebook usw anpassen

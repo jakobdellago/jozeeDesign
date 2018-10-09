@@ -13,7 +13,10 @@
 	.selectbox-wrapper {
 		text-align: center;
 		padding: 0 40px;
-		select {
+		.custom-select {
+
+		}
+		.select2-container {
 			padding: 5px;
     		width: 100%;
 			text-transform: uppercase;
@@ -21,6 +24,9 @@
 			option {
 				text-transform: uppercase;
 			    font-size: 1.4rem;
+			}
+			.select2-search {
+				display: none;
 			}
 		}
 	}
@@ -108,12 +114,8 @@
 		.selectbox-wrapper {
 			text-align: center;
 			padding: 0 40px;
-			select {
+			.custom-select {
 				//changed
-				text-align-last: center;
-			    text-align: center;
-			    -ms-text-align-last: center;
-			    -moz-text-align-last: center;
 				option {
 					text-transform: uppercase;
 				    font-size: 1.4rem;
