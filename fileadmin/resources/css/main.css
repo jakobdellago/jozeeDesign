@@ -381,7 +381,7 @@ img {
     display: none; } }
 
 .mobile-nav {
-  display: none;
+  display: block;
   height: 66px;
   position: fixed;
   z-index: 10;
@@ -443,9 +443,19 @@ img {
       .mobile-nav .list-wrapper li a:visited {
         color: #000; }
 
-@media only screen and (max-width: 1280px) {
-  .mobile-nav {
-    display: block; } }
+@media only screen and (min-width: 812px) {
+  .mobile-nav .list-wrapper li {
+    text-align: center;
+    margin: 0;
+    height: 30px; }
+    .mobile-nav .list-wrapper li.first {
+      margin-top: 5px; }
+    .mobile-nav .list-wrapper li a {
+      font-size: 1.8rem; }
+  .mobile-nav .list-wrapper .flex-wrapper.open {
+    height: 130px; }
+    .mobile-nav .list-wrapper .flex-wrapper.open li {
+      transition: all 0.5s; } }
 
 /*------------------------------------------------
 icomoon icons
@@ -1099,6 +1109,18 @@ BOLD
 .crt-popup-wrapper .crt-popup.has-image .crt-popup-right {
   display: none;
   visibility: hidden; }
+
+@media only screen and (min-width: 812px) {
+  #curator-feed .crt-post-content-text {
+    font-size: 1.4rem;
+    line-height: 18px; }
+    #curator-feed .crt-post-content-text p {
+      margin: 18px 0; } }
+
+@media only screen and (min-width: 910px) {
+  .crt-popup-wrapper .crt-popup.has-image .crt-popup-right {
+    display: block;
+    visibility: visible; } }
 
 .separator-wrapper {
   margin: 0 40px; }

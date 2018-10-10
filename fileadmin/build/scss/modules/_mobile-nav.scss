@@ -1,5 +1,5 @@
 .mobile-nav {
-	display: none;
+	display: block;
 	height: 66px;
 	position: fixed;
     z-index: 10;
@@ -80,8 +80,28 @@
 	}
 }
 
-@media only screen and (max-width: $laptop) {
+@media only screen and (min-width: $tablet) {
 	.mobile-nav {
-		display: block;
-	}	
+		.list-wrapper {
+			li {
+				text-align: center;
+				margin: 0;
+				height: 30px;
+				&.first {
+					margin-top: 5px;
+				}
+			    a {
+			    	font-size: 1.8rem;
+			    }
+			}
+			.flex-wrapper {
+    			&.open {
+    				height: 130px;
+    				li {
+    					transition: all 0.5s;
+    				}
+    			}
+			}
+		}
+	}
 }

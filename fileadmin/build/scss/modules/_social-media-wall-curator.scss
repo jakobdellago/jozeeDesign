@@ -39,3 +39,18 @@
 	display: none;
 	visibility: hidden;
 }
+
+@media only screen and (min-width: $tablet) {
+	#curator-feed {
+		.crt-post-content-text {
+			@include bodytext--tablet;
+		}
+	}
+}
+
+@media only screen and (min-width: 910px) {
+	.crt-popup-wrapper .crt-popup.has-image .crt-popup-right {
+		display: block;
+		visibility: visible;
+	}
+}
