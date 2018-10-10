@@ -1,4 +1,7 @@
 .footer {
+	.picture {
+		max-height: 350px;
+	}
 	.text-wrapper {
 		color: #fff;
 		background-color: #000;
@@ -80,6 +83,7 @@
 
 }
 
+/*
 @media only screen and (min-width: $tablet) {
 	.footer {
 		.text-wrapper {
@@ -120,6 +124,20 @@
 			}
 			> * {
 			}
+		}
+	}
+}
+*/
+
+@media only screen and (min-width: $desktop) {
+	.footer {
+		.picture {
+			display: block;
+    		position: relative;
+    		overflow: hidden;
+    		img {
+    			transform: translateY(-40%);
+    		}
 		}
 	}
 }

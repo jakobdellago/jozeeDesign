@@ -41,3 +41,24 @@
 		}
 	}
 }
+
+@media only screen and (min-width: $desktop) {
+	.text-image-box {
+		.text-wrapper {
+			.header {
+				@include header--desktop;
+			}
+			.subheader {
+				@include subheader--desktop;
+			}
+			.text {
+				@include bodytext--desktop;
+			}
+		}
+		.picture {
+		    img {
+		    	margin-top: 80px;
+	    	}
+		}
+	}
+}

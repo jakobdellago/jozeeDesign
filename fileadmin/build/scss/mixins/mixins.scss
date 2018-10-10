@@ -10,8 +10,14 @@
 	margin-bottom: 18px;
 }
 
+@mixin header--desktop {
+	font-size: 3.5rem;
+	margin-bottom: 30px;
+}
+
 @mixin bodytext {
 	font-size: 1.2rem;
+	line-height: 2.2rem;
 	font-family: 'Montserrat', sans-serif;
 	p {
 		margin: 30px 0;
@@ -25,6 +31,14 @@
 	p {
 	    margin: 18px 0;
 	}
+}
+
+@mixin bodytext--desktop {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    p {
+    	margin: 30px 0;
+    }
 }
 
 @mixin button {
@@ -58,6 +72,11 @@
 @mixin subheader--tablet {
 	font-size: 2.1rem;
 	margin-bottom: 35px;
+}
+
+@mixin subheader--desktop {
+	font-size: 2.8rem;
+	margin-bottom: 45px;
 }
 
 @mixin link-price-wrapper {

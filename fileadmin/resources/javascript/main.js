@@ -63,12 +63,20 @@ $(document).ready(function() {
 
 	$large_slider.slick({
   		infinite: true,
-  		slidesToShow: 1,
+  		slidesToShow: 2,
   		slidesToScroll: 1,
   		arrows: false,
   		adaptiveHeight: true,
   		autoplay: true,
-  		autoplaySpeed: 3000
+  		autoplaySpeed: 3000,
+  		responsive: [
+  			{
+  				breakpoint: 1280,
+  				settings: {
+  					slidesToShow: 1
+  				}
+  			}
+  		]
 	});
 
 
