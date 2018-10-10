@@ -10,7 +10,7 @@ page.10.variables {
               <img src="fileadmin\resources\images\logo.jpg" title="JozeeDesign" alt="Logo" class="logo">
           </a>
           <div class="center">
-          <li>|</li> |*| <li>|</li> |*| </div> <li class="last">|</li>
+          <li>|</li> |*| <li>|</li> |*| </div><li class="last">|</li>
         )
         stdWrap.cObject = CASE
         stdWrap.cObject {
