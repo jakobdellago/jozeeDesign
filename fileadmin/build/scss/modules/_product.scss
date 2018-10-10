@@ -35,6 +35,9 @@
     		margin: 15px 0;
 		}
 	}
+	.button-wrapper {
+		margin: 40px 0;
+	}
 
 
 	.shop-link,
@@ -64,5 +67,54 @@
 	}
 	.mail-button {
 		background-color: #53cdef;
+	}
+}
+
+@media only screen and (min-width: $tablet) {
+	.product.content-element {
+		.header {
+			@include header--tablet;
+		}
+		.subheader {
+			@include subheader--tablet;
+		}
+		.bodytext {
+			@include bodytext--tablet;
+			margin: 30px 0;
+		}
+		.picture {
+			img {
+				width: 50%;
+    			margin: 0 auto;
+			}
+		}
+		.more-button {
+			span {	
+			}
+			i {
+			}
+		}
+		.price-wrapper {
+   			margin: 40px 50px;
+		}
+
+		.shop-link,
+		.mail-link {
+			.shop-button,
+			.mail-button {
+				max-width: 400px;
+				span {
+				}
+				i {
+				}
+			}
+
+		}
+		.shop-button {
+			margin: 0 auto 20px; 
+		}
+		.mail-button {
+			margin: 0 auto; 
+		}
 	}
 }

@@ -38,24 +38,28 @@
 		</div>
 	</f:if>
 
-	<f:if condition="{data.header_link}">
-		<f:link.typolink parameter="{data.header_link}" title="button" class="shop-link">
-			<div class="shop-button">
-				<span>zum shop</span>
+	<div class="button-wrapper">
+
+		<f:if condition="{data.header_link}">
+			<f:link.typolink parameter="{data.header_link}" title="button" class="shop-link">
+				<div class="shop-button">
+					<span>zum shop</span>
+					<i class="icon-arrow-right"></i>
+				</div>
+			</f:link.typolink>
+		</f:if>
+
+		<f:link.typolink 
+			parameter="mailto:jozee.designs@gmail.com?subject=Anfrage:%20{f:cObject(typoscriptObjectPath: 'lib.spaceToHexa20', data: '{data.header}')}&body=Hallo%20Johanna,%20ich%20bin%20an%20deinen%20Produkten%20interessiert!"
+			title="button"
+			class="mail-link">
+			<div class="mail-button">
+				<span>mailanfrage</span>
 				<i class="icon-arrow-right"></i>
 			</div>
 		</f:link.typolink>
-	</f:if>
 
-	<f:link.typolink 
-		parameter="mailto:jozee.designs@gmail.com?subject=Anfrage:%20{f:cObject(typoscriptObjectPath: 'lib.spaceToHexa20', data: '{data.header}')}&body=Hallo%20Johanna,%20ich%20bin%20an%20deinen%20Produkten%20interessiert!"
-		title="button"
-		class="mail-link">
-		<div class="mail-button">
-			<span>mailanfrage</span>
-			<i class="icon-arrow-right"></i>
-		</div>
-	</f:link.typolink>
+	</div>
 
 </div>
 

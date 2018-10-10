@@ -8,3 +8,4 @@ cookiebanner einbauen
 #smaller fixes:
 make selectbox(shufflejs) work together with slickslider -> look at mask-element "product-link" for more information 
 check why favicons arent shown
+product-detail: add icons
