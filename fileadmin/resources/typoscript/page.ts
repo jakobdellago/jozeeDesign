@@ -30,7 +30,22 @@ page {
             100 = TEXT
             100.value = <meta name="theme-color" content="#ffffff">
             #Favicons END
+
+            #open graph BEGIN
+            110 = TEXT
+            110.value = <meta property="og:url" content="http://www.jozeedesign.at" />
+            120 = TEXT
+            120.value = <meta property="og:type" content="article" />
+            130 = TEXT
+            130.value = <meta property="og:title" content="Jozee Design" />
+            140 = TEXT
+            140.value = <meta property="og:description" content="Wunderbar fein! Viel geht hinein, mit dir nie allein, du Lieblingsrucksack. Huckepack!" />
+            150 = TEXT
+            150.value = <meta property="og:image" content="http://www.jozeedesign.at/fileadmin/resources/images/logo_color.png" /> 
+            150 = TEXT
+            150.value = <meta property="og:locale" content="de_AT" />
         }
+            
         10 = FLUIDTEMPLATE
         10 {
             file.stdWrap.cObject = CASE

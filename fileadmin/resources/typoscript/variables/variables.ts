@@ -6,7 +6,7 @@ page.10.variables {
       1.NO {
         doNotLinkIt = 1
         wrapItemAndSub (
-          <a href="/index.php?id=1" class="first">
+          <a href="http://www.jozeedesign.at" class="first">
               <img src="fileadmin\resources\images\logo.jpg" title="JozeeDesign" alt="Logo" class="logo">
           </a>
           <div class="center"> 

@@ -56,7 +56,7 @@
 				font-size: 1.6rem;
 			}
 			i {
-				font-size: 1.4rem;
+				font-size: 2rem;
 			}
 		}
 
@@ -123,5 +123,23 @@
 @media only screen and (min-width: $desktop) {
 	.product.content-element.product-detail {
 		margin: 60px 5em 80px;
+		.header {
+			@include header--desktop;
+		}
+		.subheader {
+			@include subheader--desktop;
+		}
+		.bodytext {
+			@include bodytext--desktop;
+		}
+		.price-wrapper {
+			p {
+				font-size: 2rem;
+			}
+		}
+		.shop-link .shop-button span,
+		.mail-link .mail-button span {
+			font-size: 1.8rem;
+		}
 	}
 }

@@ -808,7 +808,7 @@ BOLD
       margin-bottom: 35px; }
     .text-image-box .text-wrapper .text {
       font-size: 1.4rem;
-      line-height: 18px; }
+      line-height: 2.5rem; }
       .text-image-box .text-wrapper .text p {
         margin: 18px 0; }
   .text-image-box .picture img {
@@ -895,7 +895,7 @@ BOLD
       .product .shop-link .mail-button i,
       .product .mail-link .shop-button i,
       .product .mail-link .mail-button i {
-        font-size: 1.4rem; }
+        font-size: 2rem; }
   .product .shop-button {
     background-color: #47d44e;
     margin-bottom: 20px; }
@@ -911,7 +911,7 @@ BOLD
     margin-bottom: 35px; }
   .product.content-element .bodytext {
     font-size: 1.4rem;
-    line-height: 18px;
+    line-height: 2.5rem;
     margin: 30px 0; }
     .product.content-element .bodytext p {
       margin: 18px 0; }
@@ -933,7 +933,23 @@ BOLD
 
 @media only screen and (min-width: 1280px) {
   .product.content-element.product-detail {
-    margin: 60px 5em 80px; } }
+    margin: 60px 5em 80px; }
+    .product.content-element.product-detail .header {
+      font-size: 3.5rem;
+      margin-bottom: 30px; }
+    .product.content-element.product-detail .subheader {
+      font-size: 2.8rem;
+      margin-bottom: 45px; }
+    .product.content-element.product-detail .bodytext {
+      font-size: 1.8rem;
+      line-height: 3rem; }
+      .product.content-element.product-detail .bodytext p {
+        margin: 30px 0; }
+    .product.content-element.product-detail .price-wrapper p {
+      font-size: 2rem; }
+    .product.content-element.product-detail .shop-link .shop-button span,
+    .product.content-element.product-detail .mail-link .mail-button span {
+      font-size: 1.8rem; } }
 
 .footer .picture {
   max-height: 350px; }
@@ -1177,7 +1193,7 @@ BOLD
         margin-bottom: 18px; }
       .product-link.large .product-list-wrapper .product .text-wrapper .bodytext {
         font-size: 1.4rem;
-        line-height: 18px; }
+        line-height: 2.5rem; }
         .product-link.large .product-list-wrapper .product .text-wrapper .bodytext p {
           margin: 18px 0; }
       .product-link.large .product-list-wrapper .product .text-wrapper .link-price-wrapper {
@@ -1323,7 +1339,7 @@ BOLD
 @media only screen and (min-width: 812px) {
   #curator-feed .crt-post-content-text {
     font-size: 1.4rem;
-    line-height: 18px; }
+    line-height: 2.5rem; }
     #curator-feed .crt-post-content-text p {
       margin: 18px 0; } }
 
