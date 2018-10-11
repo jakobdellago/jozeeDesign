@@ -56,8 +56,10 @@ $(document).ready(function() {
 		var top  = window.pageYOffset || document.documentElement.scrollTop;
 		if (top > 70) {
 			$('.mobile-nav').addClass('scrolled');
+			$('.main-nav').addClass('scrolled');
 		} else {
 			$('.mobile-nav').removeClass('scrolled');
+			$('.main-nav').removeClass('scrolled');
 		}
 	});
 
@@ -68,7 +70,7 @@ $(document).ready(function() {
   		arrows: false,
   		adaptiveHeight: true,
   		autoplay: true,
-  		autoplaySpeed: 3000,
+  		autoplaySpeed: 7000,
   		responsive: [
   			{
   				breakpoint: 1280,

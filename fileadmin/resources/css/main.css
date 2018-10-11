@@ -344,11 +344,11 @@ img {
 
 @media only screen and (min-width: 1280px) {
   .content-element {
-    margin: 80px 0; }
+    margin: 80px 3em; }
     .content-element:first-child {
-      margin: 60px 0 80px; }
+      margin: 60px 3em 80px; }
     .content-element:last-child {
-      margin: 80px 0 20px; } }
+      margin: 80px 3em 20px; } }
 
 .no-be-login {
   background-color: #F8F9F4; }
@@ -367,6 +367,12 @@ img {
   background-color: #fff;
   top: 0;
   transition: all 0.2s; }
+  .main-nav.scrolled {
+    height: 50px; }
+    .main-nav.scrolled .nav-list-wrapper {
+      height: 50px; }
+      .main-nav.scrolled .nav-list-wrapper .first img {
+        width: 100px; }
   .main-nav .nav-list-wrapper {
     display: flex;
     justify-content: space-between;
@@ -376,6 +382,8 @@ img {
     box-shadow: 0px -5px 20px 0px #444; }
     .main-nav .nav-list-wrapper .center {
       display: flex; }
+      .main-nav .nav-list-wrapper .center li:first-child a {
+        text-align: right; }
     .main-nav .nav-list-wrapper li {
       margin: 0 20px;
       width: 120px; }
@@ -462,18 +470,29 @@ img {
         color: #000; }
 
 @media only screen and (min-width: 812px) {
-  .mobile-nav .list-wrapper li {
-    text-align: center;
-    margin: 0;
-    height: 30px; }
-    .mobile-nav .list-wrapper li.first {
-      margin-top: 5px; }
-    .mobile-nav .list-wrapper li a {
-      font-size: 1.8rem; }
-  .mobile-nav .list-wrapper .flex-wrapper.open {
-    height: 130px; }
-    .mobile-nav .list-wrapper .flex-wrapper.open li {
-      transition: all 0.5s; } }
+  /*.mobile-nav {
+		.list-wrapper {
+			li {
+				text-align: center;
+				margin: 0;
+				height: 30px;
+				&.first {
+					margin-top: 5px;
+				}
+			    a {
+			    	font-size: 1.8rem;
+			    }
+			}
+			.flex-wrapper {
+    			&.open {
+    				height: 130px;
+    				li {
+    					transition: all 0.5s;
+    				}
+    			}
+			}
+		}
+	}*/ }
 
 @media only screen and (min-width: 1280px) {
   .mobile-nav {
@@ -796,17 +815,19 @@ BOLD
     padding: 0 25%; } }
 
 @media only screen and (min-width: 1280px) {
-  .text-image-box .text-wrapper .header {
-    font-size: 3.5rem;
-    margin-bottom: 30px; }
-  .text-image-box .text-wrapper .subheader {
-    font-size: 2.8rem;
-    margin-bottom: 45px; }
-  .text-image-box .text-wrapper .text {
-    font-size: 1.8rem;
-    line-height: 3rem; }
-    .text-image-box .text-wrapper .text p {
-      margin: 30px 0; }
+  .text-image-box .text-wrapper {
+    margin: 30px 40px; }
+    .text-image-box .text-wrapper .header {
+      font-size: 3.5rem;
+      margin-bottom: 30px; }
+    .text-image-box .text-wrapper .subheader {
+      font-size: 2.8rem;
+      margin-bottom: 45px; }
+    .text-image-box .text-wrapper .text {
+      font-size: 1.8rem;
+      line-height: 3rem; }
+      .text-image-box .text-wrapper .text p {
+        margin: 30px 0; }
   .text-image-box .picture img {
     margin-top: 80px; } }
 
@@ -898,7 +919,8 @@ BOLD
     width: 50%;
     margin: 0 auto; }
   .product.content-element .price-wrapper {
-    margin: 40px 50px; }
+    margin: 40px auto;
+    width: 400px; }
   .product.content-element .shop-link .shop-button,
   .product.content-element .shop-link .mail-button,
   .product.content-element .mail-link .shop-button,
@@ -908,6 +930,10 @@ BOLD
     margin: 0 auto 20px; }
   .product.content-element .mail-button {
     margin: 0 auto; } }
+
+@media only screen and (min-width: 1280px) {
+  .product.content-element.product-detail {
+    margin: 60px 5em 80px; } }
 
 .footer .picture {
   max-height: 350px; }
@@ -1023,7 +1049,7 @@ BOLD
     position: relative;
     overflow: hidden; }
     .footer .picture img {
-      transform: translateY(-40%); } }
+      transform: translateY(-36%); } }
 
 .product-link .upper-header-wrapper {
   margin: 30px 40px 0;
@@ -1196,15 +1222,17 @@ BOLD
       font-size: 1.4rem; }
     .product-link.large .product-list-wrapper .product .text-wrapper .link-price-wrapper .more-button .price {
       font-size: 1.6rem; }
-  .product-link.small .product-list-wrapper .product .link .header {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 20px; }
-  .product-link.small .product-list-wrapper .product .link .price {
-    font-size: 1.5rem;
-    width: 100%;
-    text-align: center;
-    display: block; } }
+  .product-link.small .product-list-wrapper {
+    margin: 50px 40px 30px; }
+    .product-link.small .product-list-wrapper .product .link .header {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 20px; }
+    .product-link.small .product-list-wrapper .product .link .price {
+      font-size: 1.5rem;
+      width: 100%;
+      text-align: center;
+      display: block; } }
 
 .std-element.link .header {
   font-family: merriweather, arial;

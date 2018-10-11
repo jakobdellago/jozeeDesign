@@ -45,6 +45,7 @@
 @media only screen and (min-width: $desktop) {
 	.text-image-box {
 		.text-wrapper {
+			margin: 30px 40px;
 			.header {
 				@include header--desktop;
 			}

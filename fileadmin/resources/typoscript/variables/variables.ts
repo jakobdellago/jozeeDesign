@@ -9,7 +9,7 @@ page.10.variables {
           <a href="/index.php?id=1" class="first">
               <img src="fileadmin\resources\images\logo.jpg" title="JozeeDesign" alt="Logo" class="logo">
           </a>
-          <div class="center">
+          <div class="center"> 
           <li>|</li> |*| <li>|</li> |*| </div><li class="last">|</li>
         )
         stdWrap.cObject = CASE
@@ -36,10 +36,10 @@ page.10.variables {
           }
         }
       }
-      1.ACT = 1
-      1.ACT {
-        wrapItemAndSub = <li class="active">|</li>
-      }
+      #1.ACT = 1
+      #1.ACT {
+      #  wrapItemAndSub = <li class="active">|</li>
+      #}
     }
     
     MOBILEMENU = HMENU
