@@ -307,12 +307,6 @@ AddDefaultCharset utf-8
 	RewriteCond %{REQUEST_FILENAME} !-l
 	RewriteRule ^.*$ %{ENV:CWD}index.php [QSA,L]
 
-	# cooluri config
-	RewriteRule ^/(typo3|typo3temp|typo3conf|t3lib|tslib|fileadmin|uploads|showpic\.php)$ - [L]
-	RewriteRule ^/(typo3|typo3temp|typo3conf|t3lib|tslib|fileadmin|uploads|showpic\.php)/.*$ - [L]
-	
-	RewriteRule .* index.php
-
 </IfModule>
 
 # Access block for files

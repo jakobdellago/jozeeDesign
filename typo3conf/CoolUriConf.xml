@@ -16,7 +16,7 @@
       <!-- the status has to meet HTTP protocol header -->
       <pagenotfound>
         <status>HTTP/1.0 404 Not Found</status>
-        <behavior type="redirect">http://www.jozeedesign.at</behavior>
+        <behavior type="userfunc">Bednarik\Cooluri\Integration\Cooluri->pageNotFound</behavior>
       </pagenotfound>
       <!-- possible @type values: 
         page - will show a file (loaded using file_get_contents)
