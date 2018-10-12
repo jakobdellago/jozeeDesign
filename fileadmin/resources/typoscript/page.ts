@@ -6,6 +6,7 @@ page {
         includeCSS {
           file1 = fileadmin/resources/css/main.css
         }
+
         headerData {
             10 = TEXT
             10.value = <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
@@ -42,8 +43,35 @@ page {
             140.value = <meta property="og:description" content="Wunderbar fein! Viel geht hinein, mit dir nie allein, du Lieblingsrucksack. Huckepack!" />
             150 = TEXT
             150.value = <meta property="og:image" content="http://www.jozeedesign.at/fileadmin/resources/images/logo_color.png" /> 
-            150 = TEXT
-            150.value = <meta property="og:locale" content="de_AT" />
+            160 = TEXT
+            160.value = <meta property="og:locale" content="de_AT" />
+             
+
+
+            # Gibt die Spalte "normal" (colPos = 0) aus
+            170 < styles.content.get
+            170.renderObj = COA
+            170.renderObj {
+               # Jedes Content Element wrappen
+               stdWrap.wrap = <meta property="og:imgtest" content="|" />
+             
+              #Bild auslesen
+              20 = FILES
+              20 {
+                 references {
+                    table = tt_content
+                    uid.data = field:uid
+                    fieldName = image
+                 }
+                    
+
+
+                 renderObj = IMG_RESOURCE
+                 renderObj.file.import.data = file:current:uid
+              }
+           }
+        
+           
         }
             
         10 = FLUIDTEMPLATE
