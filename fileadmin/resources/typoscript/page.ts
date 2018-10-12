@@ -41,20 +41,19 @@ page {
             130.value = <meta property="og:title" content="Jozee Design" />
             140 = TEXT
             140.value = <meta property="og:description" content="Wunderbar fein! Viel geht hinein, mit dir nie allein, du Lieblingsrucksack. Huckepack!" />
-            150 = TEXT
-            150.value = <meta property="og:image" content="http://www.jozeedesign.at/fileadmin/resources/images/logo_color.png" /> 
+            #150 = TEXT
+            #150.value = <meta property="og:image" content="http://www.jozeedesign.at/fileadmin/resources/images/logo_color.png" /> 
             160 = TEXT
             160.value = <meta property="og:locale" content="de_AT" />
-             
-
 
             # Gibt die Spalte "normal" (colPos = 0) aus
             # Gibt die Spalte "normal" (colPos = 0) aus
             170 < styles.content.get
+            170.select.max = 1
             170.renderObj = COA
             170.renderObj {
                # Jedes Content Element wrappen
-               stdWrap.wrap = <meta property="og:imgtest" content="|" />
+               stdWrap.wrap = <meta property="og:image" content="|" />
                 stdWrap.override = http://www.jozeedesign.at/fileadmin/resources/images/logo_color.png
                 stdWrap.override.if.value.field = CType
                 stdWrap.override.if.equals = mask_product
@@ -74,7 +73,12 @@ page {
                  renderObj = IMG_RESOURCE
                  renderObj.file.import.data = file:current:uid
               }
-           }
+            }
+
+            171 = TEXT
+            171.value = <meta property="og:image:width" content="400" />
+            172 = TEXT
+            172.value = <meta property="og:image:height" content="300" />
         
            
         }

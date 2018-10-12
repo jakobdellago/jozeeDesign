@@ -1,7 +1,8 @@
 #TODOS:
 think about a typo3 and database backup system
 analytics einbauen
-open graph für facebook usw anpassen -> evtl. für jede einzelne Seite anpassen
+open graph für facebook anpassen -> evtl. für jede einzelne Seite anpassen
+open graph: kompatibilität mit instagram checken -> am ende sollte es für instagram und facebook funktionieren
 cookiebanner einbauen, Impressumtext einbauen
 backend-benutzer für Johanna anlegen
 caching aktivieren für schnelleres laden
@@ -34,4 +35,5 @@ soll ich einen social media button noch iwo installieren? bis jetzt ist er nur i
 #das muss ich ihr sagen:
 die produktbilder am besten alle im gleichen Format einpflegen
 ihr erklären, welche kombinationen bei product_link funktionieren und welche nicht
-sie darf den produkten in der produktpalette nicht die gleichen namen geben wegen cooluri
+sie darf seiten nicht die gleichen namen geben wegen realurl
+sie kann seiten (vor allem für produkte interessant) mit og auf facebook (und auch anderen netzen?) teilen
