@@ -66,7 +66,7 @@
                   }
             }
 
-##WORKS!
+##works
 # Gibt die Spalte "normal" (colPos = 0) aus
             170 < styles.content.get
             170.renderObj = COA
@@ -89,3 +89,63 @@
                  renderObj.file.import.data = file:current:uid
               }
            }
+
+
+           ###works even nicer
+            # Gibt die Spalte "normal" (colPos = 0) aus
+            # Gibt die Spalte "normal" (colPos = 0) aus
+            170 < styles.content.get
+            170.renderObj = COA
+            170.renderObj {
+               # Jedes Content Element wrappen
+               stdWrap.wrap = <meta property="og:imgtest" content="|" />
+                stdWrap.override.field = subheader
+                stdWrap.override.if.isTrue.field = subheader
+                stdWrap.override.wrap = <h2>Untertitel: |</h2>
+
+              #Bild auslesen
+              20 = FILES
+              20 {
+                 references {
+                    table = tt_content
+                    uid.data = field:uid
+                    fieldName = image
+                 }
+                    
+
+
+                 renderObj = IMG_RESOURCE
+                 renderObj.file.import.data = file:current:uid
+              }
+           }
+
+
+##WOOOORKS BEST!!
+                       # Gibt die Spalte "normal" (colPos = 0) aus
+            # Gibt die Spalte "normal" (colPos = 0) aus
+            170 < styles.content.get
+            170.renderObj = COA
+            170.renderObj {
+               # Jedes Content Element wrappen
+               stdWrap.wrap = <meta property="og:imgtest" content="|" />
+                stdWrap.override = http://www.jozeedesign.at/fileadmin/resources/images/logo_color.png
+                stdWrap.override.if.value.field = CType
+                stdWrap.override.if.equals = mask_product
+                stdWrap.override.if.negate = 1
+
+              #Bild auslesen
+              20 = FILES
+              20 {
+                 references {
+                    table = tt_content
+                    uid.data = field:uid
+                    fieldName = image
+                 }
+                    
+
+
+                 renderObj = IMG_RESOURCE
+                 renderObj.file.import.data = file:current:uid
+              }
+           }
+        
