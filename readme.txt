@@ -8,6 +8,7 @@ backend-benutzer für Johanna anlegen
 caching aktivieren für schnelleres laden
 404-Seite konfigurieren
 später muss ich mir die option offen lassen, meinen namen einzufügen
+webseite in google console einfügen
 
 #ask johanna for:
 header and footer-image in better quality for the presentation
@@ -19,6 +20,7 @@ make selectbox(shufflejs) work together with slickslider -> look at mask-element
 product-detail: add shop-icon
 autoslide stoppen funzt nicht wie gewollt.. slick slider fährt immer wieder zurück
 slick slider cropping austauschen -> soll immer bei ganzen Wörtern croppen 
+bei "weitere-produkte" auf der produkt-detailseite darf nicht das selbe produkt wie oben aufscheinen
 
 #maybe to do:
 contentelemente nur auf brauchbare colpos anzeigen

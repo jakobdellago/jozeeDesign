@@ -8,6 +8,20 @@ page {
         }
 
         headerData {
+
+            5 = TEXT
+            5.value(
+                            <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127411549-1"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', 'UA-127411549-1');
+                </script>
+            )
+
             10 = TEXT
             10.value = <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
             
@@ -46,6 +60,9 @@ page {
             160 = TEXT
             160.value = <meta property="og:locale" content="de_AT" />
 
+            165 = TEXT
+            165.value = <meta property="fb:app_id" content="288028015138308" />
+
             # Gibt die Spalte "normal" (colPos = 0) aus
             # Gibt die Spalte "normal" (colPos = 0) aus
             170 < styles.content.get
@@ -53,7 +70,7 @@ page {
             170.renderObj = COA
             170.renderObj {
                # Jedes Content Element wrappen
-               stdWrap.wrap = <meta property="og:image" content="|" />
+               stdWrap.wrap = <meta property="og:image" content="/|" />
                 stdWrap.override = http://www.jozeedesign.at/fileadmin/resources/images/logo_color.png
                 stdWrap.override.if.value.field = CType
                 stdWrap.override.if.equals = mask_product
