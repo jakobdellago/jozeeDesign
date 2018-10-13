@@ -323,6 +323,11 @@ img {
   height: auto;
   display: block; }
 
+a {
+  color: #b4b048; }
+  a:hover {
+    cursor: pointer; }
+
 .hidden {
   display: none !important;
   visibility: hidden !important; }
@@ -1362,3 +1367,26 @@ BOLD
     height: 2px;
     width: 300px;
     margin: 0 auto; }
+
+.cookiebanner {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  margin: 10px;
+  left: 0;
+  bottom: 0;
+  width: 20%;
+  z-index: 10;
+  background-color: #fff;
+  border: 1px solid #b4b048;
+  padding: 10px; }
+  .cookiebanner .text p {
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif; }
+  .cookiebanner .icon-close {
+    color: #000;
+    font-size: 2rem;
+    margin-left: 20px; }
+    .cookiebanner .icon-close:hover {
+      cursor: pointer;
+      color: #b4b048; }

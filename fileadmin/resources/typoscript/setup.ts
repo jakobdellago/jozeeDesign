@@ -7,6 +7,7 @@
 #config.tx_cooluri_enable = 1
 #config.redirectOldLinksToNew = 1
 
+#REALURL CONFIGURATION
  config.tx_realurl_enable = 1
  config.absRefPrefix = /
  # dont forget to set the allowed range, here 0-3; otherwise anything else could be inserted

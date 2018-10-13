@@ -2,14 +2,99 @@ $ = require ('jquery');
 slick = require('slick-carousel');
 window.truncate = require('html-truncate');
 window.Shuffle = require('shufflejs');
+window.Cookies = require('js-cookie');
 
 function setSlickTransform($slider) {
 	var $slick_track = $slider.find('.slick-track')
 	var width_before = $slick_track.css('transform');
 }
 
+function enableAnalytics() {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-127411549-1');
+
+	//ANALYTICS EVENTS BEGIN
+	//FOOTER BEGIN
+	$('.facebook-link').click(function() {
+		var url = $(this).attr('href');
+
+		gtag('event', 'facebook', {
+		  'event_category': 'social-media',
+		  'event_label': url
+		});
+	});
+
+	$('.instagram-link').click(function() {
+		var url = $(this).attr('href');
+
+		gtag('event', 'instagram', {
+		  'event_category': 'social-media',
+		  'event_label': url
+		});
+	});
+
+	$('.phone-link').click(function() {
+		var phone_number = $(this).attr('href');
+		
+		gtag('event', 'position:footer', {
+		  'event_category': 'click-to-call',
+		  'event_label': phone_number
+		});
+
+	});
+
+	$('.footer .mail-link').click(function() {
+		var mail_address = $(this).attr('href');
+
+		gtag('event', 'position:footer', {
+		  'event_category': 'click-to-mail',
+		  'event_label': mail_address
+		});
+	});
+	//FOOTER END
+
+	//OUTBOUND TO SHOP from menu
+	$('.mobile-nav li.last a, .main-nav li.last a').click(function() {
+		gtag('event', 'position:nav-menu', {
+		  'event_category': 'outbound-to-shop',
+		});
+	});
+
+	//OUTBOUND TO SHOP from product-detail
+	$('.product-detail .shop-link').click(function() {
+		var product_name = $('.product-detail .header').text();
+		var product_price = parseInt($('.product-detail .price').text());
+
+		gtag('event', 'shop', {
+		  'event_category': 'product-detail',
+		  'event_label': product_name,
+		  'value': product_price
+		});
+	});
+
+	//MAIL from product-detail
+	$('.product-detail .mail-link').click(function() {
+		var product_name = $('.product-detail .header').text();
+		var product_price = parseInt($('.product-detail .price').text());
+
+		gtag('event', 'mail', {
+		  'event_category': 'product-detail',
+		  'event_label': product_name,
+		  'value': product_price
+		});
+	});
+
+	//ANALYTICS EVENTS END
+}
+
 $(document).ready(function() {
 
+	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
+	var $small_slider = $('.product-link.slider.small .product-list-wrapper');
+
+	//shufflejs config
 	if($('.product-link.selectbox').length > 0) {
 		
 		$('.selectbox-wrapper select').on('change', function(){
@@ -34,9 +119,6 @@ $(document).ready(function() {
 
 		window.shuffleInstance = shuffleInstance;
 	}
-
-	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
-	var $small_slider = $('.product-link.slider.small .product-list-wrapper');
 	
 	//menu opener
 	$('.menu-opener').click( function(){
@@ -51,6 +133,7 @@ $(document).ready(function() {
 	  e.preventDefault();
 	});
 
+	//add scrolled class to navigation
 	$(window).scroll(function() {
 		var top  = window.pageYOffset || document.documentElement.scrollTop;
 		if (top > 70) {
@@ -148,78 +231,18 @@ $(document).ready(function() {
 		});
 	}
 
-	//ANALYTICS EVENTS BEGIN
-	//FOOTER BEGIN
-	$('.facebook-link').click(function() {
-		var url = $(this).attr('href');
-
-		gtag('event', 'facebook', {
-		  'event_category': 'social-media',
-		  'event_label': url
-		});
+	//Cookiebanner behaviour
+	$(document).click(function() {
+		Cookies.set('cookies_accepted', 'true', { expires: 365 });
+		enableAnalytics();
+	});
+	if( Cookies.get('cookies_accepted') === 'true') {
+		enableAnalytics();
+	}
+	$('.cookiebanner .icon-close').click(function() {
+		$('.cookiebanner').addClass('hidden');
 	});
 
-	$('.instagram-link').click(function() {
-		var url = $(this).attr('href');
-
-		gtag('event', 'instagram', {
-		  'event_category': 'social-media',
-		  'event_label': url
-		});
-	});
-
-	$('.phone-link').click(function() {
-		var phone_number = $(this).attr('href');
-		
-		gtag('event', 'position:footer', {
-		  'event_category': 'click-to-call',
-		  'event_label': phone_number
-		});
-
-	});
-
-	$('.footer .mail-link').click(function() {
-		var mail_address = $(this).attr('href');
-
-		gtag('event', 'position:footer', {
-		  'event_category': 'click-to-mail',
-		  'event_label': mail_address
-		});
-	});
-	//FOOTER END
-
-	//OUTBOUND TO SHOP from menu
-	$('.mobile-nav li.last a, .main-nav li.last a').click(function() {
-		gtag('event', 'position:nav-menu', {
-		  'event_category': 'outbound-to-shop',
-		});
-	});
-
-	//OUTBOUND TO SHOP from product-detail
-	$('.product-detail .shop-link').click(function() {
-		var product_name = $('.product-detail .header').text();
-		var product_price = parseInt($('.product-detail .price').text());
-
-		gtag('event', 'shop', {
-		  'event_category': 'product-detail',
-		  'event_label': product_name,
-		  'value': product_price
-		});
-	});
-
-	//MAIL from product-detail
-	$('.product-detail .mail-link').click(function() {
-		var product_name = $('.product-detail .header').text();
-		var product_price = parseInt($('.product-detail .price').text());
-
-		gtag('event', 'mail', {
-		  'event_category': 'product-detail',
-		  'event_label': product_name,
-		  'value': product_price
-		});
-	});
-
-	//ANALYTICS EVENTS END
 
 });
 

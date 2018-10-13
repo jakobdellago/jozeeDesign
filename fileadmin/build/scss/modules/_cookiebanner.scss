@@ -1,0 +1,28 @@
+.cookiebanner {
+    display: flex;
+    align-items: center;
+	position: fixed;
+    margin: 10px;
+    left: 0;
+    bottom: 0;
+    width: 20%;
+    z-index: 10;
+    background-color: #fff;
+    border: 1px solid #b4b048;
+    padding: 10px;
+	.text {
+		p {
+			font-size: 1.3rem;
+    		font-family: 'Montserrat', sans-serif;
+		}
+	}
+	.icon-close {
+		color: #000;
+    	font-size: 2rem;
+    	margin-left: 20px;
+    	&:hover {
+    		cursor: pointer;
+    		color: #b4b048;
+    	}
+	}
+}

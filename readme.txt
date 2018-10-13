@@ -1,6 +1,5 @@
 #TODOS:
 think about a typo3 and database backup system
-analytics einbauen
 open graph für facebook anpassen -> evtl. für jede einzelne Seite anpassen
 open graph: kompatibilität mit instagram checken -> am ende sollte es für instagram und facebook funktionieren
 cookiebanner einbauen, Impressumtext einbauen
@@ -24,6 +23,7 @@ bei "weitere-produkte" auf der produkt-detailseite darf nicht das selbe produkt 
 
 #maybe to do:
 contentelemente nur auf brauchbare colpos anzeigen
+kontrollieren ob alles dsgvo-mäßig passt
 
 #known issues:
 die unterseite des ersten menüpunktes funktioniert im desktop-view nicht richtig
@@ -39,3 +39,5 @@ die produktbilder am besten alle im gleichen Format einpflegen
 ihr erklären, welche kombinationen bei product_link funktionieren und welche nicht
 sie darf seiten nicht die gleichen namen geben wegen realurl
 sie kann seiten (vor allem für produkte interessant) mit og auf facebook (und auch anderen netzen?) teilen
+analytics erklären
+Sie muss den Impressumstext selbst einpflegen

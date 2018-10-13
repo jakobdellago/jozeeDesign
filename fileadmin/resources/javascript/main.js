@@ -3,14 +3,99 @@ $ = require ('jquery');
 slick = require('slick-carousel');
 window.truncate = require('html-truncate');
 window.Shuffle = require('shufflejs');
+window.Cookies = require('js-cookie');
 
 function setSlickTransform($slider) {
 	var $slick_track = $slider.find('.slick-track')
 	var width_before = $slick_track.css('transform');
 }
 
+function enableAnalytics() {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-127411549-1');
+
+	//ANALYTICS EVENTS BEGIN
+	//FOOTER BEGIN
+	$('.facebook-link').click(function() {
+		var url = $(this).attr('href');
+
+		gtag('event', 'facebook', {
+		  'event_category': 'social-media',
+		  'event_label': url
+		});
+	});
+
+	$('.instagram-link').click(function() {
+		var url = $(this).attr('href');
+
+		gtag('event', 'instagram', {
+		  'event_category': 'social-media',
+		  'event_label': url
+		});
+	});
+
+	$('.phone-link').click(function() {
+		var phone_number = $(this).attr('href');
+		
+		gtag('event', 'position:footer', {
+		  'event_category': 'click-to-call',
+		  'event_label': phone_number
+		});
+
+	});
+
+	$('.footer .mail-link').click(function() {
+		var mail_address = $(this).attr('href');
+
+		gtag('event', 'position:footer', {
+		  'event_category': 'click-to-mail',
+		  'event_label': mail_address
+		});
+	});
+	//FOOTER END
+
+	//OUTBOUND TO SHOP from menu
+	$('.mobile-nav li.last a, .main-nav li.last a').click(function() {
+		gtag('event', 'position:nav-menu', {
+		  'event_category': 'outbound-to-shop',
+		});
+	});
+
+	//OUTBOUND TO SHOP from product-detail
+	$('.product-detail .shop-link').click(function() {
+		var product_name = $('.product-detail .header').text();
+		var product_price = parseInt($('.product-detail .price').text());
+
+		gtag('event', 'shop', {
+		  'event_category': 'product-detail',
+		  'event_label': product_name,
+		  'value': product_price
+		});
+	});
+
+	//MAIL from product-detail
+	$('.product-detail .mail-link').click(function() {
+		var product_name = $('.product-detail .header').text();
+		var product_price = parseInt($('.product-detail .price').text());
+
+		gtag('event', 'mail', {
+		  'event_category': 'product-detail',
+		  'event_label': product_name,
+		  'value': product_price
+		});
+	});
+
+	//ANALYTICS EVENTS END
+}
+
 $(document).ready(function() {
 
+	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
+	var $small_slider = $('.product-link.slider.small .product-list-wrapper');
+
+	//shufflejs config
 	if($('.product-link.selectbox').length > 0) {
 		
 		$('.selectbox-wrapper select').on('change', function(){
@@ -35,9 +120,6 @@ $(document).ready(function() {
 
 		window.shuffleInstance = shuffleInstance;
 	}
-
-	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
-	var $small_slider = $('.product-link.slider.small .product-list-wrapper');
 	
 	//menu opener
 	$('.menu-opener').click( function(){
@@ -52,6 +134,7 @@ $(document).ready(function() {
 	  e.preventDefault();
 	});
 
+	//add scrolled class to navigation
 	$(window).scroll(function() {
 		var top  = window.pageYOffset || document.documentElement.scrollTop;
 		if (top > 70) {
@@ -149,83 +232,23 @@ $(document).ready(function() {
 		});
 	}
 
-	//ANALYTICS EVENTS BEGIN
-	//FOOTER BEGIN
-	$('.facebook-link').click(function() {
-		var url = $(this).attr('href');
-
-		gtag('event', 'facebook', {
-		  'event_category': 'social-media',
-		  'event_label': url
-		});
+	//Cookiebanner behaviour
+	$(document).click(function() {
+		Cookies.set('cookies_accepted', 'true', { expires: 365 });
+		enableAnalytics();
+	});
+	if( Cookies.get('cookies_accepted') === 'true') {
+		enableAnalytics();
+	}
+	$('.cookiebanner .icon-close').click(function() {
+		$('.cookiebanner').addClass('hidden');
 	});
 
-	$('.instagram-link').click(function() {
-		var url = $(this).attr('href');
-
-		gtag('event', 'instagram', {
-		  'event_category': 'social-media',
-		  'event_label': url
-		});
-	});
-
-	$('.phone-link').click(function() {
-		var phone_number = $(this).attr('href');
-		
-		gtag('event', 'position:footer', {
-		  'event_category': 'click-to-call',
-		  'event_label': phone_number
-		});
-
-	});
-
-	$('.footer .mail-link').click(function() {
-		var mail_address = $(this).attr('href');
-
-		gtag('event', 'position:footer', {
-		  'event_category': 'click-to-mail',
-		  'event_label': mail_address
-		});
-	});
-	//FOOTER END
-
-	//OUTBOUND TO SHOP from menu
-	$('.mobile-nav li.last a, .main-nav li.last a').click(function() {
-		gtag('event', 'position:nav-menu', {
-		  'event_category': 'outbound-to-shop',
-		});
-	});
-
-	//OUTBOUND TO SHOP from product-detail
-	$('.product-detail .shop-link').click(function() {
-		var product_name = $('.product-detail .header').text();
-		var product_price = parseInt($('.product-detail .price').text());
-
-		gtag('event', 'shop', {
-		  'event_category': 'product-detail',
-		  'event_label': product_name,
-		  'value': product_price
-		});
-	});
-
-	//MAIL from product-detail
-	$('.product-detail .mail-link').click(function() {
-		var product_name = $('.product-detail .header').text();
-		var product_price = parseInt($('.product-detail .price').text());
-
-		gtag('event', 'mail', {
-		  'event_category': 'product-detail',
-		  'event_label': product_name,
-		  'value': product_price
-		});
-	});
-
-	//ANALYTICS EVENTS END
 
 });
 
 
-},{"html-truncate":2,"jquery":3,"shufflejs":4,"slick-carousel":5}],2:[function(require,module,exports){
+},{"html-truncate":2,"jquery":3,"js-cookie":4,"shufflejs":5,"slick-carousel":6}],2:[function(require,module,exports){
 /**
  * Truncate HTML string and keep tag safe.
  *
@@ -10827,6 +10850,173 @@ return jQuery;
 } );
 
 },{}],4:[function(require,module,exports){
+/*!
+ * JavaScript Cookie v2.2.0
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+;(function (factory) {
+	var registeredInModuleLoader = false;
+	if (typeof define === 'function' && define.amd) {
+		define(factory);
+		registeredInModuleLoader = true;
+	}
+	if (typeof exports === 'object') {
+		module.exports = factory();
+		registeredInModuleLoader = true;
+	}
+	if (!registeredInModuleLoader) {
+		var OldCookies = window.Cookies;
+		var api = window.Cookies = factory();
+		api.noConflict = function () {
+			window.Cookies = OldCookies;
+			return api;
+		};
+	}
+}(function () {
+	function extend () {
+		var i = 0;
+		var result = {};
+		for (; i < arguments.length; i++) {
+			var attributes = arguments[ i ];
+			for (var key in attributes) {
+				result[key] = attributes[key];
+			}
+		}
+		return result;
+	}
+
+	function init (converter) {
+		function api (key, value, attributes) {
+			var result;
+			if (typeof document === 'undefined') {
+				return;
+			}
+
+			// Write
+
+			if (arguments.length > 1) {
+				attributes = extend({
+					path: '/'
+				}, api.defaults, attributes);
+
+				if (typeof attributes.expires === 'number') {
+					var expires = new Date();
+					expires.setMilliseconds(expires.getMilliseconds() + attributes.expires * 864e+5);
+					attributes.expires = expires;
+				}
+
+				// We're using "expires" because "max-age" is not supported by IE
+				attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
+
+				try {
+					result = JSON.stringify(value);
+					if (/^[\{\[]/.test(result)) {
+						value = result;
+					}
+				} catch (e) {}
+
+				if (!converter.write) {
+					value = encodeURIComponent(String(value))
+						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+				} else {
+					value = converter.write(value, key);
+				}
+
+				key = encodeURIComponent(String(key));
+				key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
+				key = key.replace(/[\(\)]/g, escape);
+
+				var stringifiedAttributes = '';
+
+				for (var attributeName in attributes) {
+					if (!attributes[attributeName]) {
+						continue;
+					}
+					stringifiedAttributes += '; ' + attributeName;
+					if (attributes[attributeName] === true) {
+						continue;
+					}
+					stringifiedAttributes += '=' + attributes[attributeName];
+				}
+				return (document.cookie = key + '=' + value + stringifiedAttributes);
+			}
+
+			// Read
+
+			if (!key) {
+				result = {};
+			}
+
+			// To prevent the for loop in the first place assign an empty array
+			// in case there are no cookies at all. Also prevents odd result when
+			// calling "get()"
+			var cookies = document.cookie ? document.cookie.split('; ') : [];
+			var rdecode = /(%[0-9A-Z]{2})+/g;
+			var i = 0;
+
+			for (; i < cookies.length; i++) {
+				var parts = cookies[i].split('=');
+				var cookie = parts.slice(1).join('=');
+
+				if (!this.json && cookie.charAt(0) === '"') {
+					cookie = cookie.slice(1, -1);
+				}
+
+				try {
+					var name = parts[0].replace(rdecode, decodeURIComponent);
+					cookie = converter.read ?
+						converter.read(cookie, name) : converter(cookie, name) ||
+						cookie.replace(rdecode, decodeURIComponent);
+
+					if (this.json) {
+						try {
+							cookie = JSON.parse(cookie);
+						} catch (e) {}
+					}
+
+					if (key === name) {
+						result = cookie;
+						break;
+					}
+
+					if (!key) {
+						result[name] = cookie;
+					}
+				} catch (e) {}
+			}
+
+			return result;
+		}
+
+		api.set = api;
+		api.get = function (key) {
+			return api.call(api, key);
+		};
+		api.getJSON = function () {
+			return api.apply({
+				json: true
+			}, [].slice.call(arguments));
+		};
+		api.defaults = {};
+
+		api.remove = function (key, attributes) {
+			api(key, '', extend(attributes, {
+				expires: -1
+			}));
+		};
+
+		api.withConverter = init;
+
+		return api;
+	}
+
+	return init(function () {});
+}));
+
+},{}],5:[function(require,module,exports){
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -13089,7 +13279,7 @@ return jQuery;
 })));
 
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___

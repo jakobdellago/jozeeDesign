@@ -1,8 +1,14 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{v:content.get(column: 100, pageUid: 1, limit: 1) -> f:variable(name: 'general_data')}
 
 <html>
 
     <body>
+    	<div class="cookiebanner">
+    		<f:render partial="Cookiebanner" arguments="{cookiebanner_text: general_data.0.bodytext}"/> 
+    	</div>
+
+
       	<div class="main-container">
 
 			<div class="main-nav">
@@ -34,7 +40,6 @@
 				</v:condition.iterator.contains>
 			</div>
 
-			{v:content.get(column: 100, pageUid: 1, limit: 1) -> f:variable(name: 'general_data')}
 			<f:render partial="footer" arguments="{general_data: general_data.0}"/> 
 		</div>
 		<script src="http://jozeedesign.at/fileadmin/resources/javascript/main.js"></script>

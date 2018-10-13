@@ -25,6 +25,13 @@ img {
 	display: block;
 }
 
+a {
+	color: #b4b048;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
 .hidden {
 	display: none!important;
 	visibility: hidden!important;
