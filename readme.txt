@@ -1,11 +1,11 @@
 #TODOS:
 think about a typo3 and database backup system
-open graph für facebook anpassen -> evtl. für jede einzelne Seite anpassen
 open graph: kompatibilität mit instagram checken -> am ende sollte es für instagram und facebook funktionieren
-cookiebanner einbauen, Impressumtext einbauen
+open graph facebook ausbessern
+Recherche zu facebook pixel
+cookiebanner einbauen
 backend-benutzer für Johanna anlegen
 caching aktivieren für schnelleres laden
-404-Seite konfigurieren
 später muss ich mir die option offen lassen, meinen namen einzufügen
 webseite in google console einfügen
 
@@ -33,6 +33,7 @@ curator -> stoppt ab 2000 views
 wie tun mit den textboxen? soll mehr-button beibehalten werden? Wie lange werden ihre Texte sein?
 passt das favicon oder lieber das andere?
 soll ich einen social media button noch iwo installieren? bis jetzt ist er nur im footer
+Cookiebanner sagt bis jetzt nur, dass man, falls man die webseite benutzt, automatisch den cookies zustimmt
 
 #das muss ich ihr sagen:
 die produktbilder am besten alle im gleichen Format einpflegen
