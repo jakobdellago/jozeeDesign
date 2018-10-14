@@ -166,7 +166,9 @@ $(document).ready(function() {
 
 	$('.cookiebanner .icon-close').click(function() {
 		$('.cookiebanner').addClass('hidden');
-		Cookies.set('show_cookiebanner', 1, { expires: 365 });
+		if (show_cookiebanner === true){
+			Cookies.set('show_cookiebanner', 1, { expires: 365 });
+		}
 	});
 
 

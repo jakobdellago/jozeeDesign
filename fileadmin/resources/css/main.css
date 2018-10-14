@@ -1375,13 +1375,12 @@ BOLD
   margin: 10px;
   left: 0;
   bottom: 0;
-  width: 20%;
   z-index: 10;
   background-color: #fff;
   border: 1px solid #b4b048;
   padding: 10px; }
   .cookiebanner .text p {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: 'Montserrat', sans-serif; }
   .cookiebanner .icon-close {
     color: #000;
@@ -1390,3 +1389,13 @@ BOLD
     .cookiebanner .icon-close:hover {
       cursor: pointer;
       color: #b4b048; }
+
+@media screen and (min-width: 812px) {
+  .cookiebanner .text p {
+    font-size: 1.2rem; } }
+
+@media screen and (min-width: 1280px) {
+  .cookiebanner {
+    width: 20%; }
+    .cookiebanner .text p {
+      font-size: 1.3rem; } }

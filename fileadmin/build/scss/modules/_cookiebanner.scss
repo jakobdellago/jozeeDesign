@@ -5,14 +5,13 @@
     margin: 10px;
     left: 0;
     bottom: 0;
-    width: 20%;
     z-index: 10;
     background-color: #fff;
     border: 1px solid #b4b048;
     padding: 10px;
 	.text {
 		p {
-			font-size: 1.3rem;
+			font-size: 1rem;
     		font-family: 'Montserrat', sans-serif;
 		}
 	}
@@ -24,5 +23,26 @@
     		cursor: pointer;
     		color: #b4b048;
     	}
+	}
+}
+
+@media screen and (min-width: $tablet){
+	.cookiebanner {
+		.text {
+			p {
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $desktop){
+	.cookiebanner {
+		width: 20%;
+		.text {
+			p {
+				font-size: 1.3rem;
+			}
+		}
 	}
 }
