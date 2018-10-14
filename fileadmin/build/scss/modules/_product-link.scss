@@ -10,7 +10,7 @@
 			border-top: 1px dotted #666;
 			border-bottom: 1px dotted #666;
 			padding: 15px 0;
-			width: 300px;
+			width: auto;
 			margin: 0 auto;
 		}
 	}
@@ -111,6 +111,7 @@
 		.upper-header-wrapper {
 			.upper-header {
 				font-size: 1.8rem;
+				width: 300px;
 			}
 		}
 		.selectbox-wrapper {

@@ -1083,7 +1083,7 @@ BOLD
     border-top: 1px dotted #666;
     border-bottom: 1px dotted #666;
     padding: 15px 0;
-    width: 300px;
+    width: auto;
     margin: 0 auto; }
 
 .product-link .selectbox-wrapper {
@@ -1177,7 +1177,8 @@ BOLD
 
 @media only screen and (min-width: 812px) {
   .product-link .upper-header-wrapper .upper-header {
-    font-size: 1.8rem; }
+    font-size: 1.8rem;
+    width: 300px; }
   .product-link .selectbox-wrapper .custom-select option {
     text-transform: uppercase;
     font-size: 1.4rem; }
@@ -1365,8 +1366,16 @@ BOLD
   .separator-wrapper .separator {
     border-bottom: 1px dotted #000;
     height: 2px;
-    width: 300px;
+    width: auto;
     margin: 0 auto; }
+
+@media screen and (min-width: 812px) {
+  .separator-wrapper .separator {
+    width: 300px; } }
+
+@media screen and (min-width: 1280px) {
+  .separator-wrapper .separator {
+    width: 500px; } }
 
 .cookiebanner {
   display: flex;
@@ -1392,7 +1401,7 @@ BOLD
 
 @media screen and (min-width: 812px) {
   .cookiebanner .text p {
-    font-size: 1.2rem; } }
+    font-size: 1.1rem; } }
 
 @media screen and (min-width: 1280px) {
   .cookiebanner {

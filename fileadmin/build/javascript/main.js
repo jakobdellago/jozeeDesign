@@ -11,6 +11,19 @@ function setSlickTransform($slider) {
 
 $(document).ready(function() {
 
+	//remove the product in slider where product is shown on page 
+	if($('.main-container.product-detail-page').length > 0){
+		var product_detail_header = $('.main-container.product-detail-page .product-detail .header').text();
+		var $products = $('.product-link.small .product');
+		$.each($products, function( key, value ){
+			$this = $(this);
+			var product_slider_header = $this.find('.header').text();
+			if (product_detail_header === product_slider_header) {
+				$this.remove();
+			}
+		});
+	}
+
 	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
 	var $small_slider = $('.product-link.slider.small .product-list-wrapper');
 
@@ -111,11 +124,13 @@ $(document).ready(function() {
 		}, true)
     });*/
 
+    //crop product-slider description-text
 	$('.product-link.large').find('.product').each(function(){
 		$bodytext = $(this).find('.bodytext');
 		var croppedText = truncate($bodytext.html(), 200);
 		$bodytext.html(croppedText);
 	});
+	
 
 	if($('#curator-feed').length > 0) {
 		/* curator-feed */

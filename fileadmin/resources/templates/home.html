@@ -8,8 +8,14 @@
     		<f:render partial="Cookiebanner" arguments="{cookiebanner_text: general_data.0.bodytext}"/> 
     	</div>
 
-
-      	<div class="main-container">
+			<v:condition.iterator.contains needle="8" haystack="{v:page.rootline() -> v:iterator.extract(key: 'uid')}">
+   				<f:then>
+   					<div class="main-container product-detail-page">
+   				</f:then>
+   				<f:else>
+   					<div class="main-container">
+   				</f:else>
+			</v:condition.iterator.contains>
 
 			<div class="main-nav">
 				<f:format.raw>{MAINMENU}</f:format.raw>
