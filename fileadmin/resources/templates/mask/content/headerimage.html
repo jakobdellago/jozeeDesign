@@ -1,8 +1,30 @@
 <div class="header-slider">
-	
+
+
 	<f:if condition="{data.image}">
 		<f:for each="{data.image}" as="file">
-			<f:image image="{file}" alt="{file.alternative}" title="{file.title}" width="1920c"/>
+
+			<picture class="picture">
+		        <source 
+		        	media="(max-width: 812px)" 
+		        	srcset="{f:uri.image(image:'{file}', width:'812c', treatIdAsReference:'1')}, 
+		        			{f:uri.image(image:'{file}', width:'1624', treatIdAsReference:'1')} 2x"
+		        >
+
+		        <source 
+		            media="(max-width: 1280px)" 
+		            srcset="{f:uri.image(image:'{file}', width:'1280c', treatIdAsReference:'1')}, 
+		                    {f:uri.image(image:'{file}', width:'1920c', treatIdAsReference:'1')} 2x"
+		        >
+
+		        <f:image image="{file}"
+		            width="1920c"
+		            title="jozeeDesign"
+		            alt="jozeeDesign"
+		            treatIdAsReference="1"
+		        />
+			</picture>
+
 		</f:for>
 	</f:if>
 

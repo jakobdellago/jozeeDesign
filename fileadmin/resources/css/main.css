@@ -890,7 +890,8 @@ BOLD
       text-transform: uppercase;
       border-radius: 2px;
       font-family: merriweather, arial;
-      padding: 16px; }
+      padding: 16px;
+      text-decoration: none; }
       .product .shop-link .shop-button span,
       .product .shop-link .mail-button span,
       .product .mail-link .shop-button span,

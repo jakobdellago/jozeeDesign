@@ -1,14 +1,15 @@
 # TODOS:
+* Sitemap erstellen
+* Bilder, css und js komprimieren -> siehe pagespeed insights
+* caching aktivieren für schnelleres laden
 * think about a typo3 and database backup system
 * open graph: kompatibilität mit instagram checken -> am ende sollte es für instagram und facebook funktionieren
 * open graph facebook ausbessern
 * Recherche zu facebook pixel
-* caching aktivieren für schnelleres laden
 * webseite in google console einfügen
 
 ## smaller fixes:
 * product-detail: add shop-icon -> Siehe Punkt "Johanna fragen"
-* product-detail, mailanfrage: desktop -> cursor pointer wird links und rechts auch außerhalb der buttons angezeigt
 
 ## maybe to do:
 * contentelemente nur auf brauchbare colpos anzeigen
@@ -40,6 +41,7 @@
 * sie kann seiten (vor allem für produkte interessant) mit og auf facebook (und auch anderen netzen?) teilen
 * analytics erklären
 * Sie muss den Impressumstext selbst einpflegen
+* Sie soll die Seite bevor sie dafür Werbung macht, genau durchschauen und evtl. auch Freunde drüberschauen lassen und mir dann sagen, was sie ändern will
 
 ## Vendor-Ressourcen:
 * Analytics, Facebook_app_id und Curator.io laufen über mich

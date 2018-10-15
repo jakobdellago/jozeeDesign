@@ -282,7 +282,7 @@ $(document).ready(function() {
 	});
 
 	//OUTBOUND TO SHOP from product-detail
-	$('.product-detail .shop-link').click(function() {
+	$('.product-detail .shop-button').click(function() {
 		var product_name = $('.product-detail .header').text();
 		var product_price = parseInt($('.product-detail .price').text());
 
@@ -294,7 +294,7 @@ $(document).ready(function() {
 	});
 
 	//MAIL from product-detail
-	$('.product-detail .mail-link').click(function() {
+	$('.product-detail .mail-button').click(function() {
 		var product_name = $('.product-detail .header').text();
 		var product_price = parseInt($('.product-detail .price').text());
 

@@ -57,23 +57,25 @@
 	<div class="button-wrapper">
 
 		<f:if condition="{data.header_link}">
-			<f:link.typolink parameter="{data.header_link}" title="button" class="shop-link" target="_blank">
-				<div class="shop-button">
+			<div class="shop-link">
+				<f:link.typolink parameter="{data.header_link}" title="button" class="shop-button" target="_blank">
 					<span>zum shop</span>
 					<i class="icon-arrow-right"></i>
-				</div>
-			</f:link.typolink>
+				</f:link.typolink>
+			</div>
 		</f:if>
 
-		<f:link.typolink 
+
+		<div class="mail-link">
+			<f:link.typolink 
 			parameter="mailto:jozee.designs@gmail.com?subject=Anfrage:%20{f:cObject(typoscriptObjectPath: 'lib.spaceToHexa20', data: '{data.header}')}&body=Hallo%20Johanna,%20ich%20bin%20an%20deinen%20Produkten%20interessiert!"
 			title="button"
-			class="mail-link">
-			<div class="mail-button">
+			class="mail-button">
 				<span>mailanfrage</span>
 				<i class="icon-envelop"></i>
-			</div>
-		</f:link.typolink>
+			</f:link.typolink>
+		</div>
+
 
 	</div>
 
