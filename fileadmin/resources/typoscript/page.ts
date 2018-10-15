@@ -63,33 +63,37 @@ page {
             165 = TEXT
             165.value = <meta property="fb:app_id" content="288028015138308" />
 
+            166 = TEXT
+            166.value = <meta property="og:image" content="http://www.jozeedesign.at/fileadmin/user_upload/rucksack_rose.jpg" />
+
             # Gibt die Spalte "normal" (colPos = 0) aus
             # Gibt die Spalte "normal" (colPos = 0) aus
             170 < styles.content.get
             170.select.max = 1
             170.renderObj = COA
             170.renderObj {
-               # Jedes Content Element wrappen
-               stdWrap.wrap = <meta property="og:image" content="/|" />
+                # Jedes Content Element wrappen
+                stdWrap.wrap = <meta property="og:imageTEST" content="|" />
                 stdWrap.override = http://www.jozeedesign.at/fileadmin/resources/images/logo_color.png
                 stdWrap.override.if.value.field = CType
                 stdWrap.override.if.equals = mask_product
                 stdWrap.override.if.negate = 1
 
-              #Bild auslesen
-              20 = FILES
-              20 {
-                 references {
-                    table = tt_content
-                    uid.data = field:uid
-                    fieldName = image
-                 }
-                    
+                #Bild auslesen
+                20 = FILES
+                20 {
 
+                    stdWrap.wrap = http://www.jozeedesign.at/|
 
-                 renderObj = IMG_RESOURCE
-                 renderObj.file.import.data = file:current:uid
-              }
+                    references {
+                        table = tt_content
+                        uid.data = field:uid
+                        fieldName = image
+                    }
+
+                    renderObj = IMG_RESOURCE
+                    renderObj.file.import.data = file:current:uid
+                }
             }
 
             171 = TEXT
