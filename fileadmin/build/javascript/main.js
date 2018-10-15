@@ -28,10 +28,22 @@ $(document).ready(function() {
 		});
 	}
 
-	$('.product-link.large').find('.product').each(function(){
+	$('.product-link.large.no-slider').find('.product').each(function(){
 		$bodytext = $(this).find('.bodytext');
 		var croppedText = Truncatise($bodytext.html(), {
 			TruncateLength: 250,
+			TruncateBy : "characters",
+			Strict : false,
+			StripHTML : true,
+			Suffix : ' ...'
+		});
+		$bodytext.html(croppedText);
+	});
+
+	$('.product-link.large.slider').find('.product').each(function(){
+		$bodytext = $(this).find('.bodytext');
+		var croppedText = Truncatise($bodytext.html(), {
+			TruncateLength: 180,
 			TruncateBy : "characters",
 			Strict : false,
 			StripHTML : true,

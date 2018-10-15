@@ -7,14 +7,14 @@
 * webseite in google console einfügen
 
 ## smaller fixes:
-* product-detail: add shop-icon
-* slick slider cropping austauschen -> soll immer bei ganzen Wörtern croppen 
+* product-detail: add shop-icon -> Siehe Punkt "Johanna fragen"
 * product-detail, mailanfrage: desktop -> cursor pointer wird links und rechts auch außerhalb der buttons angezeigt
 
 ## maybe to do:
 * contentelemente nur auf brauchbare colpos anzeigen
+* cropping auf Höhe anpassen
 * kontrollieren ob alles dsgvo-mäßig passt
-* mehr-button in produktslider ist auf mobil ziemlich klein, evt ganzes element mit a tag wrappen?
+* mehr-button in produktslider ist auf mobil ziemlich klein, evtl. ganzes element mit a tag wrappen?
 * make selectbox(shufflejs) work together with slickslider -> look at mask-element "product-link" for more information 
 
 ## known issues:
