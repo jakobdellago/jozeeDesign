@@ -1,9 +1,13 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 $ = require ('jquery');
 slick = require('slick-carousel');
-window.truncate = require('html-truncate');
+//window.truncate = require('html-truncate');
 window.Shuffle = require('shufflejs');
 window.Cookies = require('js-cookie');
+//require('readmore-js');
+//window.Shave = require('shave');
+//DotDotDot = require('jquery.dotdotdot');
+var Truncatise = require('truncatise');
 
 function setSlickTransform($slider) {
 	var $slick_track = $slider.find('.slick-track')
@@ -24,6 +28,35 @@ $(document).ready(function() {
 			}
 		});
 	}
+
+	$('.product-link.large').find('.product').each(function(){
+		$bodytext = $(this).find('.bodytext');
+		var croppedText = Truncatise($bodytext.html(), {
+			TruncateLength: 250,
+			TruncateBy : "characters",
+			Strict : false,
+			StripHTML : true,
+			Suffix : ' ...'
+		});
+		$bodytext.html(croppedText);
+	});
+
+	// CROP on height
+	//TODO: Redo on resize
+/*
+	var product_height = $('.product-link.large .product .bodytext').css('height');
+	product_height = product_height.substring(0, product_height.length - 1);
+	product_height = parseInt(product_height);
+	product_height = product_height - 80;
+	//Shave('.product-link.large .product .bodytext', product_height);
+	window.dotdotdot_API = $('.product-link.large .product .bodytext').dotdotdot({
+		height: product_height,
+		truncate: 'word',
+		ellipsis: ' ...',
+		watch: 'window'
+	}).data('dotdotdot');;*/
+
+
 
 	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
 	var $small_slider = $('.product-link.slider.small .product-list-wrapper');
@@ -83,10 +116,12 @@ $(document).ready(function() {
   		infinite: true,
   		slidesToShow: 2,
   		slidesToScroll: 1,
-  		arrows: false,
+  		arrows: true,
+  		nextArrow: '<div class="arrow arrow-right"><i class="icon-arrow-right"></i></div>',
+  		prevArrow: '<div class="arrow arrow-left"><i class="icon-arrow-left"></i></div>',
   		adaptiveHeight: true,
-  		autoplay: true,
-  		autoplaySpeed: 7000,
+  		//autoplay: true,
+  		//autoplaySpeed: 7000,
   		responsive: [
   			{
   				breakpoint: 1280,
@@ -126,11 +161,11 @@ $(document).ready(function() {
     });*/
 
     //crop product-slider description-text
-	$('.product-link.large').find('.product').each(function(){
+	/*$('.product-link.large').find('.product').each(function(){
 		$bodytext = $(this).find('.bodytext');
 		var croppedText = truncate($bodytext.html(), 200);
 		$bodytext.html(croppedText);
-	});
+	});*/
 	
 
 	if($('#curator-feed').length > 0) {
@@ -263,242 +298,7 @@ $(document).ready(function() {
 });
 
 
-},{"html-truncate":2,"jquery":3,"js-cookie":4,"shufflejs":5,"slick-carousel":6}],2:[function(require,module,exports){
-/**
- * Truncate HTML string and keep tag safe.
- *
- * @method truncate
- * @param {String} string string needs to be truncated
- * @param {Number} maxLength length of truncated string
- * @param {Object} options (optional)
- * @param {Boolean} [options.keepImageTag] flag to specify if keep image tag, false by default
- * @param {Boolean} [options.truncateLastWord] truncates last word, true by default
- * @param {Number} [options.slop] tolerance when options.truncateLastWord is false before we give up and just truncate at the maxLength position, 10 by default (but not greater than maxLength)
- * @param {Boolean|String} [options.ellipsis] omission symbol for truncated string, '...' by default
- * @return {String} truncated string
- */
-function truncate(string, maxLength, options) {
-    var EMPTY_OBJECT = {},
-        EMPTY_STRING = '',
-        DEFAULT_TRUNCATE_SYMBOL = '...',
-        DEFAULT_SLOP = 10 > maxLength ? maxLength : 10,
-        EXCLUDE_TAGS = ['img', 'br'],   // non-closed tags
-        items = [],                     // stack for saving tags
-        total = 0,                      // record how many characters we traced so far
-        content = EMPTY_STRING,         // truncated text storage
-        KEY_VALUE_REGEX = '([\\w|-]+\\s*(=\\s*"[^"]*")?\\s*)*',
-        IS_CLOSE_REGEX = '\\s*\\/?\\s*',
-        CLOSE_REGEX = '\\s*\\/\\s*',
-        SELF_CLOSE_REGEX = new RegExp('<\\/?\\w+\\s*' + KEY_VALUE_REGEX + CLOSE_REGEX + '>'),
-        HTML_TAG_REGEX = new RegExp('<\\/?\\w+\\s*' + KEY_VALUE_REGEX + IS_CLOSE_REGEX + '>'),
-        URL_REGEX = /(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)|((mailto:)?[_.\w\-]+@([\w][\w\-]+\.)+[a-zA-Z]{2,3})/g, // Simple regexp
-        IMAGE_TAG_REGEX = new RegExp('<img\\s*' + KEY_VALUE_REGEX + IS_CLOSE_REGEX + '>'),
-        WORD_BREAK_REGEX = new RegExp('\\W+', 'g'),
-        matches = true,
-        result,
-        index,
-        tail,
-        tag,
-        selfClose;
-
-    /**
-     * Remove image tag
-     *
-     * @private
-     * @method _removeImageTag
-     * @param {String} string not-yet-processed string
-     * @return {String} string without image tags
-     */
-    function _removeImageTag(string) {
-        var match = IMAGE_TAG_REGEX.exec(string),
-            index,
-            len;
-
-        if (!match) {
-            return string;
-        }
-
-        index = match.index;
-        len = match[0].length;
-
-        return string.substring(0, index) + string.substring(index + len);
-    }
-
-    /**
-     * Dump all close tags and append to truncated content while reaching upperbound
-     *
-     * @private
-     * @method _dumpCloseTag
-     * @param {String[]} tags a list of tags which should be closed
-     * @return {String} well-formatted html
-     */
-    function _dumpCloseTag(tags) {
-        var html = '';
-
-        tags.reverse().forEach(function (tag, index) {
-            // dump non-excluded tags only
-            if (-1 === EXCLUDE_TAGS.indexOf(tag)) {
-                html += '</' + tag + '>';
-            }
-        });
-
-        return html;
-    }
-
-    /**
-     * Process tag string to get pure tag name
-     *
-     * @private
-     * @method _getTag
-     * @param {String} string original html
-     * @return {String} tag name
-     */
-    function _getTag(string) {
-        var tail = string.indexOf(' ');
-
-        // TODO:
-        // we have to figure out how to handle non-well-formatted HTML case
-        if (-1 === tail) {
-            tail = string.indexOf('>');
-            if (-1 === tail) {
-                throw new Error('HTML tag is not well-formed : ' + string);
-            }
-        }
-
-        return string.substring(1, tail);
-    }
-
-
-    /**
-     * Get the end position for String#substring()
-     *
-     * If options.truncateLastWord is FALSE, we try to the end position up to
-     * options.slop characters to avoid breaking in the middle of a word.
-     *
-     * @private
-     * @method _getEndPosition
-     * @param {String} string original html
-     * @param {Number} tailPos (optional) provided to avoid extending the slop into trailing HTML tag
-     * @return {Number} maxLength
-     */
-    function _getEndPosition (string, tailPos) {
-        var defaultPos = maxLength - total,
-            position = defaultPos,
-            isShort = defaultPos < options.slop,
-            slopPos = isShort ? defaultPos : options.slop - 1,
-            substr,
-            startSlice = isShort ? 0 : defaultPos - options.slop,
-            endSlice = tailPos || (defaultPos + options.slop),
-            result;
-
-        if (!options.truncateLastWord) {
-
-            substr = string.slice(startSlice, endSlice);
-
-            if (tailPos && substr.length <= tailPos) {
-                position = substr.length;
-            }
-            else {
-                while ((result = WORD_BREAK_REGEX.exec(substr)) !== null) {
-                    // a natural break position before the hard break position
-                    if (result.index < slopPos) {
-                        position = defaultPos - (slopPos - result.index);
-                        // keep seeking closer to the hard break position
-                        // unless a natural break is at position 0
-                        if (result.index === 0 && defaultPos <= 1) break;
-                    }
-                    // a natural break position exactly at the hard break position
-                    else if (result.index === slopPos) {
-                        position = defaultPos;
-                        break; // seek no more
-                    }
-                    // a natural break position after the hard break position
-                    else {
-                        position = defaultPos + (result.index - slopPos);
-                        break;  // seek no more
-                    }
-                }
-            }
-            if (string.charAt(position - 1).match(/\s$/)) position--;
-        }
-        return position;
-    }
-
-    options = options || EMPTY_OBJECT;
-    options.ellipsis = (undefined !== options.ellipsis) ? options.ellipsis : DEFAULT_TRUNCATE_SYMBOL;
-    options.truncateLastWord = (undefined !== options.truncateLastWord) ? options.truncateLastWord : true;
-    options.slop = (undefined !== options.slop) ? options.slop : DEFAULT_SLOP;
-
-    while (matches) {
-        matches = HTML_TAG_REGEX.exec(string);
-
-        if (!matches) {
-            if (total >= maxLength) { break; }
-
-            matches = URL_REGEX.exec(string);
-            if (!matches || matches.index >= maxLength) {
-                content += string.substring(0, _getEndPosition(string));
-                break;
-            }
-
-            while (matches) {
-                result = matches[0];
-                index = matches.index;
-                content += string.substring(0, (index + result.length) - total);
-                string = string.substring(index + result.length);
-                matches = URL_REGEX.exec(string);
-            }
-            break;
-        }
-
-        result = matches[0];
-        index = matches.index;
-
-        if (total + index > maxLength) {
-            // exceed given `maxLength`, dump everything to clear stack
-            content += string.substring(0, _getEndPosition(string, index));
-            break;
-        } else {
-            total += index;
-            content += string.substring(0, index);
-        }
-
-        if ('/' === result[1]) {
-            // move out open tag
-            items.pop();
-            selfClose=null;
-        } else {
-            selfClose = SELF_CLOSE_REGEX.exec(result);
-            if (!selfClose) {
-                tag = _getTag(result);
-
-                items.push(tag);
-            }
-        }
-
-        if (selfClose) {
-            content += selfClose[0];
-        } else {
-            content += result;
-        }
-        string = string.substring(index + result.length);
-    }
-
-    if (string.length > maxLength - total && options.ellipsis) {
-        content += options.ellipsis;
-    }
-    content += _dumpCloseTag(items);
-
-    if (!options.keepImageTag) {
-        content = _removeImageTag(content);
-    }
-
-    return content;
-}
-
-module.exports = truncate;
-
-},{}],3:[function(require,module,exports){
+},{"jquery":2,"js-cookie":3,"shufflejs":4,"slick-carousel":5,"truncatise":6}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
@@ -10864,7 +10664,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.2.0
  * https://github.com/js-cookie/js-cookie
@@ -11031,7 +10831,7 @@ return jQuery;
 	return init(function () {});
 }));
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -13294,7 +13094,7 @@ return jQuery;
 })));
 
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
@@ -16307,4 +16107,190 @@ return jQuery;
 
 }));
 
-},{"jquery":3}]},{},[1]);
+},{"jquery":2}],6:[function(require,module,exports){
+(function(exportTo) {
+    "use strict";
+
+    var selfClosingTags = ["area", "base", "br", "col", "embed", "hr", "img", "input", "keygen", "link", "menuitem", "meta", "param", "source", "track", "wbr"];
+
+    /**
+     * Truncates a given HTML string to the specified length.
+     * @param {string} text This is the HTMl string to be truncated
+     * @param {object} options An options object defining how to truncate
+     *      Default values:
+     *      {
+     *          TruncateBy : 'words',   // Options are 'words', 'characters' or 'paragraphs'
+     *          TruncateLength : 50,    // The count to be used with TruncatedBy
+     *          StripHTML : false,      // Whether or not the truncated text should contain HTML tags
+     *          Strict : true,          // When set to false the truncated text finish at the end of the word
+     *          Suffix : '...'          // Text to be appended to the end of the truncated text
+     *      }
+     * @return {string} This returns the provided string truncated to the
+     *      length provided by the options. HTML tags may be stripped based
+     *      on the given options.
+     */
+    var truncatise = function(text,options) {
+        var options         = options || {},
+            text            = (text || "").trim(),
+            truncatedText   = "",
+            currentState    = 0,
+            isEndOfWord     = false,
+            isTagOpen       = false,
+            currentTag      = "",
+            tagStack        = [],
+            nextChar        = "";
+        //Counters
+        var charCounter         = 0,
+            wordCounter         = 0,
+            paragraphCounter    = 0;
+        //currentState values
+        var NOT_TAG         = 0,
+            TAG_START       = 1,
+            TAG_ATTRIBUTES  = 2;
+
+        //Set default values
+        options.TruncateBy      = (options.TruncateBy === undefined
+                                    || typeof options.TruncateBy !==  "string"
+                                    || !options.TruncateBy.match(/(word(s)?|character(s)?|paragraph(s)?)/))
+                                ? 'words'
+                                : options.TruncateBy.toLowerCase();
+        options.TruncateLength  = (options.TruncateLength === undefined
+                                    || typeof options.TruncateLength !== "number")
+                                ? 50
+                                : options.TruncateLength;
+        options.StripHTML       = (options.StripHTML === undefined
+                                    || typeof options.StripHTML !== "boolean")
+                                ? false
+                                : options.StripHTML;
+        options.Strict          = (options.Strict === undefined
+                                    || typeof options.Strict !== "boolean")
+                                ? true
+                                : options.Strict;
+        options.Suffix          = (options.Suffix === undefined
+                                    || typeof options.Suffix !== "string")
+                                ? '...'
+                                : options.Suffix;
+
+        if(text === "" || (text.length <= options.TruncateLength && options.StripHTML === false)){
+            return text;
+        }
+
+        //If not splitting on paragraphs we can quickly remove tags using regex
+        if(options.StripHTML && !options.TruncateBy.match(/(paragraph(s)?)/)){
+            text = String(text).replace(/<!--(.*?)-->/gm, '').replace(/<\/?[^>]+>/gi, '');
+        }
+        //Remove newline seperating paragraphs
+        text = String(text).replace(/<\/p>(\r?\n)+<p>/gm, '</p><p>');
+        //Replace double newlines with paragraphs
+        if(options.StripHTML && String(text).match(/\r?\n\r?\n/)){
+            text = String(text).replace(/((.+)(\r?\n\r?\n|$))/gi, "<p>$2</p>");
+        }
+
+        for (var pointer = 0; pointer < text.length; pointer++ ) {
+
+            var currentChar = text[pointer];
+
+            switch(currentChar){
+                case "<":
+                    if(currentState === NOT_TAG){
+                        currentState = TAG_START;
+                        currentTag = "";
+                    }
+                    if(!options.StripHTML){
+                        truncatedText += currentChar;
+                    }
+                    break;
+                case ">":
+                    if(currentState === TAG_START || currentState === TAG_ATTRIBUTES){
+                        currentState = NOT_TAG;
+                        currentTag = currentTag.toLowerCase();
+                        if(currentTag === "/p"){
+                            paragraphCounter++;
+                            if(options.StripHTML){
+                                truncatedText += " ";
+                            }
+                        }
+
+                        // Ignore self-closing tags.
+                        if ((selfClosingTags.indexOf(currentTag) === -1) && (selfClosingTags.indexOf(currentTag + '/') === -1)) {
+                            if(currentTag.indexOf("/") >= 0){
+                                tagStack.pop();
+                            } else {
+                                tagStack.push(currentTag);
+                            }
+                        }
+                    }
+                    if(!options.StripHTML){
+                        truncatedText += currentChar;
+                    }
+                    break;
+                case " ":
+                    if(currentState === TAG_START){
+                        currentState = TAG_ATTRIBUTES;
+                    }
+                    if(currentState === NOT_TAG){
+                        wordCounter++;
+                        charCounter++;
+                    }
+                    if(currentState === NOT_TAG || !options.StripHTML){
+                        truncatedText += currentChar;
+                    }
+                    break;
+                default:
+                    if(currentState === NOT_TAG){
+                        charCounter++;
+                    }
+                    if(currentState === TAG_START){
+                        currentTag += currentChar;
+                    }
+                    if(currentState === NOT_TAG || !options.StripHTML){
+                        truncatedText += currentChar;
+                    }
+                    break;
+            }
+
+            nextChar = text[pointer + 1] || "";
+            isEndOfWord = options.Strict ? true : (!currentChar.match(/[a-zA-ZÇ-Ü']/i) || !nextChar.match(/[a-zA-ZÇ-Ü']/i));
+
+            if(options.TruncateBy.match(/word(s)?/i) && options.TruncateLength <= wordCounter){
+                truncatedText = truncatedText.replace(/\s+$/, '');
+                break;
+            }
+            if(options.TruncateBy.match(/character(s)?/i) && options.TruncateLength <= charCounter && isEndOfWord){
+                break;
+            }
+            if(options.TruncateBy.match(/paragraph(s)?/i) && options.TruncateLength === paragraphCounter){
+                break;
+            }
+        }
+
+        if(!options.StripHTML && tagStack.length > 0){
+            while(tagStack.length > 0){
+                var tag = tagStack.pop();
+                if(tag!=="!--"){
+                    truncatedText += "</"+tag+">";
+                }
+            }
+        }
+
+        if(pointer < text.length - 1) {
+          if(truncatedText.match(/<\/p>$/gi)){
+              truncatedText = truncatedText.replace(/(<\/p>)$/gi, options.Suffix + "$1");
+          }else{
+              truncatedText = truncatedText + options.Suffix;
+          }
+        }
+
+        return truncatedText.trim();
+    };
+
+    // Export to node
+    if (typeof module !== 'undefined' && module.exports){
+        return module.exports = truncatise;
+    }
+
+    // Nope, export to the browser instead.
+    exportTo.truncatise = truncatise;
+}(this));
+
+},{}]},{},[1]);

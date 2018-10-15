@@ -14,15 +14,14 @@
   "license": "ISC",
   "devDependencies": {
     "browserify": "16.x",
-    "node-sass": "4.x"
+    "node-sass": "4.x",
+    "watchify": "^3.11.0"
   },
   "dependencies": {
-    "html-truncate": "^1.2.2",
     "jquery": "3.x",
     "js-cookie": "^2.2.0",
-    "selectric": "^1.13.0",
     "shufflejs": "^5.2.0",
     "slick-carousel": "1.8.0",
-    "watchify": "^3.11.0"
+    "truncatise": "0.0.7"
   }
 }

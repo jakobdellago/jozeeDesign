@@ -1,8 +1,12 @@
 $ = require ('jquery');
 slick = require('slick-carousel');
-window.truncate = require('html-truncate');
+//window.truncate = require('html-truncate');
 window.Shuffle = require('shufflejs');
 window.Cookies = require('js-cookie');
+//require('readmore-js');
+//window.Shave = require('shave');
+//DotDotDot = require('jquery.dotdotdot');
+var Truncatise = require('truncatise');
 
 function setSlickTransform($slider) {
 	var $slick_track = $slider.find('.slick-track')
@@ -23,6 +27,35 @@ $(document).ready(function() {
 			}
 		});
 	}
+
+	$('.product-link.large').find('.product').each(function(){
+		$bodytext = $(this).find('.bodytext');
+		var croppedText = Truncatise($bodytext.html(), {
+			TruncateLength: 250,
+			TruncateBy : "characters",
+			Strict : false,
+			StripHTML : true,
+			Suffix : ' ...'
+		});
+		$bodytext.html(croppedText);
+	});
+
+	// CROP on height
+	//TODO: Redo on resize
+/*
+	var product_height = $('.product-link.large .product .bodytext').css('height');
+	product_height = product_height.substring(0, product_height.length - 1);
+	product_height = parseInt(product_height);
+	product_height = product_height - 80;
+	//Shave('.product-link.large .product .bodytext', product_height);
+	window.dotdotdot_API = $('.product-link.large .product .bodytext').dotdotdot({
+		height: product_height,
+		truncate: 'word',
+		ellipsis: ' ...',
+		watch: 'window'
+	}).data('dotdotdot');;*/
+
+
 
 	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
 	var $small_slider = $('.product-link.slider.small .product-list-wrapper');
@@ -82,10 +115,12 @@ $(document).ready(function() {
   		infinite: true,
   		slidesToShow: 2,
   		slidesToScroll: 1,
-  		arrows: false,
+  		arrows: true,
+  		nextArrow: '<div class="arrow arrow-right"><i class="icon-arrow-right"></i></div>',
+  		prevArrow: '<div class="arrow arrow-left"><i class="icon-arrow-left"></i></div>',
   		adaptiveHeight: true,
-  		autoplay: true,
-  		autoplaySpeed: 7000,
+  		//autoplay: true,
+  		//autoplaySpeed: 7000,
   		responsive: [
   			{
   				breakpoint: 1280,
@@ -125,11 +160,11 @@ $(document).ready(function() {
     });*/
 
     //crop product-slider description-text
-	$('.product-link.large').find('.product').each(function(){
+	/*$('.product-link.large').find('.product').each(function(){
 		$bodytext = $(this).find('.bodytext');
 		var croppedText = truncate($bodytext.html(), 200);
 		$bodytext.html(croppedText);
-	});
+	});*/
 	
 
 	if($('#curator-feed').length > 0) {
