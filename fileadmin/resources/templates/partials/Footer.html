@@ -3,17 +3,21 @@
 	<picture class="picture">
 	    <source 
 	    	media="(max-width: 812px)" 
-	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna.png', width:'812')}, 
-	    			{f:uri.image(src:'fileadmin\resources\images\footer_johanna.png', width:'1624')} 2x"
+	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna.jpg', width:'812')}, 
+	    			{f:uri.image(src:'fileadmin\resources\images\footer_johanna.jpg', width:'1624')} 2x"
 	    >
 	   	<source 
 	    	media="(max-width: 1280px)" 
-	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna.png', width:'1280')}, 
-	    			{f:uri.image(src:'fileadmin\resources\images\footer_johanna.png', width:'2560')} 2x"
+	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna.jpg', width:'1280')}, 
+	    			{f:uri.image(src:'fileadmin\resources\images\footer_johanna.jpg', width:'2560')} 2x"
 	    >
-	    <f:image src="fileadmin\resources\images\footer_johanna.png"
-	        title="title"
-	        alt="alt"
+	   	<source 
+	    	media="(min-width: 1921px)" 
+	    	srcset="fileadmin\resources\images\footer_johanna_small_ratio.jpg"
+	    >
+	    <f:image src="fileadmin\resources\images\footer_johanna.jpg"
+	        title="johanna"
+	        alt="johanna"
 	    />
 	</picture>
 
@@ -45,6 +49,13 @@
 		<f:link.typolink parameter="14" title="imprint" class="link imprint-link">
 			<span class="header imprint-header">imprint</span>
 		</f:link.typolink>
+
+		<span class="copyright-text">
+			Made with <i class="icon-love heart"></i> from 
+			<f:link.typolink parameter="www.facebook.com/jakob.dellago" title="Jakob" class="facebook-link-jakob" target="_blank">
+				Jakob
+			</f:link.typolink>
+		</span>
 
 		<span class="copyright-text">Copyright © 2018 JozeeDesign</span>
 	</div>

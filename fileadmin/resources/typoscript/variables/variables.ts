@@ -7,7 +7,13 @@ page.10.variables {
         doNotLinkIt = 1
         wrapItemAndSub (
           <a href="http://www.jozeedesign.at" class="first">
-              <img src="http://www.jozeedesign.at/fileadmin/resources/images/logo.jpg" title="JozeeDesign" alt="Logo" class="logo">
+            <img src="http://www.jozeedesign.at/fileadmin/resources/images/logo_330.jpg"
+                title="jozeeDesign"
+                alt="jozeeDesign"
+                srcset="fileadmin/resources/images/logo_150.jpg, 
+                    fileadmin/resources/images/logo_300.jpg 2x,
+                    fileadmin/resources/images/logo_450.jpg 3x"
+            />
           </a>
           <div class="center"> 
           <li>|</li> |*| <li>|</li> |*| </div><li class="last">|</li>

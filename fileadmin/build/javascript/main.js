@@ -304,6 +304,17 @@ $(document).ready(function() {
 		});
 	});
 
+		//LINK ON JAKOBDELLAGO on facebook in footer
+	$('.footer .facebook-link-jakob').click(function() {
+
+		var url = $(this).attr('href');
+
+		gtag('event', 'facebook', {
+		  'event_category': 'social-media',
+		  'event_label': url
+		});
+	});
+
 	//ANALYTICS EVENTS END
 
 });

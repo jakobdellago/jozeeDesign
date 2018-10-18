@@ -35,7 +35,8 @@
 * ihren instagram-account auch in curator.io hinzufügen?
 
 ## das muss ich Johanna sagen:
-* Sie sollte die Bilder wenn möglich immer im gleichen Format hochladen
+* Sie sollte die Bilder wenn möglich immer im gleichen Format hochladen.
+* Bilder IMMER als .jpg-Datei hochladen, ansonsten lädt die Seite extrem langsam. 
 * ihr erklären, welche kombinationen bei product_link funktionieren und welche nicht
 * sie darf seiten nicht die gleichen namen geben wegen realurl
 * sie kann seiten (vor allem für produkte interessant) mit og auf facebook (und auch anderen netzen?) teilen
@@ -45,12 +46,4 @@
 
 ## Vendor-Ressourcen:
 * Analytics, Facebook_app_id und Curator.io laufen über mich
-* evtl. an Johanna freigeben
-
-## for me
-* später muss ich mir die option offen lassen, meinen namen einzufügen
-* bei größerem Aufwand mehr Geld verlangen, habe bis jetzt viel Zeit in das Projekt gesteckt und es ist demnach qualitativ sehr hochwertig
-
-## Das mache ich nächstes mal besser:
-* Im Backend NUR jene Dinge anzeigen, welche wirklich wichtig sind
-* Typoscript besser schreiben
+* evtl. an Johanna freigeben 
