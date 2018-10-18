@@ -143,9 +143,6 @@
 			display: block;
     		position: relative;
     		overflow: hidden;
-    		img {
-    			transform: translateY(-36%);
-    		}
 		}
 	}
 }
@@ -154,9 +151,6 @@
 	.footer {
 		.picture {
 			max-height: none;
-			img {
-	    		transform: none;
-			}
 		}
 	}
 }

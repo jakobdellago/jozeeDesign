@@ -3,19 +3,20 @@
 	<picture class="picture">
 	    <source 
 	    	media="(max-width: 812px)" 
-	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna.jpg', width:'812')}, 
-	    			{f:uri.image(src:'fileadmin\resources\images\footer_johanna.jpg', width:'1624')} 2x"
+	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna_small_ratio.jpg', width:'812c')}, 
+	    			{f:uri.image(src:'fileadmin\resources\images\footer_johanna_small_ratio.jpg', width:'1624c')} 2x"
 	    >
 	   	<source 
 	    	media="(max-width: 1280px)" 
-	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna.jpg', width:'1280')}, 
-	    			{f:uri.image(src:'fileadmin\resources\images\footer_johanna.jpg', width:'2560')} 2x"
+	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna_small_ratio.jpg', width:'1280c')}, 
+	    			{f:uri.image(src:'fileadmin\resources\images\footer_johanna_small_ratio.jpg', width:'2560c')} 2x"
 	    >
 	   	<source 
 	    	media="(min-width: 1921px)" 
-	    	srcset="fileadmin\resources\images\footer_johanna_small_ratio.jpg"
+	    	srcset="{f:uri.image(src:'fileadmin\resources\images\footer_johanna_small_ratio.jpg', width:'2400c')}"
 	    >
-	    <f:image src="fileadmin\resources\images\footer_johanna.jpg"
+	    <f:image src="fileadmin\resources\images\footer_johanna_small_ratio.jpg"
+	    	width="1920c"
 	        title="johanna"
 	        alt="johanna"
 	    />
@@ -51,7 +52,7 @@
 		</f:link.typolink>
 
 		<span class="copyright-text">
-			Made with <i class="icon-love heart"></i> from 
+			Made with <i class="icon-love heart"></i> by
 			<f:link.typolink parameter="www.facebook.com/jakob.dellago" title="Jakob" class="facebook-link-jakob" target="_blank">
 				Jakob
 			</f:link.typolink>
