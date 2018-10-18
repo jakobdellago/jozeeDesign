@@ -10,6 +10,7 @@
 
 ## smaller fixes:
 * product-detail: add shop-icon -> Siehe Punkt "Johanna fragen"
+* schrift verstecken bis montserrat und merriweater schriftart geladen ist
 
 ## maybe to do:
 * contentelemente nur auf brauchbare colpos anzeigen
@@ -27,9 +28,6 @@
 
 ## Mit Johanna besprechen:
 * curator -> stoppt ab 2000 views
-* wie tun mit den textboxen? soll mehr-button beibehalten werden? Wie lange werden ihre Texte sein?
-* passt das favicon oder lieber das andere?
-* soll ich einen social media button noch iwo einbauen? bis jetzt ist er nur im footer
 * Cookiebanner sagt bis jetzt nur, dass man, falls man die webseite benutzt, automatisch den cookies zustimmt
 * Den Open Graph besprechen.
 * ihren instagram-account auch in curator.io hinzufügen?
