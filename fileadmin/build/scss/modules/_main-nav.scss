@@ -39,6 +39,9 @@
 		    margin: 0 20px;
 			width: 120px;
 			//border: 1px dotted #666;
+			&.last {
+				visibility: hidden;
+			}
 			a {
 				text-align: center;
 				display: block;
