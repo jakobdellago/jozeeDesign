@@ -1,33 +1,50 @@
 
 <div class="product content-element product-detail" data-category="{data.tx_mask_product_categories}">
 
-	<picture class="picture">
-        <source 
-            media="(max-width: 812px)" 
-            srcset="{f:uri.image(image:'{data.image.0}', height:'500c', width:'500c', treatIdAsReference:'1')}, 
-                    {f:uri.image(image:'{data.image.0}', height:'1000c', width:'1000c', treatIdAsReference:'1')} 2x"
-        >
+<f:comment><f:debug title="all">{_all}</f:debug></f:comment>
 
-        <source 
-            media="(max-width: 1280px)" 
-            srcset="{f:uri.image(image:'{data.image.0}', height:'800c', width:'800c', treatIdAsReference:'1')}, 
-                    {f:uri.image(image:'{data.image.0}', height:'1600c', width:'1600c', treatIdAsReference:'1')} 2x"
-        >
 
-        <source 
-            media="(min-width: 1281px)" 
-            srcset="{f:uri.image(image:'{data.image.0}', height:'540c', width:'960c', treatIdAsReference:'1')}, 
-                    {f:uri.image(image:'{data.image.0}', height:'1080c', width:'1920c', treatIdAsReference:'1')} 2x"
-        >
+	<div class="image-wrapper {f:if(condition: '{data.image.1', then: 'slider', else: 'no-slider')}">
 
-        <f:image image="{data.image.0}"
-            height="1000c"
-            width="1600c"
-            title="{product.data.header}"
-            alt="{product.data.header}"
-            treatIdAsReference="1"
-        />
-    </picture>
+		
+<f:comment><f:debug title="dataimage 1">{data.image.1}</f:debug></f:comment>
+
+		<f:for each="{data.image}" as="actualImage">
+
+			<div class="single-image">
+				<picture class="picture">
+			        <source 
+			            media="(max-width: 812px)" 
+			            srcset="{f:uri.image(image:'{actualImage}', height:'500c', width:'500c', treatIdAsReference:'1')}, 
+			            {f:uri.image(image:'{actualImage}', height:'1000c', width:'1000c', treatIdAsReference:'1')} 2x"
+			        >
+
+			        <source 
+			            media="(max-width: 1280px)" 
+			            srcset="{f:uri.image(image:'{actualImage}', height:'800c', width:'800c', treatIdAsReference:'1')}, 
+			                    {f:uri.image(image:'{actualImage}', height:'1600c', width:'1600c', treatIdAsReference:'1')} 2x"
+			        >
+
+			        <source 
+			            media="(min-width: 1281px)" 
+			            srcset="{f:uri.image(image:'{actualImage}', height:'540c', width:'960c', treatIdAsReference:'1')}, 
+			                    {f:uri.image(image:'{actualImage}', height:'1080c', width:'1920c', treatIdAsReference:'1')} 2x"
+			        >
+
+			        <f:image image="{actualImage}"
+			            height="1000c"
+			            width="1600c"
+			            title="{product.data.header}"
+			            alt="{product.data.header}"
+			            treatIdAsReference="1"
+			        />
+			    </picture>
+			</div>
+			
+
+	    </f:for>
+
+    </div>
 
 	<f:if condition="{data.header}">
 		<h1 class="header">{data.header}</h1>

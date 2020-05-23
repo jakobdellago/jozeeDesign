@@ -71,6 +71,7 @@ $(document).ready(function() {
 
 	var $large_slider = $('.product-link.slider.large .product-list-wrapper');
 	var $small_slider = $('.product-link.slider.small .product-list-wrapper');
+	var $image_slider = $('.product .image-wrapper.slider');
 
 	//shufflejs config
 	if($('.product-link.selectbox').length > 0) {
@@ -160,6 +161,20 @@ $(document).ready(function() {
 		    }
 		]
 	});
+
+	$image_slider.slick({
+  		infinite: true,
+  		//slidesToShow: 2,
+  		//slidesToScroll: 1,
+  		autoplay: true,
+  		autoplaySpeed: 4000,	
+  		arrows: true,
+  		nextArrow: '<div class="arrow arrow-right"><i class="icon-arrow-right"></i></div>',
+  		prevArrow: '<div class="arrow arrow-left"><i class="icon-arrow-left"></i></div>',
+  		adaptiveHeight: true,
+		centerMode: true,
+	});
+
 
 	/* SHOULD STOP AUTOPLAY WHEN SWIPED ONCE - STILL CAUSES BUGS WHILE SLIDING
 	$large_slider.on('swipe', function(event, slick, direction){

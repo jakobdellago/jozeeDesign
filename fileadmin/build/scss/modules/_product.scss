@@ -69,6 +69,40 @@
 	.mail-button {
 		background-color: #53cdef;
 	}
+
+
+
+	.image-wrapper.slick-slider {
+		position: relative;
+		.arrow {
+			position: absolute;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    border-radius: 50%;
+		    z-index: 1;
+		    background-color: #fff;
+		    &.arrow-left{
+		    	left: 10px;
+		    }
+		    &.arrow-right{
+		    	right: 10px;
+		    }
+		}
+		.slick-list {
+			overflow: hidden;
+			.slick-track{
+				display: flex;
+    			align-items: flex-start;
+    			.slick-slide{
+    				margin: 10px;
+    			}
+			}
+		}
+	}
+
 }
 
 @media only screen and (min-width: $tablet) {
@@ -118,6 +152,17 @@
 		.mail-button {
 			margin: 0 auto; 
 		}
+
+		.image-wrapper.slick-slider {
+			.slick-list {
+				.slick-track{
+	    			.slick-slide{
+	    				margin: 30px 40px;
+	    			}
+				}
+			}
+		}
+
 	}
 }
 
