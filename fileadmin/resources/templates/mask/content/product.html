@@ -1,16 +1,9 @@
 
 <div class="product content-element product-detail" data-category="{data.tx_mask_product_categories}">
 
-<f:comment><f:debug title="all">{_all}</f:debug></f:comment>
-
-
+	<!--image-wrapper -->
 	<div class="image-wrapper {f:if(condition: '{data.image.1', then: 'slider', else: 'no-slider')}">
-
-		
-<f:comment><f:debug title="dataimage 1">{data.image.1}</f:debug></f:comment>
-
 		<f:for each="{data.image}" as="actualImage">
-
 			<div class="single-image">
 				<picture class="picture">
 			        <source 
@@ -40,10 +33,19 @@
 			        />
 			    </picture>
 			</div>
-			
-
 	    </f:for>
-
+	    <f:if condition="{data.media}">
+		    <div class="video-wrapper">
+		    	<f:for each="{data.media}" as="actualVideo">
+					<div class="single-video">
+						<video width="auto" height="auto" loop muted autoplay>
+					  		<source src="http://www.jozeedesign.at/fileadmin/{actualVideo.originalFile.identifier}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+				</f:for>
+			</div>
+		</f:if>
     </div>
 
 	<f:if condition="{data.header}">
